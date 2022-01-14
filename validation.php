@@ -5,7 +5,7 @@ session_start();
 
 $con = mysqli_connect('localhost','root','');
 
-mysqli_select_db($con, 'virtusers');
+mysqli_select_db($con, 'virttour');
 
 //$fname=$_POST['fname'];
 //$lname=$_POST['lname'];
