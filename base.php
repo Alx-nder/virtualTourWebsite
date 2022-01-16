@@ -26,8 +26,7 @@
 </head>
 <body>
 <form action="base.php" method="post">
-  City:
-  
+
   
   <div class="form-group border-bottom">
       <input type="text" name="price" class="form-control bg-transparent  border-0"  placeholder="price">
@@ -37,11 +36,15 @@
         <button class="btn d-grid gap-2 col-2 mx-auto  btn-danger" type= "submit">search</button>
     </div>
     <?php
-    $records = mysqli_query($con, "select * From listings where price = '$_POST[price]'"); 
-    while($data = mysqli_fetch_array($records))
-    {
-        echo  $data['price'];
-    }
+    if (isset($_POST['price'])) {
+        $records = mysqli_query($con, "select * From listings where price = '$_POST[price]'"); 
+        while($data = mysqli_fetch_array($records))
+        {
+            echo  $data['price'];
+            echo  $data['address'];
+        }
+            
+      }
     ?>  
 </form>
     <a href="logout.php"> logout</a>
