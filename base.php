@@ -42,9 +42,9 @@
         {
             echo  $data['price'];
             echo  $data['address'];
+            echo "<a href=".$data['description'].">some text</a>";
         }
-            
-      }
+    }
     ?>  
 </form>
     <a href="logout.php"> logout</a>
