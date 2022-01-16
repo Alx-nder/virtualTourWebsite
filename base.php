@@ -5,6 +5,11 @@
     $con = mysqli_connect('localhost','root','');
     mysqli_select_db($con, 'virttour');
 
+    if(!$con)
+    {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
     if(!isset($_SESSION['email']))
     {
         header('location:login.php');
@@ -20,40 +25,27 @@
     <title>Document</title>
 </head>
 <body>
-    <p> welcome</p>
-
-    <main class="container">
-        <form action="base.php" method="post">
-                <div class="form-group border-bottom">
-                    <input type="text" name="price" class="form-control bg-transparent  border-0"  placeholder="price">
-                </div>
-                
-                <div class="form-group">
-                <button class="btn d-grid gap-2 col-2 mx-auto  btn-danger" type= "submit">search</button>            
-                </div>
-        </form>
-        <?php    
-        if(isset($_POST['submit'])) {
-            $price=$_POST['price']; 
-            $search="select * from listings where price= '$price'";
-            $result= mysqli_query($con, $search);
-            $row = $result->fetch_array();
-            echo $row["address"]; 
-            echo $row["price"];
-            echo $row["description"];
-          while($row = mysqli_fetch_array($result))}
-            // echo $row['id'], " ", $row['address'], " ", $row['price'], " ", $row['description']; }
-            else{
-            } 
-?>
-
-           
-    </main>
-
-
-
-
+<form action="base.php" method="post">
+  City:
+  
+  
+  <div class="form-group border-bottom">
+      <input type="text" name="price" class="form-control bg-transparent  border-0"  placeholder="price">
+    </div>
+    
+    <div class="form-group">
+        <button class="btn d-grid gap-2 col-2 mx-auto  btn-danger" type= "submit">search</button>
+    </div>
+    <?php
+    $records = mysqli_query($con, "select * From listings where price = '$_POST[price]'"); 
+    while($data = mysqli_fetch_array($records))
+    {
+        echo  $data['price'];
+    }
+    ?>  
+</form>
     <a href="logout.php"> logout</a>
 
 </body>
 </html>
+
