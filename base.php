@@ -41,8 +41,8 @@
         while($data = mysqli_fetch_array($records))
         {
             echo  $data['price'];
-            echo  $data['address'];
-            echo "<a href=".$data['description'].">some text</a>";
+            echo '<img src="' . $data['address'] . '"height="42" width="42" alt="error">'; //tour image preview
+            echo "<a href=".$data['description'].">tour</a>"; //tour link
         }
     }
     ?>  
