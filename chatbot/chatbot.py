@@ -1,7 +1,9 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-chatbot = ChatBot("The Butler", storage_adapter='chatterbot.storage.SQLStorageAdapter', database_uri='sqlite:///database.sqlite3', read_only=True)
+chatbot = ChatBot("The Butler", storage_adapter='chatterbot.storage.SQLStorageAdapter', database_uri='sqlite:///database.sqlite3', read_only=True, 
+logic_adapters=[{'import_path': 'chatterbot.logic.BestMatch', 'default_response': 'I am sorry, but I do not understand.', 'maximum_similarity_threshold': 0.50}]
+)
 
 
 conversation = [
