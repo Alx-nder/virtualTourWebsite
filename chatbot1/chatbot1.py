@@ -1,4 +1,8 @@
 #!C:\Program Files\Python310\python.exe
+
+import sys
+sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-packages")
+
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
