@@ -37,14 +37,10 @@
     
         <?php
         if (isset($_GET['chat'])) {
-          $chattinglink = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GET['chat']);
+        #  $chattinglink = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". $_GET['chat'];
       
-          $chatter=file_get_contents($chattinglink);
-          
-          
+          $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GET['chat']));
           echo $chatter;
-
-          //echo shell_exec("C:\Program Files\Python310 virtualtourwebsite/chatbot1/chatbot1.py 'chat'");
         }
         ?> 
     

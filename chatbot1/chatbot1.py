@@ -3,16 +3,18 @@ print("content-type: text/html\n\n" )
 
 import sys
 import os
+import urllib.parse
 
 user_input= os.environ['QUERY_STRING']
+
+user_input= urllib.parse.unquote_plus(user_input)
 
 sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-packages")
 
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-chatbot1 = ChatBot("The Butler",  read_only=True)
-
+chatbot1 = ChatBot("TheButler",  read_only=True)
 
 conversation = [
     "Hello",
@@ -25,29 +27,6 @@ conversation = [
 ]
 trainer = ListTrainer(chatbot1, show_training_progress=False)
 trainer.train(conversation)
-
-# def smalltalk(user_input):
-#     while True:
-#         try:
-#             #user_input = input()
-#             bot_response = chatbot1.get_response(user_input)
-#             print(bot_response)
-#     # Press ctrl-c or ctrl-d on the keyboard to exit
-#         except (KeyboardInterrupt, EOFError, SystemExit):
-#             break
-"""
-while True:
-    try:
-        chatbot_input = chatbot.get_response(input())
-        print(chatbot_input)
-    except(KeyboardInterrupt, EOFError, SystemExit):
-        break
-"""
-#print('Type something to begin...')
-# The following loop will execute each time the user enters input
-
-
-#user_input = sys.argv[1]
 bot_response = chatbot1.get_response(user_input)
 print(bot_response)
 
