@@ -1,6 +1,11 @@
 #!C:\Program Files\Python310\python.exe
 print("content-type: text/html\n\n" )
+
 import sys
+import os
+
+user_input= os.environ['QUERY_STRING']
+
 sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-packages")
 
 from chatterbot import ChatBot
@@ -18,18 +23,18 @@ conversation = [
     "Thank you.",
     "You're welcome."
 ]
-trainer = ListTrainer(chatbot1)
+trainer = ListTrainer(chatbot1, show_training_progress=False)
 trainer.train(conversation)
 
-def smalltalk(user_input):
-    while True:
-        try:
-            #user_input = input()
-            bot_response = chatbot1.get_response(user_input)
-            print(bot_response)
-    # Press ctrl-c or ctrl-d on the keyboard to exit
-        except (KeyboardInterrupt, EOFError, SystemExit):
-            break
+# def smalltalk(user_input):
+#     while True:
+#         try:
+#             #user_input = input()
+#             bot_response = chatbot1.get_response(user_input)
+#             print(bot_response)
+#     # Press ctrl-c or ctrl-d on the keyboard to exit
+#         except (KeyboardInterrupt, EOFError, SystemExit):
+#             break
 """
 while True:
     try:
@@ -41,6 +46,9 @@ while True:
 #print('Type something to begin...')
 # The following loop will execute each time the user enters input
 
-#print("hello")
-user_input=""
-smalltalk(user_input)
+
+#user_input = sys.argv[1]
+bot_response = chatbot1.get_response(user_input)
+print(bot_response)
+
+

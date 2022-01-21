@@ -30,15 +30,16 @@
           
         </form>
     </div> 
-    <form action="index.php" method="Post">
+    <form action="index.php" method="get">
       <input type="text" name="chat" placeholder="Enter message">
-      <button type="submit" class="msger-send-btn">Send</button>
+      <button type="submit">Send</button>
     </form>
     
         <?php
-        if (isset($_POST['chat'])) {
-          $chattinglink = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?user_input=". $_POST['chat'];
-          
+        if (isset($_GET['chat'])) {
+          $chattinglink = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". $_GET['chat'];
+        
+
           function file_get_contents_curl($url) {
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -49,43 +50,16 @@
             return $data;
           }
 
-          $chatter=file_get_contents_curl($chattinglink);
+          $chatter=file_get_contents_curl( $chattinglink);
           
           
           echo $chatter;
+
+          //echo shell_exec("C:\Program Files\Python310 virtualtourwebsite/chatbot1/chatbot1.py 'chat'");
         }
         ?> 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <!-- <script>
-
-      const msgerForm = get(".msger-inputarea");
-      const msgerInput = get(".msger-input");
-      const msgerChat = get(".msger-chat");
-      
-      msgerForm.addEventListener("submit", event => {
-        event.preventDefault();  
-        const msgText = msgerInput.value;
-        if (!msgText) return;
-
-        //appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
-        msgerInput.value = "";
-        botResponse(msgText);
-        
-      });
-
-      function botResponse(rawText) {
-        // Bot Response
-        $.get("/get", { msg: rawText }).done(function (data) {
-          console.log(rawText);
-          console.log(data);
-          const msgText = data;
-          //appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-
-        });
-      }
-      
-    </script> -->
   </body>
 </html>
