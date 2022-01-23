@@ -11,7 +11,8 @@
 
     <title>Virtual tour</title>
   </head>
-  <body>
+  <!-- style="background-color: #0D1B2B" -->
+  <body >
     <h1>Hello, world!</h1>
     <div class="container">   
         <form action="validation.php" method="post">
@@ -41,6 +42,20 @@
       
           $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GET['chat']));
           echo $chatter;
+        }
+        ?> 
+    <form action="index.php" method="get">
+      <input type="text" name="rcmd" placeholder="try this" disabled>
+      <button type="submit">Send</button>
+    </form>
+    <?php
+      $rec=file_get_contents("http://localhost/recommendAlgo/epsilon1.py?");
+      echo $rec;
+        if (isset($_GET['rcmd'])) {
+        #  $chattinglink = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". $_GET['chat'];
+       
+          $rec1=1;
+          echo $rec1;
         }
         ?> 
     
