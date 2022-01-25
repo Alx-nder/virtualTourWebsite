@@ -30,6 +30,23 @@
         <div class="col-4"></div>  
       </div>
     </div> 
+
+        
+    <?php
+      $con = mysqli_connect('localhost','root','');
+      mysqli_select_db($con, 'virttour');
+      $rec=file_get_contents("http://localhost/recommendAlgo/epsilon1.py?");
+      echo $rec;
+        
+      $records = mysqli_query($con, "select * From listings where price = $rec OR address = '$rec'"); 
+      
+      while($data = mysqli_fetch_array($records))
+      {
+        echo  $data['price'];
+        echo $data['address'];
+      }
+    ?> 
+
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 

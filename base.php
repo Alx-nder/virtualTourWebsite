@@ -55,21 +55,21 @@
       <button type="submit">Send</button>
     </form>
     
-        <?php
- $con = mysqli_connect('localhost','root','');
- mysqli_select_db($con, 'virttour');
-
-        if (isset($_GET['chat'])) {
-        #  $chattinglink = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". $_GET['chat'];
-      
-          $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GET['chat']));
-          echo $chatter;
-        }
-        ?> 
+    <?php
+    $con = mysqli_connect('localhost','root','');
+    mysqli_select_db($con, 'virttour');
+      if (isset($_GET['chat'])) {
+        $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GET['chat']));
+        echo $chatter;
+      }
+    ?> 
+    
     <form action="index.php" method="get">
       <input type="text" name="rcmd" placeholder="try this" disabled>
       <button type="submit">Send</button>
     </form>
+    
+    
     <?php
       $rec=file_get_contents("http://localhost/recommendAlgo/epsilon1.py?");
       echo $rec;
@@ -79,16 +79,8 @@
       {
         echo  $data['price'];
         echo $data['address'];
-        //echo '<img src="' . $data['address'] . '"height="42" width="42" alt="error">'; //tour image preview
-        //echo "<a href=".$data['description'].">tour</a>"; //tour link
       }
-        if (isset($_GET['rcmd'])) {
-        #  $chattinglink = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". $_GET['chat'];
-       
-          $rec1=1;
-          echo $rec1;
-        }
-        ?> 
+    ?> 
 
 
 </body>
