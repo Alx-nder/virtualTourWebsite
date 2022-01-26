@@ -36,9 +36,15 @@
       $con = mysqli_connect('localhost','root','');
       mysqli_select_db($con, 'virttour');
       $rec=file_get_contents("http://localhost/recommendAlgo/epsilon1.py?");
+      echo "recomendation:";
       echo $rec;
-        
-      $records = mysqli_query($con, "select * From listings where price = $rec OR address = '$rec'"); 
+      echo "<br>";
+      echo "<br>";
+      echo "<br>";
+      echo nl2br("these are some houses we think you might like ");
+
+      echo "<br>";
+      $records = mysqli_query($con, "select * From listings where price = $rec OR add = $rec"); 
       
       while($data = mysqli_fetch_array($records))
       {
