@@ -36,9 +36,10 @@
       $con = mysqli_connect('localhost','root','');
       mysqli_select_db($con, 'virttour');
       $rec=file_get_contents("http://localhost/recommendAlgo/epsilon1.py?");
+      //$rec=file_get_contents("http://localhost/virtualtourwebsite/zoomapi/makemeeting.py?");
+      
       echo "recomendation:";
       echo $rec;
-      echo "<br>";
       echo "<br>";
       echo "<br>";
       echo nl2br("these are some houses we think you might like ");
