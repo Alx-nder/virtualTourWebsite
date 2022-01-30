@@ -57,6 +57,10 @@
       </div>
     </div>
   </div>
+  
+  <?php 
+  echo "hello";
+  ?>
 
 <a id="nexrec" href="#">next</a>
     
