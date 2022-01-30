@@ -29,5 +29,3 @@ trainer = ListTrainer(chatbot1, show_training_progress=False)
 trainer.train(conversation)
 bot_response = chatbot1.get_response(user_input)
 print(bot_response)
-
-
