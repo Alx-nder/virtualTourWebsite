@@ -46,28 +46,23 @@
         }
     }
     ?>  
-</form>
     <a href="logout.php"> logout</a>
+</form>
+    
 
     
-    <form action="index.php" method="get">
+    <form action="base.php" method="get">
       <input type="text" name="chat" placeholder="Enter message">
       <button type="submit">Send</button>
     </form>
     
     <?php
-    $con = mysqli_connect('localhost','root','');
-    mysqli_select_db($con, 'virttour');
       if (isset($_GET['chat'])) {
         $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GET['chat']));
         echo $chatter;
       }
     ?> 
     
-    <form action="index.php" method="get">
-      <input type="text" name="rcmd" placeholder="try this" disabled>
-      <button type="submit">Send</button>
-    </form>
     
     
     <?php
@@ -75,11 +70,11 @@
       echo $rec;
         
       $records = mysqli_query($con, "select * From listings where price = $rec"); 
-      while($data = mysqli_fetch_array($records))
-      {
-        echo  $data['price'];
-        echo $data['address'];
-      }
+        // while($data = mysqli_fetch_array($records))
+        // {
+        //   echo  $data['price'];
+        //   echo $data['address'];
+        // }
     ?> 
 
 
