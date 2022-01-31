@@ -1,8 +1,6 @@
 <?php
-    session_start();
-
-    
-    $con = mysqli_connect('localhost','root','');
+    session_start();   
+    $con = mysqli_connect('localhost','root','password');
     mysqli_select_db($con, 'virttour');
 
     if(!$con)
@@ -27,7 +25,6 @@
 <body>
 <form action="base.php" method="post">
 
-  
   <div class="form-group border-bottom">
       <input type="text" name="price" class="form-control bg-transparent  border-0"  placeholder="price">
     </div>
@@ -41,17 +38,15 @@
         while($data = mysqli_fetch_array($records))
         {
             echo  $data['price'];
-            echo '<img src="' . $data['address'] . '"height="42" width="42" alt="error">'; //tour image preview
-            echo "<a href=".$data['description'].">tour</a>"; //tour link
+            echo  $data['address'];
+            echo  $data['description'];
         }
     }
     ?>  
     <a href="logout.php"> logout</a>
 </form>
-    
 
-    
-    <form action="base.php" method="get">
+<form action="base.php" method="get">
       <input type="text" name="chat" placeholder="Enter message">
       <button type="submit">Send</button>
     </form>
@@ -62,36 +57,25 @@
         echo $chatter;
       }
     ?> 
-    
-    
-    
+        
     <?php
-      $rec=file_get_contents("http://localhost/recommendAlgo/epsilon1.py?");
+      $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
+      $rec=file_get_contents($rec_link);
       echo $rec;
         
       $records = mysqli_query($con, "select * From listings where price = $rec"); 
-        // while($data = mysqli_fetch_array($records))
-        // {
-        //   echo  $data['price'];
-        //   echo $data['address'];
-        // }
+        while($data = mysqli_fetch_array($records))
+        {
+          echo  $data['price'];
+          echo $data['address'];
+        }
     ?> 
-
     
 <?php
-      $con = mysqli_connect('localhost','root','');
-      mysqli_select_db($con, 'virttour');
-      $rec=file_get_contents("http://localhost/recommendAlgo/epsilon1.py?");
-      //$rec=file_get_contents("http://localhost/virtualtourwebsite/zoomapi/makemeeting.py?");
-      echo $rec;
-      // $records = mysqli_query($con, "select * From listings where price = $rec OR add = $rec"); 
-      // while($data = mysqli_fetch_array($records))
-      {
-        // echo  $data['price'];
-        // echo $data['address'];
-      }
-    ?> 
-
+      $meetlink="http://localhost/virtualtourwebsite/zoomapi/makemeeting.py?";
+      $meet=file_get_contents($meetlink);
+      echo $meet;
+?> 
 
 </body>
 </html>

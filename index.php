@@ -13,7 +13,7 @@
     <title>Virtual tour</title>
   </head>
   <body >
-        <!-- <form action="validation.php" class="text-center" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);" method="post">
+        <form action="validation.php" class="text-center" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);" method="post">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
             <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -23,7 +23,7 @@
             <input type="password" name="password" class="form-control" id="exampleInputPassword1">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
-        </form>    -->
+        </form>   
     
   <div class="card-group" id="csec">
     <div class="card">
