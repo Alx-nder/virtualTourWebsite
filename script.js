@@ -1,7 +1,11 @@
 var nexrec= document.getElementById("nexrec");
 nexrec.addEventListener("click", function(){
-    // alert("ada");
     var nex = document.createElement("div");
-    nex.innerHTML = "hello";
+    nex.setAttribute("class","card"); 
+    // nex.innerHTML = "hello";
+
+    var nex_nested = document.createElement("img");
+    nex_nested.setAttribute("class", "card-img-top");
+    nex.appendChild(nex_nested);
     document.getElementById("csec").appendChild(nex);
 });
