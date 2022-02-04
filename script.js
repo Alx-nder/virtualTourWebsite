@@ -2,11 +2,11 @@ var nexrec= document.getElementById("nexrec");
 nexrec.addEventListener("click", function(){
     var nex = document.createElement("div");
     nex.setAttribute("class","card"); 
-    // nex.innerHTML = "hello";
-
+    
     var nex_nested = document.createElement("img");   
     nex_nested.setAttribute("src", "...");
     nex_nested.setAttribute("class", "card-img-top");
+    nex_nested.setAttribute("alt","...");
     nex.appendChild(nex_nested);
 
     var nex_nested_div = document.createElement("div");   
@@ -34,4 +34,7 @@ nexrec.addEventListener("click", function(){
     
 
     document.getElementById("csec").appendChild(nex);
+   
+    var prev = document.getElementsByClassName('card')[0];
+    document.getElementById("csec").removeChild(prev);
 });
