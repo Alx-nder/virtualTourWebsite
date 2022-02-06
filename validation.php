@@ -7,8 +7,6 @@ $con = mysqli_connect('localhost','root','');
 
 mysqli_select_db($con, 'virttour');
 
-//$fname=$_POST['fname'];
-//$lname=$_POST['lname'];
 $email = $_POST['email'];
 $pass = $_POST['password'];
 
