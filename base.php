@@ -64,6 +64,7 @@
       echo $rec;
         
       $records = mysqli_query($con, "select * From listings where price = $rec"); 
+      //fix for json output
         while($data = mysqli_fetch_array($records))
         {
           echo  $data['price'];
