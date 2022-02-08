@@ -34,11 +34,11 @@
     </div>
     <?php
     if (isset($_POST['price'])) {
-        $records = mysqli_query($con, "select * From listings where price = '$_POST[price]'"); 
+        $records = mysqli_query($con, "select * From listings where price =" .$_POST['price']); 
         while($data = mysqli_fetch_array($records))
         {
             echo  $data['price'];
-            echo  $data['address'];
+            echo  $data['add'];
             echo  $data['description'];
         }
     }
@@ -64,7 +64,7 @@
       echo $rec;
         //using selct where or 
 
-      $records = mysqli_query($con, "select * From listings where price = '$rec' "); 
+      $records = mysqli_query($con, "select * From listings where add = '$rec' "); 
       //fix for json input
         while($data = mysqli_fetch_array($records))
         {
