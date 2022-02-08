@@ -63,7 +63,7 @@
       $rec=file_get_contents($rec_link);
       echo $rec;
         
-      $records = mysqli_query($con, "select * From listings where price = $rec"); 
+      $records = mysqli_query($con, "select * From listings where price = '$rec' or add='$rec'"); 
       //fix for json output
         while($data = mysqli_fetch_array($records))
         {
