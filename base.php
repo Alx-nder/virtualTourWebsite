@@ -62,20 +62,21 @@
       $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
       $rec=file_get_contents($rec_link);
       echo $rec;
-        
-      $records = mysqli_query($con, "select * From listings where price = '$rec' or add='$rec'"); 
-      //fix for json output
+        //using selct where or 
+
+      $records = mysqli_query($con, "select * From listings where price = '$rec' "); 
+      //fix for json input
         while($data = mysqli_fetch_array($records))
         {
           echo  $data['price'];
-          echo $data['address'];
+          echo $data['add'];
         }
     ?> 
     
 <?php
-      $meetlink="http://localhost/virtualtourwebsite/zoomapi/makemeeting.py?";
-      $meet=file_get_contents($meetlink);
-      echo $meet;
+      // $meetlink="http://localhost/virtualtourwebsite/zoomapi/makemeeting.py?";
+      // $meet=file_get_contents($meetlink);
+      // echo $meet;
 ?> 
 
 </body>
