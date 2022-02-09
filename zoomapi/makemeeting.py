@@ -45,6 +45,6 @@ join_URL = file["join_url"]
 meetingPassword = file["password"]
 
 def setup_meet():
-	print(f'\n here is your zoom meeting link {join_URL}"\n')
+	print(f'\n here is your zoom meeting link <a href= {join_URL}>{join_URL}</a>\n')
 
 setup_meet()
