@@ -1,5 +1,6 @@
 from chatterbot.logic import LogicAdapter
 import sys
+import random
 
 sys.path.append("C:\\xampp\\htdocs\\virtualTourWebsite\\zoomapi\\")
 import makemeeting
@@ -20,10 +21,7 @@ class agentlogicadapter(LogicAdapter):
         from chatterbot.conversation import Statement
     
         # Let's base the confidence value on if agent is available
-        if True:
-            confidence = 0
-        else:
-            confidence = 0
+        confidence = random.uniform(0, 1)
 
         
         response_statement = Statement(text=makemeeting.setup_meet)
