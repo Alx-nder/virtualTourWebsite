@@ -14,7 +14,14 @@ sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-pac
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-chatbot1 = ChatBot("TheButler",  read_only=True)
+
+chatbot1 = ChatBot("DButler", logic_adapters=[
+        {
+            'import_path': 'chatterbot.logic.SpecificResponseAdapter',
+            'input_text': 'agent',
+            'output_text': 'Ok, here is a link: http://chatterbot.rtfd.org'
+        }],
+        read_only=True)
 
 conversation = [
     "Hello",

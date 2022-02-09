@@ -44,4 +44,7 @@ file = json.loads(createmeeting.text)
 join_URL = file["join_url"]
 meetingPassword = file["password"]
 
-print(f'\n here is your zoom meeting link {join_URL} and your password: "{meetingPassword}"\n')
+def setup_meet():
+	print(f'\n here is your zoom meeting link {join_URL}"\n')
+
+setup_meet()
