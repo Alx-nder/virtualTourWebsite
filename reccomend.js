@@ -1,4 +1,6 @@
-
+var rec_price;
+var rec_add;
+var rec_des;
 
 var nexrec= document.getElementById("nexrec");
 nexrec.addEventListener("click", function(){
@@ -23,7 +25,8 @@ nexrec.addEventListener("click", function(){
     var nex_nested_div_text = document.createElement("p");   
     nex_nested_div_text.setAttribute("class", "card-text");
     nex_nested_div.appendChild(nex_nested_div_text);
-    nex_nested_div_text.innerHTML="This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.";
+    rec_des = nex_nested_div_text.innerHTML ;
+    // rec_des="This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.";
 
     var nex_nested_footer = document.createElement("div");   
     nex_nested_footer.setAttribute("class", "card-footer");
