@@ -81,8 +81,6 @@
         }
     }
     ?>  
-
-    
 </form>
 
 <form action="base.php" method="get">
@@ -96,22 +94,20 @@
         echo $chatter;
       }
     ?> 
- 
- 
 
     <script src="reccomend.js">
       var  des= '    <?php
-      $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
-      $rec=file_get_contents($rec_link);
-      echo $rec;
-       
-      $records = mysqli_query($con, "select * From listings where price = '$rec' "); 
-        while($data = mysqli_fetch_array($records))
-        {
-          echo  $data['price'];
-          echo $data['add'];
-        }
-    ?>;';
+            $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
+            $rec=file_get_contents($rec_link);
+            echo $rec;
+            
+            $records = mysqli_query($con, "select * From listings where price = '$rec' "); 
+              while($data = mysqli_fetch_array($records))
+              {
+                echo  $data['price'];
+                echo $data['add'];
+              }
+          ?>;';
       rec_des=des;
       console.log("des");
     </script>

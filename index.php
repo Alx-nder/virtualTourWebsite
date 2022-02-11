@@ -10,17 +10,26 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="style.css">
     <title>Virtual tour</title>
   </head>
-  <body >
-        <form action="validation.php" class="text-center" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);" method="post">
-          <div class="mb-3">
-            <input type="email" name="email" class="form-control" placeholder="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <body class="video-container" >
+
+  <video  autoplay muted loop poster="https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+    <source type="video/mp4" src="https://assets.mixkit.co/videos/preview/mixkit-minimalist-room-with-gray-sofa-3110-large.mp4">
+    <!-- pic credit https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 -->
+    <!-- vid credit https://assets.mixkit.co/videos/preview/mixkit-minimalist-room-with-gray-sofa-3110-large.mp4 -->
+    </video>
+
+
+        <form action="validation.php" class="text-center rounded" id="login_tag" method="post">
+          <div class="mb-3 border-bottom">
+            <input type="email" name="email" class="form-control border-0 bg-transparent" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
-          <div class="mb-3">
-            <input type="password" name="password" class="form-control" placeholder="password" id="exampleInputPassword1">
+          <div class="mb-3 border-bottom">
+            <input type="password" name="password" class="form-control border-0 bg-transparent" placeholder="Password" id="exampleInputPassword1">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn border bg-transparent">Log In</button>
         </form>   
       
   <?php 
