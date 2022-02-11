@@ -9,16 +9,17 @@ import requests
 import json
 import datetime
 
-# Enter your API key and your API secret
+# API key and your API secret issued from zoom
 API_KEY = 'P2VgBjzBSGmWExeDMPgHiQ'
 API_SEC = 'LwbEhSMV8rvITHDhBOoGc6E0Yu5Ut2F42Luw'
 
-# create a function to generate a token
-# using the pyjwt library
-
+# api key and expiration time is needed for token generation
 currenttime= datetime.datetime.now()
 expiring = currenttime + datetime.timedelta(seconds=17) 
+#rounded off unix epoch time
 expiringfrmt = round(expiring.timestamp())
+
+
 headers={ 
 	"alg": "HS256",
 	"typ": "JWT"
@@ -30,14 +31,18 @@ payload ={
 
 encodedjwt= jwt.encode(payload,API_SEC,algorithm="HS256")
 
+# email of who is creating meeting
 email= "info.virttour@gmail.com"
 
+# endpoint provided by zoom api
 url='https://api.zoom.us/v2/users/{}/meetings'.format(email)
 header = {"authorization":"Bearer {}".format(encodedjwt)}
 date = datetime.datetime(2022,1,26,23,30).strftime("%Y-%M-%dT%H:%M:%SZ")
 
+# meeting details
 obj={"topic":"Live agent","starttime":date, "duration":30, "password":"12345"}
 
+# post method creates meeting -  the url with details and the authorization 
 createmeeting = requests.post(url,json=obj, headers= header)
 
 file = json.loads(createmeeting.text)
