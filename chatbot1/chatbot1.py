@@ -15,16 +15,24 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
 
-chatbot1 = ChatBot("DButler", logic_adapters=[
-        {
-            'import_path': 'chatterbot.logic.SpecificResponseAdapter',
-            'input_text': 'agent',
-            'output_text': 'Ok, here is a link: http://chatterbot.rtfd.org'
-        },
-        {
-            'import_path': 'cb_logic_adapter.agentlogicadapter'
-        }],
-        read_only=True)
+sys.path.append("C:\\xampp\\htdocs\\virtualTourWebsite\\zoomapi\\")
+import makemeeting
+
+
+
+
+chatbot1 = ChatBot("DButler", read_only=True)
+
+# , logic_adapters=[
+#         {
+#             'import_path': 'chatterbot.logic.SpecificResponseAdapter',
+#             'input_text': 'agent',
+#             'output_text': 'Ok, here is a link: http://chatterbot.rtfd.org'
+#         },
+#         {
+#             'import_path': 'cb_logic_adapter.agentlogicadapter'
+#         }],
+#         read_only=True)
 
 conversation = [
     "Hello",
@@ -33,9 +41,11 @@ conversation = [
     "I'm doing great.",
     "That is good to hear",
     "Thank you.",
-    "You're welcome."
+    "You're welcome.",
+    "Agent",
+    # makemeeting.setup_meet
 ]
 trainer = ListTrainer(chatbot1, show_training_progress=False)
 trainer.train(conversation)
-bot_response = chatbot1.generate_response(user_input)
+bot_response = chatbot1.get_response(user_input)
 print(bot_response)
