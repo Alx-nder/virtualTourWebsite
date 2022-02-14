@@ -23,10 +23,20 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="reccomend.js"></script>
+    
 </head>
 <body>
-  
+  <?php
+$rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
+            $rec=file_get_contents($rec_link);
+            echo $rec;
+            $records = mysqli_query($con, "select * From listings where price = '$rec' "); 
+              while($data = mysqli_fetch_array($records))
+              {
+                echo  $data['price'];
+                echo $data['description'];
+              }
+       ?>     
 <div class="card-group" id="csec">
       <div class="card">
         <img src="..." class="card-img-top" alt="...">
@@ -60,6 +70,7 @@
       </div>
     </div>
 
+    <!-- event listener -->
     <a id="nexrec" href="#">next</a>
        
 <form action="base.php" method="post">
@@ -94,7 +105,7 @@
         echo $chatter;
       }
     ?> 
-
+<!-- 
     <script src="reccomend.js">
       var  des= '    <?php
             $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
@@ -110,9 +121,9 @@
           ?>;';
       rec_des=des;
       console.log("des");
-    </script>
+    </script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script src="reccomend.js"></script>         
 
 </body>
 </html>
