@@ -6,16 +6,21 @@ api_version = 'v1'
 # base url
 api_base_url = f"https://api.decentraland.org/{api_version}"
 # using api to get maps with url parameters
-endpoint_path= f"/map.png?center=23,-23&selected=23,-23&size=20&width=2048&height=2048"
+map_png_endpoint_path= f"/map.png?center=23,-23&selected=23,-23&size=20&width=2048&height=2048"
+
+parcel_list_endpoint_path="/parcels?status=open&sort_by=price&sort_order=asc&limit=20&offset=0"
+
 
 # the final endpoint to communicate with
-final_endpoint=f"{api_base_url}{endpoint_path}"
-see_map = requests.get(final_endpoint)
+final_endpoint=f"{api_base_url}{parcel_list_endpoint_path}"
+r = requests.get(final_endpoint)
 
+print (r)
 
-# print (see_map.text)
+## function to save an image
+def save_map(api_response):
+    #will need validation of type eventually
+    with open("graphic2.png", "wb") as p:
+        p.write(api_response.content)
 
-## to save an image
-with open("graphic2.png", "wb") as p:
-    p.write(see_map.content)
 
