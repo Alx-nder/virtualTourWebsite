@@ -77,7 +77,7 @@ $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
   <div >
       <input type="text" name="price"   placeholder="price">
     </div>
-    
+
     <div class="form-group">
         <button class="btn mx-auto  btn-danger" type= "submit">search</button>
     </div>
