@@ -6,9 +6,9 @@ import os
 import urllib.parse
 import zoneinfo
 
-user_input= os.environ['QUERY_STRING']
+# user_input= os.environ['QUERY_STRING']
 
-user_input= urllib.parse.unquote_plus(user_input)
+# user_input= urllib.parse.unquote_plus(user_input)
 
 sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-packages")
 
@@ -46,10 +46,10 @@ conversation = [
     "Thank you.",
     "You're welcome.",
     "Agent",
-    " {}".format(zoom_meeting_link),
+    f"{zoom_meeting_link}",
     "enjoy"
 ]
 trainer = ListTrainer(chatbot1, show_training_progress=False)
 trainer.train(conversation)
-bot_response = chatbot1.get_response(user_input)
+bot_response = chatbot1.get_response("agent")
 print(bot_response)
