@@ -49,11 +49,10 @@ def main():
 
 	file = json.loads(createmeeting.text)
 	join_URL = file["join_url"]
-	meetingPassword = file["password"]
-
+	
 	return f'\n here is your zoom meeting link <a href= {join_URL} target=\"_blank\">{join_URL}</a>\n'
 
-
+# script to prevent the program from running when importing 
 if __name__ == "__main__":
 	main()	
 

@@ -4,10 +4,11 @@ print("content-type: text/html\n\n" )
 import sys
 import os
 import urllib.parse
+import zoneinfo
 
-# user_input= os.environ['QUERY_STRING']
+user_input= os.environ['QUERY_STRING']
 
-# user_input= urllib.parse.unquote_plus(user_input)
+user_input= urllib.parse.unquote_plus(user_input)
 
 sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-packages")
 
@@ -35,7 +36,7 @@ chatbot1 = ChatBot("DButler", read_only=True)
 #         read_only=True)
 
 zoom_meeting_link=makemeeting.main()
-# print(zoom_meeting_link)
+
 conversation = [
     "Hello",
     "Hi there!",
@@ -45,10 +46,10 @@ conversation = [
     "Thank you.",
     "You're welcome.",
     "Agent",
-    " {}".format(makemeeting.main()),
+    " {}".format(zoom_meeting_link),
     "enjoy"
 ]
 trainer = ListTrainer(chatbot1, show_training_progress=False)
 trainer.train(conversation)
-bot_response = chatbot1.get_response("agent")
+bot_response = chatbot1.get_response(user_input)
 print(bot_response)
