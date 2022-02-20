@@ -10,7 +10,7 @@ api_base_url = f"https://api.decentraland.org/{api_version}"
 # base url and id given by decentraland v2 to submit queries
 graph_base_url="https://api.thegraph.com/subgraphs/name/decentraland/marketplace"
 GRAPH_ID="QmaRXWMMB7qrKCVFYACaJ5iH9QcjT2oYYrBMfv5ECaK8tr"
-# query element to request items from api
+# query attribute to request items from graph api
 graph_query={
     "query":"""{
     nfts(first: 5, orderBy: searchOrderPrice, where:{ category: parcel, searchOrderStatus: open, searchOrderExpiresAt_gt: 1611082372 }) {
@@ -28,25 +28,31 @@ graph_query={
 # using api to get maps with url parameters
 map_png_endpoint_path= f"/map.png?center=23,-23&selected=23,-23&size=20&width=2048&height=2048"
 
-parcel_list_endpoint_path="/parcels?status=open&sort_by=price&sort_order=asc&limit=20&offset=0"
-
-  
-
-
 # the final endpoint to communicate with
-v1_final_endpoint=f"{api_base_url}{parcel_list_endpoint_path}"
+# v1_final_endpoint=f"{api_base_url}{}"
 
 r = requests.post(graph_base_url,json=graph_query)
 
-print (r.text)
 print("############")
 file=json.loads(r.text)
-print(file)
 
-## function to save an image
-def save_map(api_response):
-    #will need validation of type eventually
-    with open("graphic2.png", "wb") as p:
-        p.write(api_response.content)
+# parsed to only show the results 
+parsed_response=file['data']['nfts']
+print(parsed_response)
 
+  
+## function to save an image using cooridinates
+def save_map(x,y,nth):
+    #will need to validate type eventually
+    pic_url=requests.get(f"{api_base_url}/parcels/{x}/{y}/map.png")
+    with open(f"graphic{nth}.png", "wb") as p:
+        p.write(pic_url.content)
+    return pic_url
 
+# traversing results to save corresponding images
+for nft in range(len(parsed_response)):
+  current_parcel = parsed_response[nft]['parcel']
+  current_parcel_x=current_parcel['x']
+  current_parcel_y=current_parcel['y']
+  save_map(current_parcel_x,current_parcel_y,nft)
+  
