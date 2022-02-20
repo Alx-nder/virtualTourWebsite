@@ -9,47 +9,51 @@ import requests
 import json
 import datetime
 
-# API key and your API secret issued from zoom
-API_KEY = 'P2VgBjzBSGmWExeDMPgHiQ'
-API_SEC = 'LwbEhSMV8rvITHDhBOoGc6E0Yu5Ut2F42Luw'
+def main():
+	# API key and your API secret issued from zoom
+	API_KEY = 'P2VgBjzBSGmWExeDMPgHiQ'
+	API_SEC = 'LwbEhSMV8rvITHDhBOoGc6E0Yu5Ut2F42Luw'
 
-# api key and expiration time is needed for token generation
-currenttime= datetime.datetime.now()
-expiring = currenttime + datetime.timedelta(seconds=17) 
-#rounded off unix epoch time
-expiringfrmt = round(expiring.timestamp())
+	# api key and expiration time is needed for token generation
+	currenttime= datetime.datetime.now()
+	expiring = currenttime + datetime.timedelta(seconds=17) 
+	#rounded off unix epoch time
+	expiringfrmt = round(expiring.timestamp())
 
 
-headers={ 
-	"alg": "HS256",
-	"typ": "JWT"
+	headers={ 
+		"alg": "HS256",
+		"typ": "JWT"
+		}
+	payload ={
+		"iss": API_KEY,
+		"exp": expiringfrmt
 	}
-payload ={
-	"iss": API_KEY,
-	"exp": expiringfrmt
-}
 
-encodedjwt= jwt.encode(payload,API_SEC,algorithm="HS256")
+	encodedjwt= jwt.encode(payload,API_SEC,algorithm="HS256")
 
-# email of who is creating meeting
-email= "info.virttour@gmail.com"
+	# email of who is creating meeting
+	email= "info.virttour@gmail.com"
 
-# endpoint provided by zoom api
-url='https://api.zoom.us/v2/users/{}/meetings'.format(email)
-header = {"authorization":"Bearer {}".format(encodedjwt)}
-date = datetime.datetime(2022,1,26,23,30).strftime("%Y-%M-%dT%H:%M:%SZ")
+	# endpoint provided by zoom api
+	url='https://api.zoom.us/v2/users/{}/meetings'.format(email)
+	header = {"authorization":"Bearer {}".format(encodedjwt)}
+	date = datetime.datetime(2022,1,26,23,30).strftime("%Y-%M-%dT%H:%M:%SZ")
 
-# meeting details
-obj={"topic":"Live agent","starttime":date, "duration":30, "password":"12345"}
+	# meeting details
+	obj={"topic":"Live agent","starttime":date, "duration":30, "password":"12345"}
 
-# post method creates meeting -  the url with details and the authorization 
-createmeeting = requests.post(url,json=obj, headers= header)
+	# post method creates meeting -  the url with details and the authorization 
+	createmeeting = requests.post(url,json=obj, headers= header)
 
-file = json.loads(createmeeting.text)
-join_URL = file["join_url"]
-meetingPassword = file["password"]
+	file = json.loads(createmeeting.text)
+	join_URL = file["join_url"]
+	meetingPassword = file["password"]
 
-def setup_meet():
-	print(f'\n here is your zoom meeting link <a href= {join_URL} target=\"_blank\">{join_URL}</a>\n')
+	return f'\n here is your zoom meeting link <a href= {join_URL} target=\"_blank\">{join_URL}</a>\n'
 
-setup_meet()
+
+if __name__ == "__main__":
+	main()	
+
+	
