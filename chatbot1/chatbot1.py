@@ -35,6 +35,7 @@ chatbot1 = ChatBot("DButler", read_only=True)
 #         read_only=True)
 
 zoom_meeting_link=makemeeting.main()
+# print(zoom_meeting_link)
 conversation = [
     "Hello",
     "Hi there!",
@@ -44,7 +45,7 @@ conversation = [
     "Thank you.",
     "You're welcome.",
     "Agent",
-    f"{zoom_meeting_link}",
+    " {}".format(makemeeting.main()),
     "enjoy"
 ]
 trainer = ListTrainer(chatbot1, show_training_progress=False)

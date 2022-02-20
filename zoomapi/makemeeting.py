@@ -9,6 +9,7 @@ import requests
 import json
 import datetime
 
+# all code contained in main
 def main():
 	# API key and your API secret issued from zoom
 	API_KEY = 'P2VgBjzBSGmWExeDMPgHiQ'
