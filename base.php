@@ -26,17 +26,6 @@
     
 </head>
 <body>
-  <?php
-$rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
-            $rec=file_get_contents($rec_link);
-            echo $rec;
-            $records = mysqli_query($con, "select * From listings where price = '$rec' "); 
-              while($data = mysqli_fetch_array($records))
-              {
-                echo  $data['price'];
-                echo $data['description'];
-              }
-       ?>     
 <div class="card-group" id="csec">
       <div class="card">
         <img src="..." class="card-img-top" alt="...">
@@ -70,9 +59,10 @@ $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
       </div>
     </div>
 
-    <!-- event listener -->
+    <!-- event listener for recommemding -->
     <a id="nexrec" href="#">next</a>
        
+    <!-- search form -->
 <form action="base.php" method="post">
   <div >
       <input type="text" name="price"   placeholder="price">
@@ -81,13 +71,15 @@ $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
     <div class="form-group">
         <button class="btn mx-auto  btn-danger" type= "submit">search</button>
     </div>
-    <?php
+
+<!-- search fuction -->
+<?php
     if (isset($_POST['price'])) {
         $records = mysqli_query($con, "select * From listings where price =" .$_POST['price']); 
         while($data = mysqli_fetch_array($records))
         {
             echo  $data['price'];
-            echo  $data['add'];
+            echo  $data['location'];
             echo  $data['description'];
         }
     }
@@ -105,25 +97,9 @@ $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
         echo $chatter;
       }
     ?> 
-<!-- 
-    <script src="reccomend.js">
-      var  des= '    <?php
-            $rec_link = "http://localhost/recommendAlgo/epsilon1.py?";
-            $rec=file_get_contents($rec_link);
-            echo $rec;
-            
-            $records = mysqli_query($con, "select * From listings where price = '$rec' "); 
-              while($data = mysqli_fetch_array($records))
-              {
-                echo  $data['price'];
-                echo $data['add'];
-              }
-          ?>;';
-      rec_des=des;
-      console.log("des");
-    </script> -->
+
+    <script src="reccomend.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="reccomend.js"></script>         
 
 </body>
 </html>
