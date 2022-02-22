@@ -60,9 +60,17 @@
     </div>
 
     <!-- event listener for recommemding -->
-    <a id="nexrec" href="#">next</a>
-       
+    <form  action="" method="get">
+      <input   type="submit" name="next_recommend" value="See next">  
+    </form>
+    <!-- python function to run from click -->
+    <?php
+      if(isset($_GET['next_recommend'])){
+        exec("python C:\\xampp\\htdocs\\recommendAlgo\\epsilon1.py");
+      }
+    ?>
     <!-- search form -->
+
 <form action="base.php" method="post">
   <div >
       <input type="text" name="price"   placeholder="price">
@@ -71,7 +79,7 @@
     <div class="form-group">
         <button class="btn mx-auto  btn-danger" type= "submit">search</button>
     </div>
-
+<a id="nexrec" href="#"> next</a>
 <!-- search fuction -->
 <?php
     if (isset($_POST['price'])) {
