@@ -59,16 +59,8 @@
       </div>
     </div>
 
-    <!-- event listener for recommemding -->
-    <form  action="" method="get">
-      <input   type="submit" name="next_recommend" value="See next">  
-    </form>
-    <!-- python function to run from click -->
-    <?php
-      if(isset($_GET['next_recommend'])){
-        exec("python C:\\xampp\\htdocs\\recommendAlgo\\epsilon1.py");
-      }
-    ?>
+    <a id="nexrec" href="#"> next</a>
+
     <!-- search form -->
 
 <form action="base.php" method="post">
@@ -79,7 +71,6 @@
     <div class="form-group">
         <button class="btn mx-auto  btn-danger" type= "submit">search</button>
     </div>
-<a id="nexrec" href="#"> next</a>
 <!-- search fuction -->
 <?php
     if (isset($_POST['price'])) {
@@ -98,7 +89,7 @@
       <input type="text" name="chat" placeholder="Enter message">
       <button type="submit">Send</button>
     </form>
-    
+     
     <?php
       if (isset($_GET['chat'])) {
         $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GET['chat']));

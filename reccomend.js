@@ -1,8 +1,19 @@
-var rec_dict=[3, "Kingston", 20220126, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet labore hic fugiat vitae id illum numquam quo voluptate, culpa voluptas nulla ipsa impedit expedita laborum ea corporis repellat? Placeat, illum?", 1052442]
+// var rec_dict=[3, "Kingston", 20220126, "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet labore hic fugiat vitae id illum numquam quo voluptate, culpa voluptas nulla ipsa impedit expedita laborum ea corporis repellat? Placeat, illum?", 1052442]
 
+import { spawn as spawner } from 'child_process';
+        const python_process=spawner('python',['http://localhost/recommendAlgo/epsilon1.py',]);
+
+        python_process.stdout.on('data',(data)=>{
+            console.log(JSON.parse(data.toString()));
+        });
 
 var nexrec= document.getElementById("nexrec");
-nexrec.addEventListener("click", async function(){
+   
+    nexrec.addEventListener("click", function(){
+    
+        
+
+
     var nex = document.createElement("div");
     nex.setAttribute("class","card"); 
     
