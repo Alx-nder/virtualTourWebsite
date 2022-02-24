@@ -6,9 +6,9 @@ import os
 import urllib.parse
 
 # pulling the query part of the url of the call 
-user_input= os.environ['QUERY_STRING']
+# user_input= os.environ['QUERY_STRING']
 # removing the unnecessary and special elements from the url string to get the user input alone
-user_input= urllib.parse.unquote_plus(user_input)
+# user_input= urllib.parse.unquote_plus(user_input)
 
 sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-packages")
 
@@ -35,7 +35,7 @@ chatbot1 = ChatBot("DButler", read_only=True)
 
 # imported zoom link - a function call
 zoom_meeting_link=makemeeting.main()
-
+print(zoom_meeting_link)
 conversation = [
     "Hello",
     "Hi there!",
@@ -43,12 +43,12 @@ conversation = [
     "I'm doing great.",
     "That is good to hear",
     "Thank you.",
-    "You're welcome.",
     "Agent",
+    "You're welcome.",
     f"{str(zoom_meeting_link)}",
     "enjoy"
 ]
 trainer = ListTrainer(chatbot1, show_training_progress=False)
 trainer.train(conversation)
-bot_response = chatbot1.get_response(user_input)
+bot_response = chatbot1.get_response("You're welcome")
 print(str(bot_response))

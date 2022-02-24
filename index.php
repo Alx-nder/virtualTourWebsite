@@ -22,7 +22,7 @@
     </video>
 
 
-        <form action="validation.php" class="text-center rounded" id="login_tag" method="post">
+        <form action="validation.php" class="text-center rounded login_tag" method="post">
           <div class="mb-3 border-bottom">
             <input type="email" name="email" class="form-control border-0 bg-transparent" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
