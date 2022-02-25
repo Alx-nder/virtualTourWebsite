@@ -49,7 +49,7 @@ def save_map(x,y,nth):
         p.write(pic_url.content)
     return pic_url
 
-# traversing results to save corresponding images
+# # traversing results to save corresponding images
 for nft in range(len(parsed_response)):
   current_parcel = parsed_response[nft]['parcel']
   current_parcel_x=current_parcel['x']

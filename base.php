@@ -28,15 +28,15 @@
 <body>
   <div id="for_rec" class="container">
     <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec">
-      <div class="col">
+    <div class="col">
         <div class="card h-100">
           <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h5 class="card-title">Black River <br> $10,000,000.00</h5>
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
           </div>
           <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+            <small class="text-muted">Posted January 1</small>
           </div>
         </div>
       </div>
@@ -44,29 +44,29 @@
         <div class="card h-100">
           <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <h5 class="card-title">Black River <br> $10,000,000.00</h5>
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
           </div>
           <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+            <small class="text-muted">Posted January 1</small>
           </div>
         </div>
-      </div>    
+      </div>  
       <div class="col">
         <div class="card h-100">
           <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <h5 class="card-title">Black River <br> $10,000,000.00</h5>
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
           </div>
           <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
+            <small class="text-muted">Posted January 1</small>
           </div>
         </div>
       </div>
     </div>
   </div>
-    <a href=""> next</a>
+ 
 <h1 id="nexrec" >next</h1>
 
 <!-- The Modal -->
@@ -81,28 +81,38 @@
     <div class="form-group">
         <button class="btn mx-auto  btn-danger" type= "submit">search</button>
     </div> -->
+
+
 <!-- search fuction -->
 <?php
-    if (isset($_POST['price'])) {
-        $records = mysqli_query($con, "select * From listings where price =" .$_POST['price']); 
-        while($data = mysqli_fetch_array($records))
-        {
-            echo  $data['price'];
-            echo  $data['location'];
-            echo  $data['description'];
-        }
-    }
+    // if (isset($_POST['price'])) {
+    //     $records = mysqli_query($con, "select * From listings where price =" .$_POST['price']); 
+    //     while($data = mysqli_fetch_array($records))
+    //     {
+    //         echo  $data['price'];
+    //         echo  $data['location'];
+    //         echo  $data['description'];
+    //     }
+    // }
     ?>  
 </form>
 
     <form action="base.php" method="get">
       <input type="text" name="chat" placeholder="Enter message">
       <button type="submit">Send</button>
+      <button type="submit" name="mic" value="1" >mic</button>
     </form>
      
+
     <?php
       if (isset($_GET['chat'])) {
         $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GET['chat']));
+        echo $chatter;
+      }
+
+      if (isset($_GET['mic'])) {
+        exec("python C:\\xampp\htdocs\\virtualTourWebsite\\chatbot1\\speech_module.py",$mic_input,$mic_input);
+        $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($mic_input));
         echo $chatter;
       }
     ?> 

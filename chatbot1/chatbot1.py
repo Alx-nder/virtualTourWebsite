@@ -4,6 +4,8 @@ print("content-type: text/html\n\n" )
 import sys
 import os
 import urllib.parse
+import speech_module
+
 
 # pulling the query part of the url of the call 
 # user_input= os.environ['QUERY_STRING']
@@ -35,7 +37,6 @@ chatbot1 = ChatBot("DButler", read_only=True)
 
 # imported zoom link - a function call
 zoom_meeting_link=makemeeting.main()
-print(zoom_meeting_link)
 conversation = [
     "Hello",
     "Hi there!",
@@ -50,5 +51,10 @@ conversation = [
 ]
 trainer = ListTrainer(chatbot1, show_training_progress=False)
 trainer.train(conversation)
-bot_response = chatbot1.get_response("You're welcome")
+
+# # use to demonstrate speech
+user_speech=speech_module.main()
+bot_response = chatbot1.get_response(user_speech)
+
+# bot_response = chatbot1.get_response(user_input)
 print(str(bot_response))
