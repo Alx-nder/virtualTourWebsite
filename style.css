@@ -31,9 +31,3 @@ video{
   border: 1px solid #bdbabab7!important;
 }
 
-.css_selector {
-  background: linear-gradient(270deg, #3f9f86, #9f7f3f);
-  background-size: 400% 400%;
-
-  animation: colors 10s ease infinite;
-}
