@@ -111,7 +111,7 @@
       }
 
       if (isset($_GET['mic'])) {
-        exec("python C:\\xampp\htdocs\\virtualTourWebsite\\chatbot1\\speech_module.py",$mic_input,$mic_input);
+        $mic_input=exec("python C:\\xampp\htdocs\\virtualTourWebsite\\chatbot1\\speech_module.py");
         $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($mic_input));
         echo $chatter;
       }
