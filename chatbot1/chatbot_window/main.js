@@ -1,9 +1,10 @@
 const picker = new EmojiButton();
-const trigger = document.querySelector('.trigger');
+const emoji_btn = document.querySelector('#emoji-btn');
 
 picker.on('emoji', selection => {
   // `selection` object has an `emoji` property
   // containing the selected emoji
+  document.querySelector('input').value+=selection;
 });
 
-trigger.addEventListener('click', () => picker.togglePicker(trigger));
+emoji_btn.addEventListener('click', () => picker.togglePicker(emoji_btn));
