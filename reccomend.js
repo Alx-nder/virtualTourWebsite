@@ -23,7 +23,7 @@
 // // When the user clicks on <span> (x), close the modal
 // span.onclick = function() { 
 //   modal.style.display = "none";
-// }
+// }    
 
 var nexrec= document.getElementById("nexrec");
    nexrec.addEventListener("click", function(){

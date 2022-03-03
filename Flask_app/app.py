@@ -24,14 +24,20 @@ import speech_recognition as sr
 app = Flask(__name__)
 
 
-FORMAT = pyaudio.paInt16
-CHANNELS = 2
-RATE = 44100
-CHUNK = 1024
-RECORD_SECONDS = 5
+#background process happening without any refreshing
+@app.route('/background_process_test')
+def background_process_test():
+    print ("Hello")
+    return ("nothing")
+
+# FORMAT = pyaudio.paInt16
+# CHANNELS = 2
+# RATE = 44100
+# CHUNK = 1024
+# RECORD_SECONDS = 5
 
 
-audio1 = pyaudio.PyAudio()
+# audio1 = pyaudio.PyAudio()
 
 
 
@@ -52,14 +58,6 @@ def genHeader(sampleRate, bitsPerSample, channels):
     o += (datasize).to_bytes(4,'little')                                    # (4byte) Data size in bytes
     return o
 
-@app.route('/audio')
-def audio():
-    # start Recording
-    # obtain audio from the microphone
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("Say something!")
-        audio = r.listen(source)
 
 
     # recognize speech using Google Speech Recognition
@@ -103,6 +101,17 @@ def audio():
 def index():
     """Video streaming home page."""
     return render_template('index.html')
+
+
+@app.route('/audio')
+def audio():
+    # start Recording
+    # obtain audio from the microphone
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Say something!")
+        audio = r.listen(source)
+        return ("nothing")
 
 
 if __name__ == "__main__":
