@@ -15,7 +15,7 @@ def main():
 
     # recognize speech using Google Speech Recognition
     try:
-        # the default API (no keys needed)
+        # the default google API (no keys needed)
         speech=r.recognize_google(audio)
         print(speech)
         return speech

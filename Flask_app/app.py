@@ -24,11 +24,6 @@ import speech_recognition as sr
 app = Flask(__name__)
 
 
-#background process happening without any refreshing
-@app.route('/background_process_test')
-def background_process_test():
-    print ("Hello")
-    return ("nothing")
 
 # FORMAT = pyaudio.paInt16
 # CHANNELS = 2
@@ -41,36 +36,25 @@ def background_process_test():
 
 
 
-def genHeader(sampleRate, bitsPerSample, channels):
-    datasize = 2000*10**6
-    o = bytes("RIFF",'ascii')                                               # (4byte) Marks file as RIFF
-    o += (datasize + 36).to_bytes(4,'little')                               # (4byte) File size in bytes excluding this and RIFF marker
-    o += bytes("WAVE",'ascii')                                              # (4byte) File type
-    o += bytes("fmt ",'ascii')                                              # (4byte) Format Chunk Marker
-    o += (16).to_bytes(4,'little')                                          # (4byte) Length of above format data
-    o += (1).to_bytes(2,'little')                                           # (2byte) Format type (1 - PCM)
-    o += (channels).to_bytes(2,'little')                                    # (2byte)
-    o += (sampleRate).to_bytes(4,'little')                                  # (4byte)
-    o += (sampleRate * channels * bitsPerSample // 8).to_bytes(4,'little')  # (4byte)
-    o += (channels * bitsPerSample // 8).to_bytes(2,'little')               # (2byte)
-    o += (bitsPerSample).to_bytes(2,'little')                               # (2byte)
-    o += bytes("data",'ascii')                                              # (4byte) Data Chunk Marker
-    o += (datasize).to_bytes(4,'little')                                    # (4byte) Data size in bytes
-    return o
+# def genHeader(sampleRate, bitsPerSample, channels):
+#     datasize = 2000*10**6
+#     o = bytes("RIFF",'ascii')                                               # (4byte) Marks file as RIFF
+#     o += (datasize + 36).to_bytes(4,'little')                               # (4byte) File size in bytes excluding this and RIFF marker
+#     o += bytes("WAVE",'ascii')                                              # (4byte) File type
+#     o += bytes("fmt ",'ascii')                                              # (4byte) Format Chunk Marker
+#     o += (16).to_bytes(4,'little')                                          # (4byte) Length of above format data
+#     o += (1).to_bytes(2,'little')                                           # (2byte) Format type (1 - PCM)
+#     o += (channels).to_bytes(2,'little')                                    # (2byte)
+#     o += (sampleRate).to_bytes(4,'little')                                  # (4byte)
+#     o += (sampleRate * channels * bitsPerSample // 8).to_bytes(4,'little')  # (4byte)
+#     o += (channels * bitsPerSample // 8).to_bytes(2,'little')               # (2byte)
+#     o += (bitsPerSample).to_bytes(2,'little')                               # (2byte)
+#     o += bytes("data",'ascii')                                              # (4byte) Data Chunk Marker
+#     o += (datasize).to_bytes(4,'little')                                    # (4byte) Data size in bytes
+#     return o
 
 
 
-    # recognize speech using Google Speech Recognition
-    try:
-        # the default API (no keys needed)
-        speech=r.recognize_google(audio)
-        print(speech)
-        return speech
-
-    except sr.UnknownValueError:
-        print("Google Speech Recognition could not understand audio")
-    except sr.RequestError as e:
-        print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
     # def sound():
 
@@ -99,7 +83,6 @@ def genHeader(sampleRate, bitsPerSample, channels):
 
 @app.route('/')
 def index():
-    """Video streaming home page."""
     return render_template('index.html')
 
 
