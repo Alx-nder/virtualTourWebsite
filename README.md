@@ -10,3 +10,6 @@ click next
 run recc algo
 display new record
 maybe use carousel 
+
+
+js to determine position in list of card images to select
