@@ -1,4 +1,4 @@
-
+var list_img = document.getElementsByClassName('list_img');
 var nexrec= document.getElementById("nexrec");
    nexrec.addEventListener("click", function(){
 $.ajax({
@@ -50,12 +50,17 @@ $.ajax({
         // var prev = document.getElementsByClassName('card')[0];
         // document.getElementById("csec").removeChild(prev);  
 
-        
-        // // Get the modal
+        list_img = document.getElementsByClassName('list_img');
+   
+       }
+})
+      
+});
+   // // Get the modal
         var modal = document.getElementById('myModal');
 
         // // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var list_img = document.getElementsByClassName('list_img');
+        // list_img = document.getElementsByClassName('list_img');
         var modalImg = document.getElementById("img01");
         // var captionText = document.getElementById("caption");
 
@@ -71,8 +76,4 @@ $.ajax({
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() { 
         modal.style.display = "none";
-        }    
-
-    }
-})
-});
+        } 
