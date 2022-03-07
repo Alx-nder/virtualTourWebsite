@@ -1,3 +1,4 @@
+var tour_link="http://localhost/vtour/tour.html"
 var list_img = document.getElementsByClassName('list_img');
 var nexrec= document.getElementById("nexrec");
    nexrec.addEventListener("click", function(){
@@ -51,7 +52,7 @@ $.ajax({
         // document.getElementById("csec").removeChild(prev);  
 
         list_img = document.getElementsByClassName('list_img');
-   
+        tour_link=resp[6]
        }
 })
       
@@ -65,9 +66,13 @@ $.ajax({
         // var captionText = document.getElementById("caption");
 
         for (var i = 0, len = list_img.length; i < len; ++i) {
-            list_img[i].onclick=function () {
+            list_img[0].onclick=function () {
                 modal.style.display = "block";
-                modalImg.src = list_img[i].src;
+                var tour_html=document.createElement("embed");
+                tour_html.type="text/html";
+                tour_html.src=tour_link;
+                modal.appendChild(tour_html);
+                // modalImg.src = list_img[i].src;
                 // captionText.innerHTML = this.alt;
             }
         }
