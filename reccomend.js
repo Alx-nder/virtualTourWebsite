@@ -6,8 +6,17 @@ $.ajax({
     url:"http://localhost/recommendAlgo/epsilon1.py",
     type:"POST",
     success:  function(resp){
-        
-        resp=JSON.parse(resp);
+
+        var db_Items = '';
+        resp.on("data", function (data) {
+            db_Items += data;
+        });
+
+        resp.on("end", function () {
+            resp  = JSON.parse(db_Items);
+            // console.log(jsonParse);
+        });
+        // resp=JSON.parse(resp);
 
         var outer_div = document.createElement("div");
         outer_div.setAttribute("class","col"); 
@@ -71,6 +80,8 @@ $.ajax({
                 var tour_html=document.createElement("embed");
                 tour_html.type="text/html";
                 tour_html.src=tour_link;
+                tour_html.setAttribute("style", "max-width:100%; height:auto; object-fit:contain;");
+        
                 modal.appendChild(tour_html);
                 // modalImg.src = list_img[i].src;
                 // captionText.innerHTML = this.alt;
