@@ -72,6 +72,9 @@
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
+  <div>
+    <embed id="for_tour" src="" type="">
+  </div>
   <!-- <img class="modal-content" id="img01"> -->
   <!-- <div id="caption"></div> -->
 </div>

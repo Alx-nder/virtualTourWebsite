@@ -74,15 +74,17 @@ $.ajax({
         var modalImg = document.getElementById("img01");
         // var captionText = document.getElementById("caption");
 
+
+
         for (var i = 0, len = list_img.length; i < len; ++i) {
             list_img[0].onclick=function () {
                 modal.style.display = "block";
-                var tour_html=document.createElement("embed");
+                var tour_html=document.getElementById("for_tour");
                 tour_html.type="text/html";
                 tour_html.src=tour_link;
-                tour_html.setAttribute("style", "max-width:100%; height:auto; object-fit:contain;");
+                // tour_html.setAttribute("style", "max-width:100%; height:auto; object-fit:contain;");
         
-                modal.appendChild(tour_html);
+                // modal.appendChild(tour_html);
                 // modalImg.src = list_img[i].src;
                 // captionText.innerHTML = this.alt;
             }
