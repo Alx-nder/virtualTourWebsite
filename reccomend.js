@@ -71,7 +71,7 @@ $.ajax({
 
         // // Get the image and insert it inside the modal - use its "alt" text as a caption
         // list_img = document.getElementsByClassName('list_img');
-        var modalImg = document.getElementById("img01");
+        // var modalImg = document.getElementById("img01");
         // var captionText = document.getElementById("caption");
 
 
@@ -82,9 +82,9 @@ $.ajax({
                 var tour_html=document.getElementById("for_tour");
                 tour_html.type="text/html";
                 tour_html.src=tour_link;
-                // tour_html.setAttribute("style", "max-width:100%; height:auto; object-fit:contain;");
-        
-                // modal.appendChild(tour_html);
+                tour_html.height="100%";
+                
+               
                 // modalImg.src = list_img[i].src;
                 // captionText.innerHTML = this.alt;
             }
