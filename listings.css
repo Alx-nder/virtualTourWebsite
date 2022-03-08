@@ -78,3 +78,13 @@
       width: 100%;
     }
   }
+
+  body{
+    background-color: #997d60;
+  }
+  .card{
+    background-color: #ffffff38!important;;
+  }
+.navbar{
+  background-color: rgba(0, 0, 0, 0)!important;
+}

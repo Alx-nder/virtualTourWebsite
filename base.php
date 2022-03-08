@@ -26,47 +26,74 @@
     
 </head>
 <body>
-  <div id="for_rec" class="container">
-    <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec">
-    <div class="col">
-        <div class="card h-100">
-          <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Black River <br> $10,000,000.00</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Posted January 1</small>
-          </div>
-        </div>
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse text-center justify-content-center navbar-collapse" id="navbarTogglerDemo02">
+        
+        <ul class="navbar-nav  mb-2 justify-content-center mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        
       </div>
+    </div>
+  </nav>
+  
+  <main class="mt-5">
+    <div id="for_rec" class="container">
+      <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec">
       <div class="col">
-        <div class="card h-100">
-          <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top list_img" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Black River <br> $10,000,000.00</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Posted January 1</small>
+          <div class="card h-100">
+            <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Black River <br> $10,000,000.00</h5>
+              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Posted January 1</small>
+            </div>
           </div>
         </div>
-      </div>  
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Black River <br> $10,000,000.00</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
+        
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top list_img" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Black River <br> $10,000,000.00</h5>
+              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Posted January 1</small>
+            </div>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">Posted January 1</small>
+        </div>  
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Black River <br> $10,000,000.00</h5>
+              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Posted January 1</small>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
- 
+  </main>
+   
 <h1 id="nexrec" >next</h1>
 
 <!-- The Modal -->
