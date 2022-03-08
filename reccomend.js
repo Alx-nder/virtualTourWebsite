@@ -1,4 +1,5 @@
-var tour_link="http://localhost/vtour/tour.html"
+var tour_link="http://localhost/vtour/tour.html";
+tour_link="https://everpano.s3.eu-central-1.amazonaws.com/3d/iencuentro/index.html";
 var list_img = document.getElementsByClassName('list_img');
 var nexrec= document.getElementById("nexrec");
    nexrec.addEventListener("click", function(){
