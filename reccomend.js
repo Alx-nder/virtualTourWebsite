@@ -1,23 +1,14 @@
 var tour_link="http://localhost/vtour/tour.html";
 tour_link="https://everpano.s3.eu-central-1.amazonaws.com/3d/iencuentro/index.html";
 var list_img = document.getElementsByClassName('list_img');
+
 var nexrec= document.getElementById("nexrec");
    nexrec.addEventListener("click", function(){
 $.ajax({
     url:"http://localhost/recommendAlgo/epsilon1.py",
     type:"POST",
     success:  function(resp){
-
-        var db_Items = '';
-        resp.on("data", function (data) {
-            db_Items += data;
-        });
-
-        resp.on("end", function () {
-            resp  = JSON.parse(db_Items);
-            // console.log(jsonParse);
-        });
-        // resp=JSON.parse(resp);
+        resp=JSON.parse(resp);
 
         var outer_div = document.createElement("div");
         outer_div.setAttribute("class","col"); 
@@ -29,7 +20,7 @@ $.ajax({
         
         var nex_nested = document.createElement("img");   
         nex_nested.setAttribute("src", resp[5]);
-        nex_nested.setAttribute("class", "card-img-top list_img my_img");
+        nex_nested.setAttribute("class", "list_img my_img rounded my-2 mx-2");
         nex_nested.setAttribute("style", "max-width:100%; height:auto; object-fit:contain;");
         nex.appendChild(nex_nested);
 
@@ -84,8 +75,6 @@ $.ajax({
                 tour_html.type="text/html";
                 tour_html.src=tour_link;
                 tour_html.height="100%";
-                
-               
                 // modalImg.src = list_img[i].src;
                 // captionText.innerHTML = this.alt;
             }

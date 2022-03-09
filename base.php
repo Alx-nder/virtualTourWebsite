@@ -26,7 +26,7 @@
     
 </head>
 <body>
-  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -37,28 +37,27 @@
         
         <ul class="navbar-nav  mb-2 justify-content-center mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">Buy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Sell</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link" href="#"  >METAverse</a>
           </li>
         </ul>
         
       </div>
     </div>
   </nav>
-
   
-  
+  <!-- main section -->
   <main class="mt-5">
     <div id="for_rec" class="container">
       <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec">
       <div class="col">
           <div class="card h-100">
-            <img class="mx-2 my-2 rounded" src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="...">
+            <img class="list_img my_img rounded my-2 mx-2" src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="...">
             <div class="card-body">
               <h5 class="card-title">Black River <br> $10,000,000.00</h5>
               <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
@@ -71,7 +70,7 @@
         
         <div class="col">
           <div class="card h-100">
-            <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top list_img" alt="...">
+            <img  src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class=" list_img my_img rounded my-2 mx-2"  alt="...">
             <div class="card-body">
               <h5 class="card-title">Black River <br> $10,000,000.00</h5>
               <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
@@ -83,7 +82,7 @@
         </div>  
         <div class="col">
           <div class="card h-100">
-            <img src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="card-img-top" alt="...">
+            <img class="list_img my_img rounded my-2 mx-2" src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  alt="...">
             <div class="card-body">
               <h5 class="card-title">Black River <br> $10,000,000.00</h5>
               <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
@@ -96,63 +95,40 @@
       </div>
     </div>
   </main>
-   
-<h1 id="nexrec" >next</h1>
+  
+  <!-- next button -->
+  <h1 id="nexrec" >next</h1>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <span class="close">&times;</span>
-  <embed class="modal-content" id="for_tour" src="" type="">
-  <!-- <img class="modal-content" id="img01"> -->
-  <!-- <div id="caption"></div> -->
-</div>
-    <!-- search form -->
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <embed class="modal-content" id="for_tour" src="" type="">
+    <!-- <img class="modal-content" id="img01"> -->
+    <!-- <div id="caption"></div> -->
+  </div>
 
-<!-- <form action="base.php" method="post">
-  <div >
-      <input type="text" name="price"   placeholder="price">
-    </div>
+  <!-- chatbot -->
+  <form action="base.php" method="get">
+    <input type="text" name="chat" placeholder="Enter message">
+    <button type="submit">Send</button>
+    <button type="submit" name="mic" value="1" >mic</button>
+  </form>
 
-    <div class="form-group">
-        <button class="btn mx-auto  btn-danger" type= "submit">search</button>
-    </div> -->
+  <?php
+    if (isset($_GET['chat'])) {
+      $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GE['chat']));
+      echo $chatter;
+    }
+    if (isset($_GET['mic'])) {
+      $mic_input=exec("python C:\\xampp\htdocs\\virtualTourWebsite\\chatbot1\\speech_module.py");
+      $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($mic_input));
+      echo $chatter;
+    }
+  ?> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script  type = "text/javascript" src="reccomend.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"crossorigin="anonymous"></script>
 
-<!-- search fuction -->
-<?php
-    // if (isset($_POST['price'])) {
-    //     $records = mysqli_query($con, "select * From listings where price =" .$_POST['price']); 
-    //     while($data = mysqli_fetch_array($records))
-    //     {
-    //         echo  $data['price'];
-    //         echo  $data['location'];
-    //         echo  $data['description'];
-    //     }
-    // }
-    ?>  
-</form>
-
-    <form action="base.php" method="get">
-      <input type="text" name="chat" placeholder="Enter message">
-      <button type="submit">Send</button>
-      <button type="submit" name="mic" value="1" >mic</button>
-    </form>
-
-    <?php
-      if (isset($_GET['chat'])) {
-        $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GET['chat']));
-        echo $chatter;
-      }
-
-      if (isset($_GET['mic'])) {
-        $mic_input=exec("python C:\\xampp\htdocs\\virtualTourWebsite\\chatbot1\\speech_module.py");
-        $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($mic_input));
-        echo $chatter;
-      }
-    ?> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script  type = "text/javascript" src="reccomend.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    </div>
 </body>
 </html>
 
