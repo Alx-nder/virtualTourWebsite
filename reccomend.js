@@ -2,14 +2,18 @@ var tour_link="http://localhost/vtour/tour.html";
 tour_link="https://everpano.s3.eu-central-1.amazonaws.com/3d/iencuentro/index.html";
 var list_img = document.getElementsByClassName('list_img');
 
-var nexrec= document.getElementById("nexrec");
-   nexrec.addEventListener("click", function(){
-$.ajax({
-    url:"http://localhost/recommendAlgo/epsilon1.py",
-    type:"POST",
-    success:  function(resp){
-        resp=JSON.parse(resp);
+const uri="http://localhost/recommendAlgo/epsilon1.py";
 
+var nexrec= document.getElementById("nexrec");
+nexrec.addEventListener("click", function(){
+
+    fetch(uri,{
+        method:"POST"
+    })
+    .then(function(response){
+        return response.json();
+    })
+    .then((resp)=>{
         var outer_div = document.createElement("div");
         outer_div.setAttribute("class","col"); 
         
@@ -48,16 +52,27 @@ $.ajax({
         nex_nested_footer_text.innerHTML="Posted: "+ resp[2];
         
         document.getElementById("csec").appendChild(outer_div);
-    
+
         // var prev = document.getElementsByClassName('card')[0];
         // document.getElementById("csec").removeChild(prev);  
 
         list_img = document.getElementsByClassName('list_img');
         tour_link=resp[6]
-       }
+    })
+    .catch((err)=>{
+        console.log('ERROR: ', err.message);
+
+    });
 })
-      
-});
+
+
+// var nexrec= document.getElementById("nexrec");
+//    nexrec.addEventListener("click", function(){
+//     $.ajax({
+//     url:"http://localhost/recommendAlgo/epsilon1.py",
+//     type:"POST",
+//     success:  
+
    // // Get the modal
         var modal = document.getElementById('myModal');
 
