@@ -50,6 +50,12 @@
       </div>
     </div>
   </nav>
+
+
+  <!-- chatbot -->
+    <input type="text" name="chat" placeholder="Enter message">
+    <button class="send">Send</button>
+
   
   <!-- main section -->
   <main class="mt-4">
@@ -63,6 +69,7 @@
     <img src="803.gif" alt="loading..." >
   </div>
    -->
+   
   <!-- scroll to top button -->
   <div class="text-center py-3">
     <i id="page_top" class="fas fa-plus fa-2x"></i>
@@ -73,29 +80,10 @@
     <span class="close">&times;</span>
     <embed class="modal-content" id="for_tour" src="" type="">
   </div>
-
-  <!-- chatbot -->
-  <form action="base.php" method="get">
-    <input type="text" name="chat" placeholder="Enter message">
-    <button type="submit">Send</button>
-    <button type="submit" name="mic" value="1" >mic</button>
-  </form>
-
  
-
-  <?php
-    if (isset($_GET['chat'])) {
-      $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($_GE['chat']));
-      echo $chatter;
-    }
-    if (isset($_GET['mic'])) {
-      $mic_input=exec("python C:\\xampp\htdocs\\virtualTourWebsite\\chatbot1\\speech_module.py");
-      $chatter=file_get_contents("http://localhost/virtualtourwebsite/chatbot1/chatbot1.py?". urlencode($mic_input));
-      echo $chatter;
-    }
-  ?> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script  type = "text/javascript" src="reccomend.js"></script>
+  <script src="chatbot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"crossorigin="anonymous"></script>
 
 </body>
