@@ -95,7 +95,12 @@
       </div>
     </div>
   </main>
-  
+
+   <!-- loader image -->
+  <!-- <div id="loader_image" style="display: block">
+    <img src="803.gif" alt="loading..." >
+  </div>
+   -->
   <!-- scroll to top button -->
   <div class="text-center py-3">
     <i id="page_top" class="fas fa-plus fa-2x"></i>
@@ -115,6 +120,8 @@
     <button type="submit">Send</button>
     <button type="submit" name="mic" value="1" >mic</button>
   </form>
+
+ 
 
   <?php
     if (isset($_GET['chat'])) {

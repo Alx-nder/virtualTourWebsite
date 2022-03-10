@@ -72,13 +72,13 @@ nexrec.addEventListener("click", function(){
 // infinite scroll
 
 $(window).scroll(function () {
-    $("#LoaderImage").css("display", "block");
+    $("#loader_image").css("display", "block");
     if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
         a_recommendation();
         a_recommendation();
         a_recommendation();
     }
-    $("#LoaderImage").css("display", "none");
+    $("#loader_image").css("display", "none");
 });
 
    // // Get the modal
