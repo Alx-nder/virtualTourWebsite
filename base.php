@@ -23,8 +23,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="listings.css">
-    
-</head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" media="all">
+  </head>
 <body>
     <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light ">
@@ -52,7 +52,7 @@
   </nav>
   
   <!-- main section -->
-  <main class="mt-5">
+  <main class="mt-4">
     <div id="for_rec" class="container">
       <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec">
       <div class="col">
@@ -96,9 +96,11 @@
     </div>
   </main>
   
-  <!-- next button -->
-  <h1 id="nexrec" >next</h1>
-
+  <!-- scroll to top button -->
+  <div class="text-center py-3">
+    <i id="page_top" class="fas fa-plus fa-2x"></i>
+  </div>
+  
   <!-- The Modal -->
   <div id="myModal" class="modal">
     <span class="close">&times;</span>

@@ -4,9 +4,7 @@ var list_img = document.getElementsByClassName('list_img');
 
 const uri="http://localhost/recommendAlgo/epsilon1.py";
 
-var nexrec= document.getElementById("nexrec");
-nexrec.addEventListener("click", function(){
-
+function a_recommendation(){
     fetch(uri,{
         method:"POST"
     })
@@ -61,17 +59,27 @@ nexrec.addEventListener("click", function(){
     })
     .catch((err)=>{
         console.log('ERROR: ', err.message);
-
     });
+}
+
+
+var nexrec= document.getElementById("page_top");
+nexrec.addEventListener("click", function(){
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 })
 
+// infinite scroll
 
-// var nexrec= document.getElementById("nexrec");
-//    nexrec.addEventListener("click", function(){
-//     $.ajax({
-//     url:"http://localhost/recommendAlgo/epsilon1.py",
-//     type:"POST",
-//     success:  
+$(window).scroll(function () {
+    $("#LoaderImage").css("display", "block");
+    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
+        a_recommendation();
+        a_recommendation();
+        a_recommendation();
+    }
+    $("#LoaderImage").css("display", "none");
+});
 
    // // Get the modal
         var modal = document.getElementById('myModal');
