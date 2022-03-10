@@ -54,45 +54,7 @@
   <!-- main section -->
   <main class="mt-4">
     <div id="for_rec" class="container">
-      <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec">
-      <div class="col">
-          <div class="card h-100">
-            <img class="list_img my_img rounded my-2 mx-2" src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Black River <br> $10,000,000.00</h5>
-              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Posted January 1</small>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col">
-          <div class="card h-100">
-            <img  src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class=" list_img my_img rounded my-2 mx-2"  alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Black River <br> $10,000,000.00</h5>
-              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Posted January 1</small>
-            </div>
-          </div>
-        </div>  
-        <div class="col">
-          <div class="card h-100">
-            <img class="list_img my_img rounded my-2 mx-2" src="https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"  alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Black River <br> $10,000,000.00</h5>
-              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet esse doloremque id necessitatibus dolorum cupiditate ratione cum a. Libero doloribus cum iusto minus non soluta excepturi rem laborum distinctio neque!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Posted January 1</small>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec"></div>
     </div>
   </main>
 
@@ -110,8 +72,6 @@
   <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <embed class="modal-content" id="for_tour" src="" type="">
-    <!-- <img class="modal-content" id="img01"> -->
-    <!-- <div id="caption"></div> -->
   </div>
 
   <!-- chatbot -->
