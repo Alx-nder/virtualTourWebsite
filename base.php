@@ -55,6 +55,7 @@
   <!-- chatbot -->
     <input type="text" name="chat" placeholder="Enter message">
     <button class="send">Send</button>
+    <button class="mic">mic</button>
 
   
   <!-- main section -->
@@ -69,7 +70,7 @@
     <img src="803.gif" alt="loading..." >
   </div>
    -->
-   
+
   <!-- scroll to top button -->
   <div class="text-center py-3">
     <i id="page_top" class="fas fa-plus fa-2x"></i>

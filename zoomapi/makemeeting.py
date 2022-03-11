@@ -13,7 +13,7 @@ import datetime
 def main():
 	# API key and your API secret issued from zoom
 	API_KEY = 'P2VgBjzBSGmWExeDMPgHiQ'
-	API_SEC = 'LwbEhSMV8rvITHDhBOoGc6E0Yu5Ut2F42Luw'
+	API_SEC = 'HzFTDkWetRJeo8TnKVE3q9aYXGQTpsIFPIp8'
 
 	# api key and expiration time is needed for token generation
 	currenttime= datetime.datetime.now()
@@ -48,9 +48,10 @@ def main():
 	createmeeting = requests.post(url,json=obj, headers= header)
 
 	file = json.loads(createmeeting.text)
-	join_URL = file["join_url"]
+	print(file)
+	join_url = file["join_url"]
 	
-	return f'\n here is your zoom meeting link <a href= {join_URL} target=\"_blank\">{join_URL}</a>\n'
+	return f'\n here is your zoom meeting link <a href= {join_url} target=\"_blank\">{join_url}</a>\n'
 
 # script to prevent the program from running when importing 
 if __name__ == "__main__":

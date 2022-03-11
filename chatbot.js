@@ -1,5 +1,15 @@
 const cb_uri = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py";
+const mic_url="http://localhost/virtualtourwebsite/chatbot1/speech_module.py";
 
+$(".mic").click(function(){
+    $.ajax({
+        url:mic_url,
+        method:"Get",
+        success: function(mic_bot){
+            alert(mic_bot);
+        }
+    })
+})
 
 $(".send").click(function(){
     const message = $('[name=chat]').val();
@@ -16,22 +26,5 @@ $(".send").click(function(){
                 alert(data);
             }
         })
-        // fetch(cb_uri,{
-        //     method: "POST",
-        //     contentType: "text/html;charset=utf-8",
-        //     // data: {message_py: message},
-        //     dataType: "text",
-        //     body:JSON.stringify({message_py: message})
-            
-        // })
-        // .then(function(response){
-        //     return response;
-        // })
-        // .then((response)=>{
-        //     alert("worked", response);
-        // })
-        // .catch((err)=>{
-        //     alert("ERROR", err.message);
-        // })
     }
 })
