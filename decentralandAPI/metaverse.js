@@ -1,9 +1,8 @@
-const uri="http://localhost/recommendAlgo/epsilon1.py";
+var nft_uri="http://localhost/virtualTourWebsite/decentralandAPI/decentralandapi.py";
 
-var current_user =$('[name=user_session]').val();
 
 function a_recommendation(){
-    fetch(uri,{
+    fetch(nft_uri,{
         method:"POST"
     })
     .then(function(response){
@@ -18,10 +17,10 @@ function a_recommendation(){
         outer_div.appendChild(nex);
         
         var nex_nested = document.createElement("img");   
-        nex_nested.setAttribute("src", resp[5]);
+        nex_nested.setAttribute("src", resp[4]);
         nex_nested.setAttribute("class", "list_img my_img rounded my-2 mx-2");
         nex_nested.setAttribute("style", "max-width:100%; height:auto; object-fit:contain;");
-        nex_nested.setAttribute("alt",resp[6]);
+        nex_nested.setAttribute("alt",resp[5]);
         nex.appendChild(nex_nested);
 
         var nex_nested_div = document.createElement("div");   
@@ -29,14 +28,14 @@ function a_recommendation(){
         nex.appendChild(nex_nested_div);
 
         var nex_nested_div_title = document.createElement("h5");   
-        nex_nested_div_title.setAttribute("class", "card-title");
+        nex_nested_div_title.setAttribute("class", " text-wrap card-title");
         nex_nested_div.appendChild(nex_nested_div_title);
-        nex_nested_div_title.innerHTML=""+ resp[1] + "<br>"+ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(resp[4]);
+        nex_nested_div_title.innerHTML=""+ resp[2] + "<br><br>"+resp[6]+" ETH";
 
         var nex_nested_div_text = document.createElement("p");   
         nex_nested_div_text.setAttribute("class", "card-text");
         nex_nested_div.appendChild(nex_nested_div_text);
-        nex_nested_div_text.innerHTML =resp[3];
+        nex_nested_div_text.innerHTML ="X:"+resp[0]+"<br>"+"Y:"+resp[1]+"<br><br>Owner: "+resp[3];
         
         var nex_nested_footer = document.createElement("div");   
         nex_nested_footer.setAttribute("class", "card-footer");
@@ -45,7 +44,7 @@ function a_recommendation(){
         var nex_nested_footer_text = document.createElement("small");   
         nex_nested_footer_text.setAttribute("class", "text-muted");
         nex_nested_footer.appendChild(nex_nested_footer_text);
-        nex_nested_footer_text.innerHTML="Posted: "+ resp[2];
+        nex_nested_footer_text.innerHTML="Current Status: "+ resp[7];
         
         document.getElementById("csec").appendChild(outer_div);
 

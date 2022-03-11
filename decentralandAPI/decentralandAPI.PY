@@ -1,5 +1,12 @@
+#!C:\Program Files\Python310\python.exe
+print("content-type: text/html;\n\n" )
+
+import sys
+sys.path.append(r'C:\Users\tyree\AppData\Roaming\Python\Python310\site-packages')
+
 import json
 import requests
+import random
 
 # string substitutions
 # declaring te api version 1 or 2
@@ -13,13 +20,19 @@ GRAPH_ID="QmaRXWMMB7qrKCVFYACaJ5iH9QcjT2oYYrBMfv5ECaK8tr"
 # query attribute to request items from graph api
 graph_query={
     "query":"""{
-    nfts(first: 5, orderBy: searchOrderPrice, where:{ category: parcel, searchOrderStatus: open, searchOrderExpiresAt_gt: 1611082372 }) {
+    nfts(first: 50, orderBy: searchOrderPrice, where:{ category: parcel, searchOrderStatus: open, searchOrderExpiresAt_gt: 1611082372 }) {
     parcel {
+      id,
+      
       x,
-      y
+      y,
+      owner{
+        id,
+      }
     }
     activeOrder {
-      price
+      price,
+      status
     }
     }
     }"""
@@ -33,26 +46,28 @@ map_png_endpoint_path= f"/map.png?center=23,-23&selected=23,-23&size=20&width=20
 
 r = requests.post(graph_base_url,json=graph_query)
 
-print("############")
+# print("############")
 file=json.loads(r.text)
 
 # parsed to only show the results 
 parsed_response=file['data']['nfts']
-print(parsed_response)
+a_nft=random.choice(parsed_response)
+
+
+nft = a_nft['parcel']
+nft_x=nft['x']
+nft_y=nft['y']
+nft_id=nft['id']
+
+owner=nft["owner"]["id"]
+
+pic_url=f"{api_base_url}/parcels/{nft_x}/{nft_y}/map.png"
+nft_tour=f"https://play.decentraland.org/?position={nft_x},{nft_y}"
+nft_price=int(a_nft["activeOrder"]["price"])/1000000000000000000
+nft_status=a_nft["activeOrder"]["status"]
+
+final_json=[ nft_x,nft_y,nft_id,owner, pic_url,nft_tour,nft_price,nft_status]
+print(json.dumps(final_json))
 
   
-## function to save an image using cooridinates
-def save_map(x,y,nth):
-    #will need to validate type eventually
-    pic_url=requests.get(f"{api_base_url}/parcels/{x}/{y}/map.png")
-    with open(f"graphic{nth}.png", "wb") as p:
-        p.write(pic_url.content)
-    return pic_url
-
-# # traversing results to save corresponding images
-for nft in range(len(parsed_response)):
-  current_parcel = parsed_response[nft]['parcel']
-  current_parcel_x=current_parcel['x']
-  current_parcel_y=current_parcel['y']
-  save_map(current_parcel_x,current_parcel_y,nft)
   
