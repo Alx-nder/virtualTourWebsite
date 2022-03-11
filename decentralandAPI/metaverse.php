@@ -29,7 +29,7 @@
     <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark ">
     <div class="container-fluid">
-      <a class="navbar-brand h3" href="#">VtZ</a>
+      <a class="navbar-brand h3" href="http://localhost/virtualTourWebsite/logout.php">VtZ</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,7 +39,7 @@
             <a class="nav-link" href="http://localhost/virtualTourWebsite/base.php">Buy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sell</a>
+            <a class="nav-link" href="http://localhost/virtualTourWebsite/seller/sell.php">Sell</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#"  >METAverse</a>
@@ -66,20 +66,16 @@
 
    <!-- loader image -->
   <!-- <div id="loader_image" style="display: block">
-    <img src="803.gif" alt="loading..." >
-  </div>
-   -->
+    <img src="" alt="loading..." >
+  </div> -->
+  
 
   <!-- scroll to top button -->
   <div class="text-center py-3">
     <i id="page_top" class="fas fa-plus fa-2x"></i>
   </div>
   
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <embed class="modal-content" id="for_tour" src="" type="">
-  </div>
+  
  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script  type = "text/javascript" src="metaverse.js"></script>

@@ -1,6 +1,6 @@
 var nft_uri="http://localhost/virtualTourWebsite/decentralandAPI/decentralandapi.py";
 
-
+// creating a recommend card
 function a_recommendation(){
     fetch(nft_uri,{
         method:"POST"
@@ -63,27 +63,16 @@ a_recommendation();
 a_recommendation();
 
 
- // // Get the modal
+ // // open new window for tour
  function enter_tour(){
-    var modal = document.getElementById('myModal');
     var list_img = document.getElementsByClassName('list_img');
     for (var i = 0, len = list_img.length; i < len; ++i) {
         list_img[i].onclick=function () {
-            modal.style.display = "block";
-            var modal_embed=document.getElementById("for_tour");
-            modal_embed.type="text/html";
-            modal_embed.src=this.alt;
-            modal_embed.height="100%";
+            window.open(this.alt);
         }
-    }
-    // // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() { 
-        modal.style.display = "none";
-    }
-   }
-
+    }}
+    
+    // top of page function
 var nexrec= document.getElementById("page_top");
 nexrec.addEventListener("click", function(){
     document.body.scrollTop = 0; // For Safari

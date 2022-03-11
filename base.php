@@ -29,7 +29,7 @@
     <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
-      <a class="navbar-brand h3" href="#">VtZ</a>
+      <a class="navbar-brand h3" href="logout.php">VtZ</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,7 +39,7 @@
             <a class="nav-link active" aria-current="page" href="#">Buy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sell</a>
+            <a class="nav-link" href="seller\sell.php">Sell</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="decentralandAPI\metaverse.php"  >METAverse</a>
