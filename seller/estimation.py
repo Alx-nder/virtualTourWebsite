@@ -16,17 +16,17 @@ db=connection.connect(
 query="select * from listings"
 
 db_data= pd.read_sql(query,db)
-print(db_data)
+print(db_data['price'])
 
 predictors=["living_space","bathrooms","building_class","land"]
 outcome='price'
 
 # print(predictors)
 
-model = LinearRegression()
-model.fit(db_data[predictors],db_data[outcome])
+# model = LinearRegression()
+# model.fit(db_data[predictors],db_data[outcome])
 
-print(f'intercept: {model.intercept_:.3f}')
-print("Coefficients: ")
-for name, coef in zip(predictors, model.coef_):
-    print(f" {name} : {coef}")
+# print(f'intercept: {model.intercept_:.3f}')
+# print("Coefficients: ")
+# for name, coef in zip(predictors, model.coef_):
+#     print(f" {name} : {coef}")
