@@ -58,19 +58,19 @@
   
   <!-- main section -->
   <main class="mt-4">
-    <div id="" class="container">
+    <div class="container">
         <div class="navbar bg-transparent navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid justify-content-center">
+            <div class="container-fluid pb-2 justify-content-center">
                 <div class="fs-5" >
                 <ul class="navbar-nav">
                     <li class="nav-item px-3">
-                    <a class="nav-link active" aria-current="page" href="#">Profile</a>
+                    <a class="nav-link active" aria-current="page" id="user_profile">Profile</a>
                     </li>
                     <li class="nav-item px-3">
-                    <a class="nav-link" href="#">Upload a listing</a>
+                    <a class="nav-link" id="upload_listing">Upload a listing</a>
                     </li>
                     <li class="nav-item px-3">
-                    <a class="nav-link" href="#">My Listings</a>
+                    <a class="nav-link" id="my_listings">My Listings</a>
                     </li>
                     <li class="nav-item px-3 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,48 +88,56 @@
         </div>    
     </div>
     
-    <div id="for_rec" class="container ">
-      <div class=" rounded my-3 row row-cols-1 row-cols-md-3 g-4" style="background-color: #ffffff57!important;" id="csec">
-        <div class="card bg-transparent border-0 " style="width: 18rem;">
-        <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" class="card-img-top" alt="user">
-        <!-- pic from https://pixabay.com/vectors/instagram-insta-user-instagram-icon-3814049/ -->
-        <div class="card-body">
-            <h5 class="card-title"><?php echo $_SESSION['email'];?></h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
+    <div class="container py-2 px-4" style="background-color: #ffffff57!important;">
+      <div id="current_selection">
+        <div class=" rounded my-3 row align-self-center">    
+          <div class="card col bg-transparent border-0 " style="width: 18rem;">
+            <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" class="card-img-top" alt="user">
+            <!-- pic from https://pixabay.com/vectors/instagram-insta-user-instagram-icon-3814049/ -->
+            <div class="card-body">
+                <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+    
+          <div class="card col bg-transparent border-0 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-transparent">An item</li>
+              <li class="list-group-item bg-transparent">A second item</li>
+              <li class="list-group-item bg-transparent">A third item</li>
+            </ul>
+          </div>
+          <div class="card bg-transparent border-0 " style="width: 18rem;">
+            <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+          <div class="card col bg-transparent border-0 " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-transparent">An item</li>
+                <li class="list-group-item bg-transparent">A second item</li>
+                <li class="list-group-item bg-transparent">A third item</li>
+            </ul>
+  <!--           
+            <div class="card bg-transparent border-0 " style="width: 18rem;">
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div> -->
         </div>
         
-        <div class="card bg-transparent border-0 " style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-transparent">An item</li>
-            <li class="list-group-item bg-transparent">A second item</li>
-            <li class="list-group-item bg-transparent">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
-
-        <div class="card bg-transparent border-0 " style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-transparent">An item</li>
-            <li class="list-group-item bg-transparent">A second item</li>
-            <li class="list-group-item bg-transparent">A third item</li>
-        </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-        </div>
-        </div>
+        
+       
       </div>
     </div>
   </main>
