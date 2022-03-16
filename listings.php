@@ -1,4 +1,12 @@
 <?php
+session_start();   
+$con = mysqli_connect('localhost','root','');
+mysqli_select_db($con, 'virttour');
+
+if(!$con)
+{
+    die("Connection failed: " . mysqli_connect_error());
+}
     if(!isset($_SESSION['email']))
     {
         $_SESSION['email']='guest';

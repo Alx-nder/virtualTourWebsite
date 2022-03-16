@@ -12,6 +12,9 @@
     {
         header('location:/virtualTourWebsite/login.php');
     } 
+    if($_SESSION['email']='guest'){
+      header('location:/virtualTourWebsite/login.php');
+    }
 ?>
 
 <!DOCTYPE html>
