@@ -3,7 +3,6 @@
 import sys
 sys.path.append(r'''C:\Users\tyree\AppData\Roaming\Python\Python310\site-packages''')
 
-import email
 import jwt
 import requests
 import json

@@ -12,7 +12,7 @@ from chatterbot.trainers import ListTrainer
 
 
 # sys.path.append("C:\\xampp\\htdocs\\virtualTourWebsite\\zoomapi\\")
-# import makemeeting
+import makemeeting
 
 # insantiating the chatbot
 chatbot2 = ChatBot("DButler2", read_only=True)

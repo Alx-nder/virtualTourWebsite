@@ -7,7 +7,7 @@ $("#my_listings").click(function(){
 })
 
 $.ajax({
-    url: "http://localhost/recommendAlgo/epsilon2.py",
+    url: "http://localhost/recommendAlgo/testingajax.py",
     method: "POST",
     data: {message_py:username},
     dataType: "text",
