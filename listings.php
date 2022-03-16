@@ -1,16 +1,7 @@
 <?php
-    session_start();   
-    $con = mysqli_connect('localhost','root','');
-    mysqli_select_db($con, 'virttour');
-
-    if(!$con)
-    {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
     if(!isset($_SESSION['email']))
     {
-        header('location:login.php');
+        $_SESSION['email']='guest';
     } 
 ?>
 
@@ -48,9 +39,8 @@
       </div>
     </div>
   </nav>
-
-<input style="display: none;" type="text" name="user_session" value=<?php echo $_SESSION['email'];?>>  
-
+  <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
+                
   <!-- chatbot -->
     <input type="text" name="chat" placeholder="Enter message">
     <button class="send">Send</button>

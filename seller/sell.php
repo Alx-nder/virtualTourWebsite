@@ -10,7 +10,7 @@
 
     if(!isset($_SESSION['email']))
     {
-        header('location:login.php');
+        header('location:/virtualTourWebsite/login.php');
     } 
 ?>
 

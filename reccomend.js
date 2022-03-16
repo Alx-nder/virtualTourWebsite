@@ -1,6 +1,16 @@
 const uri="http://localhost/recommendAlgo/epsilon1.py";
 
-var current_user =$('[name=user_session]').val();
+var username=document.getElementById("user_id").innerHTML;
+
+$.ajax({
+    url: "http://localhost/recommendAlgo/testingajax.py",
+    method: "POST",
+    data: {message_py:username},
+    dataType: "text",
+    success: function(data){
+        alert(data);
+    }
+})
 
 function a_recommendation(){
     fetch(uri,{
@@ -57,11 +67,11 @@ function a_recommendation(){
 }
 
 // first few recommendations
-a_recommendation();
-a_recommendation();
-a_recommendation();
-a_recommendation();
-a_recommendation();
+// a_recommendation();
+// a_recommendation();
+// a_recommendation();
+// a_recommendation();
+// a_recommendation();
 
 
  // // Get the modal
