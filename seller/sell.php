@@ -36,7 +36,7 @@
       <div class="collapse justify-content-center navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav  mb-2 justify-content-center mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost/virtualTourWebsite/base.php">Buy</a>
+            <a class="nav-link" href="http://localhost/virtualTourWebsite/listings.php">Buy</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Sell</a>

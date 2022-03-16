@@ -1,25 +1,14 @@
-const uri="http://localhost/recommendAlgo/epsilon1.py";
+// const uri="http://localhost/recommendAlgo/epsilon1.py";
 
 var username=document.getElementById("user_id").innerHTML;
-
+function a_recommendation(){
 $.ajax({
-    url: "http://localhost/recommendAlgo/testingajax.py",
+    url: "http://localhost/recommendAlgo/epsilon1.py",
     method: "POST",
     data: {message_py:username},
     dataType: "text",
-    success: function(data){
-        alert(data);
-    }
-})
-
-function a_recommendation(){
-    fetch(uri,{
-        method:"POST"
-    })
-    .then(function(response){
-        return response.json();
-    })
-    .then((resp)=>{
+    success: function(resp){
+        resp=JSON.parse(resp)
         var outer_div = document.createElement("div");
         outer_div.setAttribute("class","col"); 
 
@@ -60,18 +49,15 @@ function a_recommendation(){
         document.getElementById("csec").appendChild(outer_div);
 
         enter_tour();
-    })
-    .catch((err)=>{
-        console.log('ERROR: ', err.message);
-    });
+    }
+})
 }
-
 // first few recommendations
-// a_recommendation();
-// a_recommendation();
-// a_recommendation();
-// a_recommendation();
-// a_recommendation();
+a_recommendation();
+a_recommendation();
+a_recommendation();
+a_recommendation();
+a_recommendation();
 
 
  // // Get the modal
