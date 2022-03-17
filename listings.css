@@ -1,3 +1,6 @@
+html{
+  /* overflow: hidden; */
+}
 
 .my_img {
     border-radius: 5px;
@@ -87,4 +90,16 @@
   }
 .navbar{
   background-color: rgba(0, 0, 0, 0)!important;
+}
+
+video{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  /* z-index: -1; */
+  /* background-repeat:no-repeat; 
+  background-size: 100% 100%; */
+  top: 0;
+  left: 0;
 }
