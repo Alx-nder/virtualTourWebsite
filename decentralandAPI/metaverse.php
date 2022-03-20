@@ -26,7 +26,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" media="all">
   </head>
 <!-- <body style="background-color: #10051b!important; " class="container-fluid min-vh-100 text-light"> -->
-<body>
+<body id="metabody">
   <!-- navbar -->
     <!-- <div  style="background-image: url('http://localhost/virtualTourWebsite/milad-fakurian-wNsHBf_bTBo-unsplash.jpg'); background-repeat: no-repeat; background-attachment: fixed;background-size: cover;"> -->
       <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -50,8 +50,18 @@
         </div>
       </div>
     </nav>
-    <!-- </div> -->
-    <div class="min-vh-100"></div>
+<!-- isolated view of landing page's background image -->
+    <div class=" row min-vh-100 ">
+      <div class="col-3 ">
+        <div class="text-light container position-absolute top-50 start-0 translate-middle-y">
+        <!-- fs-1 -->
+          <h1 class="">
+             Want Land in the METAverse?
+          </h1> 
+        </div>
+      </div>
+
+    </div>
   
   
 <input style="display: none;" type="text" name="user_session" value=<?php echo $_SESSION['email'];?>>  
@@ -63,7 +73,7 @@
 
   
   <!-- main section -->
-  <main class="mt-4" style="background-color:antiquewhite;">
+  <main class="mt-4">
     <div id="for_rec" class="container">
       <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec"></div>
     </div>
