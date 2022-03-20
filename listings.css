@@ -83,10 +83,19 @@ html{
   }
 
   body{
-    background-color: #ebc8a2;
+    /* background-color: #ebc8a2; */
+    background-image: url("http://localhost/virtualTourWebsite/milad-fakurian-wNsHBf_bTBo-unsplash.jpg");
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
   }
   .card{
-    background-color: #ffffff57!important;;
+    /* backdrop-filter: blur(20px)!important; */
+    /* background-color: #ffffff57!important;; */
+    /* background-image: url("http://localhost/virtualTourWebsite/milad-fakurian-wNsHBf_bTBo-unsplash.jpg"); */
+ /* background-repeat: no-repeat; */
+ /* background-attachment: fixed; */
+ /* background-size: cover;  */
   }
 .navbar{
   background-color: rgba(0, 0, 0, 0)!important;
@@ -100,6 +109,8 @@ video{
   /* z-index: -1; */
   /* background-repeat:no-repeat; 
   background-size: 100% 100%; */
+  background-attachment: fixed;
+  background-size: cover;
   top: 0;
   left: 0;
 }

@@ -25,10 +25,10 @@
     <link rel="stylesheet" href="http://localhost/virtualTourWebsite/listings.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" media="all">
   </head>
-<body style="background-color: #10051b!important;   background-size: 100% 100%;   object-fit: cover;
-" class="container-fluid text-light">
-    <!-- navbar -->
-    <div class="min-vh-100" style="background-image: url('http://localhost/virtualTourWebsite/milad-fakurian-wNsHBf_bTBo-unsplash.jpg');">
+<!-- <body style="background-color: #10051b!important; " class="container-fluid min-vh-100 text-light"> -->
+<body>
+  <!-- navbar -->
+    <!-- <div  style="background-image: url('http://localhost/virtualTourWebsite/milad-fakurian-wNsHBf_bTBo-unsplash.jpg'); background-repeat: no-repeat; background-attachment: fixed;background-size: cover;"> -->
       <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="container-fluid">
         <a class="navbar-brand h3" href="http://localhost/virtualTourWebsite/logout.php">VtZ</a>
@@ -50,7 +50,8 @@
         </div>
       </div>
     </nav>
-    </div>
+    <!-- </div> -->
+    <div class="min-vh-100"></div>
   
   
 <input style="display: none;" type="text" name="user_session" value=<?php echo $_SESSION['email'];?>>  
@@ -62,7 +63,7 @@
 
   
   <!-- main section -->
-  <main class="mt-4">
+  <main class="mt-4" style="background-color:antiquewhite;">
     <div id="for_rec" class="container">
       <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec"></div>
     </div>
