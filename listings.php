@@ -25,7 +25,7 @@ if(!$con)
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" media="all">
   </head> 
 
-<body  >
+<body  class="movingGradient" >
     
     
     <!-- navbar -->
@@ -52,24 +52,24 @@ if(!$con)
     </nav>
 
    
-    <div class=" row min-vh-100 ">
-      <div class="col-3">
-        <div class="text-dark container position-absolute top-50 start-0 translate-middle-y">
+    <div class=" row container min-vh-100 pt-5 ">
+      <div class="col-5 pt-5">
+        <div class="text-dark pt-5 px-4 ">
         <!-- fs-1 -->
-          <h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit vitae eligendi in dignissimos ex. Eaque, eius ipsum cumque at dolorem porro quo deleniti voluptatem eos vel fuga obcaecati animi nobis?</h1> 
+          <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1> 
+        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione temporibus tenetur quod blanditiis optio natus quibus</p>
         </div>
       </div>
 
-        <div class="col-3"></div>
-        <div class="col-3">
-          <div >
-            <video autoplay muted loop poster="https://images.unsplash.com/photo-1488707872600-5507977fe355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
+      <!-- <div class="col-1"></div> -->
+        <div class="col-4">
+          <!-- <div> -->
+            <video autoplay muted  loop poster="https://images.unsplash.com/photo-1488707872600-5507977fe355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
             <source type="video/mp4" src="housetourvideo.mp4">
             <!-- pic credit https://images.unsplash.com/photo-1488707872600-5507977fe355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80 -->
             <!-- vid credit https://www.youtube.com/watch?v=An0SK0n7Xeo -->
             </video>
-          </div>
+          <!-- </div> -->
       </div>
     </div>
   
