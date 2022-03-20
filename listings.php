@@ -23,14 +23,11 @@ if(!$con)
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="listings.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" media="all">
-  </head>
+  </head> 
+
 <body  >
-  <div class="min-vh-100" >
-    <video autoplay muted loop poster="https://images.unsplash.com/photo-1488707872600-5507977fe355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
-      <source type="video/mp4" src="housetourvideo.mp4">
-      <!-- pic credit https://images.unsplash.com/photo-1488707872600-5507977fe355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80 -->
-      <!-- vid credit https://www.youtube.com/watch?v=An0SK0n7Xeo -->
-      </video>
+    
+    
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light ">
       <div class="container-fluid">
@@ -53,11 +50,28 @@ if(!$con)
         </div>
       </div>
     </nav>
-  </div>
-<div >
-  
-</div>
 
+   
+    <div class=" row min-vh-100 ">
+      <div class="col-3">
+        <div class="text-dark container position-absolute top-50 start-0 translate-middle-y">
+        <!-- fs-1 -->
+          <h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit vitae eligendi in dignissimos ex. Eaque, eius ipsum cumque at dolorem porro quo deleniti voluptatem eos vel fuga obcaecati animi nobis?</h1> 
+        </div>
+      </div>
+
+        <div class="col-3"></div>
+        <div class="col-3">
+          <div >
+            <video autoplay muted loop poster="https://images.unsplash.com/photo-1488707872600-5507977fe355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
+            <source type="video/mp4" src="housetourvideo.mp4">
+            <!-- pic credit https://images.unsplash.com/photo-1488707872600-5507977fe355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80 -->
+            <!-- vid credit https://www.youtube.com/watch?v=An0SK0n7Xeo -->
+            </video>
+          </div>
+      </div>
+    </div>
   
   <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
                 
@@ -90,10 +104,8 @@ if(!$con)
     <span class="close">&times;</span>
     <embed class="modal-content" id="for_tour" src="" type="">
   </div>
- 
-  <div class="min-vh-100" style="background-color: #2672a4;">
 
- </div>
+  <!-- <div class="min-vh-100" style="background-color: #2672a4;"></div> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script  type = "text/javascript" src="reccomend.js"></script>
   <script src="chatbot.js"></script>
