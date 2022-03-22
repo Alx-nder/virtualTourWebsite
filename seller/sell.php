@@ -1,18 +1,18 @@
 <?php
     session_start();   
-    $con = mysqli_connect('localhost','root','');
-    mysqli_select_db($con, 'virttour');
+    // $con = mysqli_connect('localhost','root','');
+    // mysqli_select_db($con, 'virttour');
 
-    if(!$con)
-    {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+    // if(!$con)
+    // {
+    //     die("Connection failed: " . mysqli_connect_error());
+    // }
 
-    if(!isset($_SESSION['email']))
-    {
-        header('location:/virtualTourWebsite/login.php');
-    } 
-    if($_SESSION['email']='guest'){
+    // if(!isset($_SESSION['email']))
+    // {
+    //     header('location:/virtualTourWebsite/login.php');
+    // } 
+    if($_SESSION['email']=='guest'){
       header('location:/virtualTourWebsite/login.php');
     }
 ?>

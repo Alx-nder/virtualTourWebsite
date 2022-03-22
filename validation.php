@@ -1,10 +1,8 @@
 <?php
+session_destroy();
 
 session_start();
-
-
 $con = mysqli_connect('localhost','root','');
-
 mysqli_select_db($con, 'virttour');
 
 $email = $_POST['email'];
