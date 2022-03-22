@@ -29,9 +29,9 @@ if(!$con)
     
     
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar  navbar-expand-lg navbar-light ">
       <div class="container-fluid">
-        <a class="navbar-brand h3" href="logout.php">VtZ</a>
+        <a class="navbar-brand h3" href="logout.php"><img class="ms-4 w-25" src="qesf.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -46,13 +46,15 @@ if(!$con)
             <li class="nav-item">
               <a class="nav-link" href="decentralandAPI\metaverse.php"  >METAverse</a>
             </li>
-          </ul>      
+          </ul> 
+          <a class="navbar-brand h3" href="logout.php">Logout</a>
+     
         </div>
       </div>
     </nav>
 
    
-    <div class=" row container min-vh-100 pt-5 ">
+    <div class=" row container min-vh-100 pt-4">
       <div class="col-5 pt-5">
         <div class="text-dark pt-5 px-4 ">
         <!-- fs-1 -->
