@@ -2,7 +2,6 @@
 print("content-type: text/html\n\n" )
 
 import sys
-
 import cgi
 
 sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-packages")
@@ -10,9 +9,6 @@ sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-pac
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-
-# sys.path.append("C:\\xampp\\htdocs\\virtualTourWebsite\\zoomapi\\")
-import makemeeting
 
 # insantiating the chatbot
 chatbot2 = ChatBot("DButler2", read_only=True)
@@ -39,7 +35,6 @@ conversation = [
     "Thank you.",
     "Agent",
     "You're welcome.",
-    # f"{str(zoom_meeting_link)}",
     "enjoy"
 ]
 trainer = ListTrainer(chatbot2, show_training_progress=False)

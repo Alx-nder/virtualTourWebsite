@@ -18,7 +18,7 @@ $(".send").click(function(){
     }
     else{
         $.ajax({
-            url: "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py",
+            url: cb_uri,
             method: "POST",
             data: {message_py:message},
             dataType: "text",

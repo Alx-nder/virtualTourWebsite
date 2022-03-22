@@ -79,6 +79,10 @@ if(!$con)
     <input type="text" name="chat" placeholder="Enter message">
     <button class="send">Send</button>
     <button class="mic">mic</button>
+    <?php
+    // system("C:\\xampp\htdocs\\virtualTourWebsite\\chatbot1\\speech_module.py",$voice);
+    // echo $voice;
+    ?>
 
   
   <!-- main section -->
