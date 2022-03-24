@@ -4,7 +4,7 @@ print("content-type: text/html\n\n" )
 import sys
 sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-packages")
 
-# import pyaudio
+
 import speech_recognition as sr
 
 
@@ -19,7 +19,6 @@ try:
     # the default google API (no keys needed)
     speech=r.recognize_google(audio)
     print(speech)
-    # return speech
 except sr.UnknownValueError:
     print("Google Speech Recognition could not understand audio")
 except sr.RequestError as e:
