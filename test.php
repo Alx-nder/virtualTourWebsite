@@ -24,7 +24,7 @@
         
         <div class="card-body">
             <h5 class="card-title">grange hill</h5>
-            <h5 class="card-title">$3,125,476.00</h5>
+            <h5 class="card-title">3125476</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugiat rerum consequatur. Eaque delectus voluptates aliquid temporibus quibusdam magni quidem, nesciunt hic atque laborum consequatur fugiat aut sunt dolores quam?</p>
         </div>
         <div class="card-footer">
@@ -42,7 +42,10 @@
 
     var card_location= parent_card.getElementsByClassName("card-title")[0].innerHTML;
     var card_price= parent_card.getElementsByClassName("card-title")[1].innerHTML;
-    var req_body=JSON.stringify({card_price,card_location});
+
+    var username="guest";
+    // creates a json obj for the request body
+    var req_body=JSON.stringify({username,card_price,card_location});
 
     // alert(JSON.stringify(req_body));
     $.ajax({
