@@ -23,7 +23,7 @@
         <img class="image" src="" alt="...">
         
         <div class="card-body">
-            <h5 class="card-title">grange hill</h5>
+            <h5 class="card-title">grange</h5>
             <h5 class="card-title">3125476</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugiat rerum consequatur. Eaque delectus voluptates aliquid temporibus quibusdam magni quidem, nesciunt hic atque laborum consequatur fugiat aut sunt dolores quam?</p>
         </div>

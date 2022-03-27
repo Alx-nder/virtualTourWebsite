@@ -93,7 +93,7 @@ function update_preference(image_tag){
     var list_img = document.getElementsByClassName('list_img');
     for (var i = 0, len = list_img.length; i < len; ++i) {
         list_img[i].onclick=function () {
-            // alert(this)
+            // alert("awda")
             modal.style.display = "block";
             var modal_embed=document.getElementById("for_tour");
             modal_embed.type="text/html";
