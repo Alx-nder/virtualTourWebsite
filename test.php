@@ -20,10 +20,11 @@
     <i id="loader_image" class="gg-dollar"></i>
 
     <div class="card h-100 bg-light">
-        <img src="...">
+        <img class="image" src="" alt="...">
         
         <div class="card-body">
-            <h5 class="card-title">grange hill<br>$3,125,476.00</h5>
+            <h5 class="card-title">grange hill</h5>
+            <h5 class="card-title">$3,125,476.00</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugiat rerum consequatur. Eaque delectus voluptates aliquid temporibus quibusdam magni quidem, nesciunt hic atque laborum consequatur fugiat aut sunt dolores quam?</p>
         </div>
         <div class="card-footer">
@@ -35,15 +36,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-    var image_tag=document.getElementsByClassName('card-title');
+    var image_tag=document.getElementsByClassName('image');
     var parent_card= image_tag[0].parentElement;
     var the_lorem=parent_card.getElementsByClassName('card-text')[0].innerHTML;
 
-    // alert(the_lorem);
+    var card_location= parent_card.getElementsByClassName("card-title")[0].innerHTML;
+    var card_price= parent_card.getElementsByClassName("card-title")[1].innerHTML;
+    var req_body=JSON.stringify({card_price,card_location});
+
+    // alert(JSON.stringify(req_body));
     $.ajax({
         url: "http://localhost/recommendAlgo/update_pref.py",
         method: "POST",
-        data: {message_py:the_lorem},
+        data: {message_py:req_body},
         dataType: "text",
         success: function(resp){ 
             alert(resp);

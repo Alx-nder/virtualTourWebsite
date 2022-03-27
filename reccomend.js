@@ -70,13 +70,14 @@ a_recommendation();
 // FUNCTION TO UPDATE THE INTERACTION VIA PYTHON SCRIPT FOR A specific USER
 function update_preference(image_tag){
     var parent_card= image_tag.parentElement;
-    var location= parent_card.getElementsByClassName("card-title")[0].innerHTML;
-    var price= parent_card.getElementsByClassName("card-title")[1].innerHTML;
-    
+    var card_location= parent_card.getElementsByClassName("card-title")[0].innerHTML;
+    var card_price= parent_card.getElementsByClassName("card-title")[1].innerHTML;
+    var req_body={username,card_price,card_location}
+
     $.ajax({
         url: "http://localhost/recommendAlgo/update_pref.py",
         method: "POST",
-        data: {message_py:username,price,location},
+        data: {message_py:req_body},
         dataType: "text",
         success: function(resp){ 
             // console.log
