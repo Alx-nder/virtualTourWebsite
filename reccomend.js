@@ -1,6 +1,8 @@
 // collecting user id to deliver preference
 var username=document.getElementById("user_id").innerHTML;
 
+
+// function that send a recommendation to html
 function a_recommendation(){
 $.ajax({
     url: "http://localhost/recommendAlgo/epsilon1.py",
@@ -30,12 +32,12 @@ $.ajax({
         var card_title = document.createElement("h5");   
         card_title.setAttribute("class", "card-title");
         card_body.appendChild(card_title);
-        card_title.innerHTML=""+ resp[1] + "<br>"+ new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(resp[4]);
+        card_title.innerHTML=""+ resp[1]; 
 
         var listing_price = document.createElement("h5");   
         listing_price.setAttribute("class", "card-title");
         card_body.appendChild(listing_price);
-        listing_price.innerHTML=resp[4];
+        listing_price.innerHTML=new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(resp[4]);
 
         var card_sub_body = document.createElement("p");   
         card_sub_body.setAttribute("class", "card-text");
@@ -53,7 +55,7 @@ $.ajax({
         
         document.getElementById("csec").appendChild(div);
 
-        // code to use the image to open tour in modal
+        // code to use the image to open tour in modal ... this is included because the tour script (contains a list of the recommendations and that list) needs to be updated after every new recommendation is called 
         enter_tour();
     }
 })
@@ -65,11 +67,23 @@ a_recommendation();
 a_recommendation();
 a_recommendation();
 
-// FUNCTION TO UPDATE THE INTERACTION VIA PYTHON SCRIPT FOR A USER
+// FUNCTION TO UPDATE THE INTERACTION VIA PYTHON SCRIPT FOR A specific USER
 function update_preference(image_tag){
     var parent_card= image_tag.parentElement;
+    var location= parent_card.getElementsByClassName("card-title")[0].innerHTML;
+    var price= parent_card.getElementsByClassName("card-title")[1].innerHTML;
     
-}
+    $.ajax({
+        url: "http://localhost/recommendAlgo/update_pref.py",
+        method: "POST",
+        data: {message_py:username,price,location},
+        dataType: "text",
+        success: function(resp){ 
+            // console.log
+        } 
+    })
+}      
+
 
 
  // // Get the modal

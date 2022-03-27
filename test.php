@@ -20,7 +20,7 @@
     <i id="loader_image" class="gg-dollar"></i>
 
     <div class="card h-100 bg-light">
-        <img src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" class="list_img my_img rounded my-2 mx-2" style="max-width:100%; height:auto; object-fit:contain;" alt="https://everpano.s3.eu-central-1.amazonaws.com/3d/loft/index.html">
+        <img src="...">
         
         <div class="card-body">
             <h5 class="card-title">grange hill<br>$3,125,476.00</h5>
@@ -32,3 +32,22 @@
     </div>    
 </body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    var image_tag=document.getElementsByClassName('card-title');
+    var parent_card= image_tag[0].parentElement;
+    var the_lorem=parent_card.getElementsByClassName('card-text')[0].innerHTML;
+
+    // alert(the_lorem);
+    $.ajax({
+        url: "http://localhost/recommendAlgo/update_pref.py",
+        method: "POST",
+        data: {message_py:the_lorem},
+        dataType: "text",
+        success: function(resp){ 
+            alert(resp);
+        } 
+    })
+
+</script>

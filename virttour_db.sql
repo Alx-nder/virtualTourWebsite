@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2022 at 02:58 AM
+-- Generation Time: Mar 27, 2022 at 03:08 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -139,18 +139,18 @@ CREATE TABLE `user_pref` (
   `price_0` int(11) NOT NULL,
   `price_1` int(11) NOT NULL,
   `price_2` int(11) NOT NULL,
-  `loc_l` int(11) NOT NULL,
-  `loc_m` int(11) NOT NULL,
-  `loc_k` int(11) NOT NULL,
-  `loc_g` int(11) NOT NULL,
-  `loc_mv` int(100) NOT NULL
+  `lucea` int(11) NOT NULL,
+  `manchester` int(11) NOT NULL,
+  `kingston` int(11) NOT NULL,
+  `grange hill` int(11) NOT NULL,
+  `mandeville` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_pref`
 --
 
-INSERT INTO `user_pref` (`username`, `price_0`, `price_1`, `price_2`, `loc_l`, `loc_m`, `loc_k`, `loc_g`, `loc_mv`) VALUES
+INSERT INTO `user_pref` (`username`, `price_0`, `price_1`, `price_2`, `lucea`, `manchester`, `kingston`, `grange hill`, `mandeville`) VALUES
 ('guest', 0, 0, 0, 0, 0, 0, 0, 0),
 ('hello@hi.hey', 2, 6, 7, 2, 6, 1, 5, 0),
 ('t@y.com', 2, 4, 1, 2, 4, 3, 0, 0);
