@@ -1,6 +1,6 @@
-// const uri="http://localhost/recommendAlgo/epsilon1.py";
-
+// collecting user id to deliver preference
 var username=document.getElementById("user_id").innerHTML;
+
 function a_recommendation(){
 $.ajax({
     url: "http://localhost/recommendAlgo/epsilon1.py",
@@ -53,6 +53,7 @@ $.ajax({
         
         document.getElementById("csec").appendChild(div);
 
+        // code to use the image to open tour in modal
         enter_tour();
     }
 })
@@ -63,6 +64,12 @@ a_recommendation();
 a_recommendation();
 a_recommendation();
 a_recommendation();
+
+// FUNCTION TO UPDATE THE INTERACTION VIA PYTHON SCRIPT FOR A USER
+function update_preference(image_tag){
+    var parent_card= image_tag.parentElement;
+    
+}
 
 
  // // Get the modal
