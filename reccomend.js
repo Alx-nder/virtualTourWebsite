@@ -37,7 +37,7 @@ $.ajax({
         var listing_price = document.createElement("h5");   
         listing_price.setAttribute("class", "card-title");
         card_body.appendChild(listing_price);
-        listing_price.innerHTML=new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(resp[4]);
+        listing_price.innerHTML=resp[4];
 
         var card_sub_body = document.createElement("p");   
         card_sub_body.setAttribute("class", "card-text");
@@ -69,10 +69,10 @@ a_recommendation();
 
 // FUNCTION TO UPDATE THE INTERACTION VIA PYTHON SCRIPT FOR A specific USER
 function update_preference(image_tag){
-    var parent_card= image_tag.parentElement;
+    var parent_card=image_tag.parentElement;
     var card_location= parent_card.getElementsByClassName("card-title")[0].innerHTML;
     var card_price= parent_card.getElementsByClassName("card-title")[1].innerHTML;
-    var req_body={username,card_price,card_location}
+    var req_body=JSON.stringify({username,card_price,card_location});
 
     $.ajax({
         url: "http://localhost/recommendAlgo/update_pref.py",
@@ -93,11 +93,13 @@ function update_preference(image_tag){
     var list_img = document.getElementsByClassName('list_img');
     for (var i = 0, len = list_img.length; i < len; ++i) {
         list_img[i].onclick=function () {
+            // alert(this)
             modal.style.display = "block";
             var modal_embed=document.getElementById("for_tour");
             modal_embed.type="text/html";
             modal_embed.src=this.alt;
             modal_embed.height="100%";
+            update_preference(this);
         }
     }
     // // Get the <span> element that closes the modal
