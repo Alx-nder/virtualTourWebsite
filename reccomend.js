@@ -1,5 +1,11 @@
 // collecting user id to deliver preference
 var username=document.getElementById("user_id").innerHTML;
+var logout=document.getElementById("logout");
+if (username=="guest"){
+    logout.style.display = "none";
+}
+var username_tag=document.getElementById("user_id");
+username_tag.style.display="none";
 
 
 // function that send a recommendation to html

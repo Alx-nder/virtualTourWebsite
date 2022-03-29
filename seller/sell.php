@@ -30,9 +30,9 @@
   </head>
 <body style="background-color: #7f9497!important;" class="container-fluid text-dark">
     <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light ">
+  <nav class="navbar pt-3 navbar-expand-lg navbar-light ">
     <div class="container-fluid">
-      <a class="navbar-brand h3" href="http://localhost/virtualTourWebsite/logout.php">VtZ</a>
+    <a href="http://localhost/virtualTourWebsite/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/logo.png 3x" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

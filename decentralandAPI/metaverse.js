@@ -1,3 +1,13 @@
+// collecting user id to deliver preference
+var username=document.getElementById("user_id").innerHTML;
+var logout=document.getElementById("logout");
+if (username=="guest"){
+    logout.style.display = "none";
+}
+var username_tag=document.getElementById("user_id");
+username_tag.style.display="none";
+
+
 var nft_uri="http://localhost/virtualTourWebsite/decentralandAPI/decentralandapi.py";
 
 // creating a recommend card

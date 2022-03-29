@@ -1,4 +1,8 @@
 var username=document.getElementById("user_id").innerHTML;
+var logout=document.getElementById("logout");
+if (username=="guest"){
+    logout.style.display = "none";
+}
 
 $("#my_listings").click(function(){
     username=document.getElementById("user_id").innerHTML;

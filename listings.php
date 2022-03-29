@@ -29,12 +29,10 @@ if(!$con)
   </head> 
 
 <body  class="movingGradient" >
-    
-    
     <!-- navbar -->
-    <nav class="navbar  navbar-expand-lg navbar-light ">
+    <nav class="navbar pt-3 navbar-expand-lg navbar-light ">
       <div class="container-fluid">
-        <a class="navbar-brand h3" href="logout.php"><img class="ms-4 w-25" src="qesf.png" alt=""></a>
+        <a href="http://localhost/virtualTourWebsite/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/logo.png 3x" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,8 +47,10 @@ if(!$con)
             <li class="nav-item">
               <a class="nav-link" href="decentralandAPI\metaverse.php"  >METAverse</a>
             </li>
+            <li>
+              <a class="navbar-brand h3" id="logout" href="logout.php">Logout</a>
+            </li>
           </ul> 
-          <a class="navbar-brand h3" href="logout.php">Logout</a>
      
         </div>
       </div>

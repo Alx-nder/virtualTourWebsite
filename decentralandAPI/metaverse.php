@@ -1,17 +1,16 @@
 <?php
-    session_start();   
-    $con = mysqli_connect('localhost','root','');
-    mysqli_select_db($con, 'virttour');
+  session_start();   
+  $con = mysqli_connect('localhost','root','');
+  mysqli_select_db($con, 'virttour');
 
-    if(!$con)
-    {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
-    if(!isset($_SESSION['email']))
-    {
-        header('location:login.php');
-    } 
+  if(!$con)
+  {
+      die("Connection failed: " . mysqli_connect_error());
+  }
+      if(!isset($_SESSION['email']))
+      {
+          $_SESSION['email']='guest';
+      } 
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +28,9 @@
 <body id="metabody">
   <!-- navbar -->
     <!-- <div  style="background-image: url('http://localhost/virtualTourWebsite/milad-fakurian-wNsHBf_bTBo-unsplash.jpg'); background-repeat: no-repeat; background-attachment: fixed;background-size: cover;"> -->
-      <nav class="navbar navbar-expand-lg navbar-dark ">
+      <nav class="navbar pt-3 navbar-expand-lg navbar-dark ">
       <div class="container-fluid">
-        <a class="navbar-brand h3" href="http://localhost/virtualTourWebsite/logout.php">VtZ</a>
+        <a href="http://localhost/virtualTourWebsite/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/logo.png 3x" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,6 +44,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"  >METAverse</a>
+            </li>
+            <li>
+              <a class="navbar-brand h3" id="logout" href="logout.php">Logout</a>
             </li>
           </ul>      
         </div>
@@ -63,7 +65,7 @@
     </div>
   
   
-<input style="display: none;" type="text" name="user_session" value=<?php echo $_SESSION['email'];?>>  
+    <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
 
   <!-- chatbot -->
     <input type="text" name="chat" placeholder="Enter message">
@@ -90,7 +92,7 @@
   </div>
   
   
- 
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script  type = "text/javascript" src="metaverse.js"></script>
   <script src="http://localhost/virtualTourWebsite/chatbot.js"></script>
