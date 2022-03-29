@@ -47,6 +47,9 @@
           <li class="nav-item">
             <a class="nav-link "  href="http://localhost/virtualTourWebsite/decentralandAPI/metaverse.php"  >METAverse</a>
           </li>
+          <li>
+            <a class="nav-link" id="logout" href="logout.php">Logout</a>
+          </li>
         </ul>      
       </div>
     </div>

@@ -46,7 +46,7 @@
               <a class="nav-link active" aria-current="page" href="#"  >METAverse</a>
             </li>
             <li>
-              <a class="navbar-brand h3" id="logout" href="logout.php">Logout</a>
+              <a class="nav-link" id="logout" href="logout.php">Logout</a>
             </li>
           </ul>      
         </div>

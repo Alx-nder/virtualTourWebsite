@@ -78,12 +78,12 @@ function update_preference(image_tag){
     var parent_card=image_tag.parentElement;
     var card_location= parent_card.getElementsByClassName("card-title")[0].innerHTML;
     var card_price= parent_card.getElementsByClassName("card-title")[1].innerHTML;
-    var req_body=JSON.stringify({username,card_price,card_location});
+    var request_body=JSON.stringify({username,card_price,card_location});
 
     $.ajax({
         url: "http://localhost/recommendAlgo/update_pref.py",
         method: "POST",
-        data: {message_py:req_body},
+        data: {message_py:request_body},
         dataType: "text",
         success: function(resp){ 
             // console.log

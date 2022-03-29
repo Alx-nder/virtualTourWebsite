@@ -45,10 +45,10 @@ if(!$con)
               <a class="nav-link" href="seller\sell.php">Sell</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="decentralandAPI\metaverse.php"  >METAverse</a>
+              <a class="nav-link" href="decentralandAPI\metaverse.php">METAverse</a>
             </li>
             <li>
-              <a class="navbar-brand h3" id="logout" href="logout.php">Logout</a>
+              <a class="nav-link" id="logout" href="logout.php">Logout</a>
             </li>
           </ul> 
      

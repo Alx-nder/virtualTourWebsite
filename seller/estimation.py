@@ -5,6 +5,12 @@ import mysql.connector as connection
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
+import cgi
+
+
+## accept ajax body
+form=cgi.FieldStorage()
+house_details=form.getvalue("message_py")
 
 # connecting to database
 db=connection.connect(
