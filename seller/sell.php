@@ -68,37 +68,29 @@
         <div class="navbar bg-transparent navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid pb-2 justify-content-center">
                 <div class="fs-5" >
-                <ul class="navbar-nav">
+                  <ul class="navbar-nav">
                     <li class="nav-item px-3">
-                    <a class="nav-link active" aria-current="page" id="user_profile">Profile</a>
+                    <a class="nav-link" id="profile">Profile</a>
                     </li>
                     <li class="nav-item px-3">
-                    <a class="nav-link" id="upload_listing">Upload a listing</a>
+                    <a class="nav-link" id="upload_listing">Upload listing</a>
                     </li>
                     <li class="nav-item px-3">
                     <a class="nav-link" id="my_listings">My Listings</a>
                     </li>
-                    <li class="nav-item px-3 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                    </li>
-                </ul>
+                  </ul>
                 </div>
-            </div>
-        </div>    
-    </div>
+              </div>
+          </div>    
+      </div>
     
     <div class="container py-2 px-4" style="background-color: #ffffff57!important;">
-      <div id="current_selection">
+      <div id="profile_page">
         <div class=" rounded my-3 row align-self-center">    
-          <div class="card col bg-transparent border-0 " style="width: 18rem;">
-            <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png" class="card-img-top" alt="user">
+          <div class="card col bg-transparent border-0">
+           <div>
+             <img srcset="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png 3x"  alt="user">
+           </div> 
             <!-- pic from https://pixabay.com/vectors/instagram-insta-user-instagram-icon-3814049/ -->
             <div class="card-body">
                 <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
@@ -106,24 +98,13 @@
             </div>
           </div>
     
-          <div class="card col bg-transparent border-0 " style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-transparent">An item</li>
-              <li class="list-group-item bg-transparent">A second item</li>
-              <li class="list-group-item bg-transparent">A third item</li>
-            </ul>
-          </div>
-          <div class="card bg-transparent border-0 " style="width: 18rem;">
+          <div class="card col bg-transparent border-0">
             <div class="card-body">
                 <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a>
             </div>
           </div>
-          <div class="card col bg-transparent border-0 " style="width: 18rem;">
+          <div class="card col bg-transparent border-0 ">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -133,25 +114,35 @@
                 <li class="list-group-item bg-transparent">A second item</li>
                 <li class="list-group-item bg-transparent">A third item</li>
             </ul>
-  <!--           
-            <div class="card bg-transparent border-0 " style="width: 18rem;">
-              <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div> -->
+          </div> 
         </div>
-        
-        
-       
+      </div>
+
+      <div id="upload_listing_page">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="living_space">
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="bathrooms">
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="bedrooms">
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="building_class">
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="land">
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="age">
+        </div>
+
       </div>
     </div>
   </main>
 
-  <!-- listing for the user -->
-  <div id="my_listings">
 
-  </div>
  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script  type = "text/javascript" src="sell.js"></script>
