@@ -1,6 +1,8 @@
 #!C:\Program Files\Python310\python.exe
 print("content-type: text/html;\n\n" )
 
+import sys
+sys.path.append(r'C:\Users\tyree\AppData\Roaming\Python\Python310\site-packages')
 import mysql.connector as connection
 import pandas as pd
 import numpy as np

@@ -12,28 +12,32 @@ $("#profile").click(function(){
 $("#upload_listing").click(function(){
     $("#profile_page").css("display", "none");
     $("#upload_listing_page").css("display", "inline-block");
-
 })
 
-// $.ajax({
-//     url: "http://localhost/recommendAlgo.py",
-//     method: "POST",
-//     data: {message_py:username},
-//     dataType: "text",
-//     success: function(data){
-//         alert(data);
-//     }
-// })
 
-$("age").innerHTML=age;
-$("living_space").innerHTML=living_space;
-$("bathrooms").innerHTML=bathrooms;
-$("bedrooms").innerHTML=bedrooms;
-$("building_class").innerHTML=building_class;
-$("land").innerHTML=land;
 
-$(".house_details").click(function(){
-    alert(age);
+$(".submit").click(function(){
+    var living_space= $("[name=living_space]").val();
+    var land=$("[name=land]").val();
+    var age=$('[name=age]').val();
+    var bedrooms= $("[name=bedrooms]").val();
+    var building_class=$("[name=building_class]").val();
+    var bathrooms=$("[name=bathrooms]").val();
+    var message = JSON.stringify({ living_space,land,age,bedrooms,building_class,bathrooms});
+    if (message=="")
+    {
+    }
+    else{
+        $.ajax({
+            url: "http://localhost/virtualTourWebsite/seller/estimation.py",
+            method: "POST",
+            data: {message_py:message},
+            dataType: "text",
+            success: function(data){
+                alert(data);
+            }
+        })
+    }
 })
 
 // var house_details = document.getElementsByClassName('house_details');

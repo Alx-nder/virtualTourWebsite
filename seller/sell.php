@@ -119,25 +119,26 @@
       </div>
 
       <div id="upload_listing_page">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control house_details" id="living_space" placeholder="living_space" require>
-        </div>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control house_details" id="bathrooms" placeholder="bathrooms">
-        </div>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control house_details" id="bedrooms" placeholder="bedrooms">
-        </div>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control house_details" id="building_class" placeholder="building_class">
-        </div>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control house_details" id="land" placeholder="land">
-        </div>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control house_details" id="age" placeholder="age">
-        </div>
-
+          <div class="input-group mb-3">
+            <input type="text" class="form-control house_details" name="living_space" placeholder="living_space" require>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control house_details" name="bathrooms" placeholder="bathrooms">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control house_details" name="bedrooms" placeholder="bedrooms">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control house_details" name="building_class" placeholder="building_class">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control house_details" name="land" placeholder="land">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control house_details" name="age" placeholder="age">
+          </div>
+          <button class="btn border bg-transparent submit">Estimate</button>
+        
       </div>
     </div>
   </main>
