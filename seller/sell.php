@@ -15,6 +15,38 @@
     if($_SESSION['email']=='guest'){
       header('location:/virtualTourWebsite/login.php');
     }
+
+    
+# server name
+$sName = "localhost";
+# user name
+$uName = "root";
+# password
+$pass = "";
+
+# database name
+$db_name = "virttour";
+
+    try {
+      $conn = new PDO("mysql:host=$sName;dbname=$db_name", 
+                      $uName, $pass);
+  
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+  }catch(PDOException $e){
+    echo "Connection failed : ". $e->getMessage();
+  }
+
+
+    # fetching images
+	$sql  = "SELECT img_name FROM
+  images ORDER BY id DESC";
+
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+
+$images = $stmt->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -119,26 +151,52 @@
       </div>
 
       <div id="upload_listing_page">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control house_details" name="living_space" placeholder="living_space" require>
+        <div class="row align-self-center">
+          <div class="col">
+            <form action="upload.php" method="POST" enctype="multipart/form-data">
+
+            <?php  
+            if (isset($_GET['error'])) {
+            	echo "<p class='error'>";
+            	    echo htmlspecialchars($_GET['error']);
+            	echo "</p>";
+            }
+	         ?>
+
+              <input type="file" name="images[]" multiple>
+              <button type="submit" name="upload">Upload</button>
+            </form>
+            <?php if ($stmt->rowCount() > 0) { ?>
+                <div class="gallery">
+                  <h4>All Images</h4>
+                      <?php foreach ($images as $image) { ?>
+                        <img style="width:127px;" src="uploads/<?=$image['img_name']?>">
+                      <?php } ?>
+                </div>
+            <?php } ?>
           </div>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control house_details" name="bathrooms" placeholder="bathrooms">
+          <div class="col">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="living_space" placeholder="living_space" require>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="bathrooms" placeholder="bathrooms">
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="bedrooms" placeholder="bedrooms">
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="building_class" placeholder="building_class">
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="land" placeholder="land">
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="age" placeholder="age">
+              </div>
+              <button class="btn border bg-transparent submit">Estimate</button>
+            </div>
           </div>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control house_details" name="bedrooms" placeholder="bedrooms">
-          </div>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control house_details" name="building_class" placeholder="building_class">
-          </div>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control house_details" name="land" placeholder="land">
-          </div>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control house_details" name="age" placeholder="age">
-          </div>
-          <button class="btn border bg-transparent submit">Estimate</button>
-        
       </div>
     </div>
   </main>

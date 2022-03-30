@@ -24,10 +24,10 @@
 
         <form action="validation.php" class="text-center rounded login_tag" method="post">
           <div class="mb-3 border-bottom">
-            <input type="email" name="email" class="form-control border-0 bg-transparent" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" name="email" class="form-control border-0 bg-transparent" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
           </div>
           <div class="mb-3 border-bottom">
-            <input type="password" name="password" class="form-control border-0 bg-transparent" placeholder="Password" id="exampleInputPassword1">
+            <input type="password" name="password" class="form-control border-0 bg-transparent" placeholder="Password" id="exampleInputPassword1" required>
           </div>
           <button type="submit" class="btn border bg-transparent">Log In</button>
         </form>   
