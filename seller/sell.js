@@ -25,7 +25,16 @@ $("#upload_listing").click(function(){
 //     }
 // })
 
+$("age").innerHTML=age;
+$("living_space").innerHTML=living_space;
+$("bathrooms").innerHTML=bathrooms;
+$("bedrooms").innerHTML=bedrooms;
+$("building_class").innerHTML=building_class;
+$("land").innerHTML=land;
 
+$(".house_details").click(function(){
+    alert(age);
+})
 
 // var house_details = document.getElementsByClassName('house_details');
 // var request_body=JSON.stringify({username,house_location,living_space,bathrooms,bedrooms, building_class,age,land});
