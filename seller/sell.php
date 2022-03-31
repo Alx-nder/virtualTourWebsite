@@ -17,35 +17,35 @@
     }
 
     
-# server name
-$sName = "localhost";
-# user name
-$uName = "root";
-# password
-$pass = "";
+// # server name
+// $sName = "localhost";
+// # user name
+// $uName = "root";
+// # password
+// $pass = "";
 
-# database name
-$db_name = "virttour";
+// # database name
+// $db_name = "virttour";
 
-    try {
-      $conn = new PDO("mysql:host=$sName;dbname=$db_name", 
-                      $uName, $pass);
+//     try {
+//       $conn = new PDO("mysql:host=$sName;dbname=$db_name", 
+//                       $uName, $pass);
   
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
-  }catch(PDOException $e){
-    echo "Connection failed : ". $e->getMessage();
-  }
+//   }catch(PDOException $e){
+//     echo "Connection failed : ". $e->getMessage();
+//   }
 
 
-    # fetching images
-	$sql  = "SELECT img_name FROM
-  images ORDER BY id DESC";
+//     # fetching images
+// 	$sql  = "SELECT img_name FROM
+//   images ORDER BY id DESC";
 
-$stmt = $conn->prepare($sql);
-$stmt->execute();
+// $stmt = $conn->prepare($sql);
+// $stmt->execute();
 
-$images = $stmt->fetchAll();
+// $images = $stmt->fetchAll();
 
 ?>
 
@@ -80,7 +80,7 @@ $images = $stmt->fetchAll();
             <a class="nav-link "  href="http://localhost/virtualTourWebsite/decentralandAPI/metaverse.php"  >METAverse</a>
           </li>
           <li>
-            <a class="nav-link" id="logout" href="logout.php">Logout</a>
+            <a class="nav-link" id="logout" href="http://localhost/virtualTourWebsite/logout.php">Logout</a>
           </li>
         </ul>      
       </div>
@@ -164,41 +164,53 @@ $images = $stmt->fetchAll();
             }
 	         ?>
 
-              <input type="file" name="images[]" multiple>
+              <input type="file" name="image" multiple>
               <button type="submit" name="upload">Upload</button>
             </form>
-            <?php if ($stmt->rowCount() > 0) { ?>
-                <div class="gallery">
-                  <h4>All Images</h4>
-                      <?php foreach ($images as $image) { ?>
-                        <img style="width:127px;" src="uploads/<?=$image['img_name']?>">
-                      <?php } ?>
-                </div>
-            <?php } ?>
+            <?php 
+            // if ($stmt->rowCount() > 0) { 
+              ?>
+                <!-- <div class="gallery">
+                  <h4>All Images</h4> -->
+                      <?php 
+                      // foreach ($images as $image) { 
+                        ?>
+                        <!-- <img style="width:127px;" src="uploads/ -->
+                        <?
+                        // =$image['img_name']
+                        ?>
+                        <!-- "> -->
+                      <?php 
+                    // } 
+                    ?>
+                <!-- </div> -->
+            <?php 
+          // } 
+          ?>
           </div>
           <!-- mid section -->
           <div class="col">
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="living_space" placeholder="living_space" require>
+                <input type="text" class="form-control house_details" name="living_space" placeholder="acres of living space" require>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="bathrooms" placeholder="bathrooms">
+                <input type="text" class="form-control house_details" name="bathrooms" placeholder="no. of bathrooms">
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="bedrooms" placeholder="bedrooms">
+                <input type="text" class="form-control house_details" name="bedrooms" placeholder="no. of bedrooms">
               </div>
               <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="building_class" placeholder="building_class">
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="land" placeholder="land">
+                <input type="text" class="form-control house_details" name="land" placeholder="acres of land">
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="age" placeholder="age">
+                <input type="text" class="form-control house_details" name="age" placeholder="age in years">
               </div>
               <ul class="list-group list-group-horizontal">
-                <li> <button class="btn border bg-transparent submit">Estimate</button></li>
-                <li> <input type="text"id="the_estimate" disabled placeholder=""></li>
+                <button class="btn border bg-transparent submit">Estimate</button>
+                <input type="text"id="the_estimate" disabled placeholder="">
               </ul>
              
             </div>
