@@ -8,11 +8,11 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 import cgi
-
+import json
 
 ## accept ajax body
-form=cgi.FieldStorage()
-house_details=form.getvalue("message_py")
+# form=cgi.FieldStorage()
+# house_details=form.getvalue("message_py")
 
 # connecting to database
 db=connection.connect(
@@ -36,7 +36,11 @@ outcome='price'
 model = LinearRegression()
 model.fit(db_data[predictors],db_data[outcome])
 
-print(f'intercept: {model.intercept_:.3f}')
-print("Coefficients: ")
+co_eff=[]
+# print(f'intercept: {model.intercept_:.3f}')
+# print("Coefficients: ")
 for name, coef in zip(db_data[predictors], model.coef_):
-    print(f" {name} : {coef}")
+    # print(f" {name} : {coef}")
+    co_eff.append(coef)
+
+print(json.dumps(co_eff))

@@ -14,7 +14,17 @@ $("#upload_listing").click(function(){
     $("#upload_listing_page").css("display", "inline-block");
 })
 
-
+var lm_coefficients=[];
+$.ajax({
+    url: "http://localhost/virtualTourWebsite/seller/estimation.py",
+    method: "POST",
+    data: {message_py:""},
+    dataType: "text",
+    success: function(data){
+        // alert(data);
+        lm_coefficients=data;
+    }
+})
 
 $(".submit").click(function(){
     var living_space= $("[name=living_space]").val();
@@ -28,15 +38,8 @@ $(".submit").click(function(){
     {
     }
     else{
-        $.ajax({
-            url: "http://localhost/virtualTourWebsite/seller/estimation.py",
-            method: "POST",
-            data: {message_py:message},
-            dataType: "text",
-            success: function(data){
-                alert(data);
-            }
-        })
+        alert(lm_coefficients)
+        // alert((living_space*lm_coefficients[0])+(bathrooms*lm_coefficients[1])+(bedrooms*lm_coefficients[2])+(building_class*lm_coefficients[3])+(land*lm_coefficients[4])+(age*lm_coefficients[5]));
     }
 })
 

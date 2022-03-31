@@ -152,6 +152,7 @@ $images = $stmt->fetchAll();
 
       <div id="upload_listing_page">
         <div class="row align-self-center">
+          <!-- first column -->
           <div class="col">
             <form action="upload.php" method="POST" enctype="multipart/form-data">
 
@@ -175,6 +176,7 @@ $images = $stmt->fetchAll();
                 </div>
             <?php } ?>
           </div>
+          <!-- mid section -->
           <div class="col">
               <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="living_space" placeholder="living_space" require>
@@ -195,6 +197,15 @@ $images = $stmt->fetchAll();
                 <input type="text" class="form-control house_details" name="age" placeholder="age">
               </div>
               <button class="btn border bg-transparent submit">Estimate</button>
+            </div>
+            <div class="col">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="price" placeholder="Asking price">
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="house_location" placeholder="location">
+              </div>
+              
             </div>
           </div>
       </div>
