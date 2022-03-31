@@ -196,7 +196,11 @@ $images = $stmt->fetchAll();
               <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="age" placeholder="age">
               </div>
-              <button class="btn border bg-transparent submit">Estimate</button>
+              <ul class="list-group list-group-horizontal">
+                <li> <button class="btn border bg-transparent submit">Estimate</button></li>
+                <li> <input type="text"id="the_estimate" disabled placeholder=""></li>
+              </ul>
+             
             </div>
             <div class="col">
               <div class="input-group mb-3">

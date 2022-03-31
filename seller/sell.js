@@ -15,33 +15,28 @@ $("#upload_listing").click(function(){
 })
 
 var lm_coefficients=[];
+$(".submit").click(function(){
+
 $.ajax({
     url: "http://localhost/virtualTourWebsite/seller/estimation.py",
     method: "POST",
     data: {message_py:""},
     dataType: "text",
     success: function(data){
-        // alert(data);
-        lm_coefficients=data;
+        data=JSON.parse(data);
+            var living_space= $("[name=living_space]").val();
+            var land=$("[name=land]").val();
+            var age=$('[name=age]').val();
+            var bedrooms= $("[name=bedrooms]").val();
+            var building_class=$("[name=building_class]").val();
+            var bathrooms=$("[name=bathrooms]").val();
+            var the_estimate=((living_space*data[0])+(bathrooms*data[1])+(bedrooms*data[2])+(building_class*data[3])+(land*data[4])+(age*data[5])); 
+            $('#the_estimate').attr('placeholder',the_estimate);
+            
     }
 })
-
-$(".submit").click(function(){
-    var living_space= $("[name=living_space]").val();
-    var land=$("[name=land]").val();
-    var age=$('[name=age]').val();
-    var bedrooms= $("[name=bedrooms]").val();
-    var building_class=$("[name=building_class]").val();
-    var bathrooms=$("[name=bathrooms]").val();
-    var message = JSON.stringify({ living_space,land,age,bedrooms,building_class,bathrooms});
-    if (message=="")
-    {
-    }
-    else{
-        alert(lm_coefficients)
-        // alert((living_space*lm_coefficients[0])+(bathrooms*lm_coefficients[1])+(bedrooms*lm_coefficients[2])+(building_class*lm_coefficients[3])+(land*lm_coefficients[4])+(age*lm_coefficients[5]));
-    }
 })
+// alert(lm_coefficients)
 
 // var house_details = document.getElementsByClassName('house_details');
 // var request_body=JSON.stringify({username,house_location,living_space,bathrooms,bedrooms, building_class,age,land});

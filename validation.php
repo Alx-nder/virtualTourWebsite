@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //to destroy guest session
 session_destroy();
 
