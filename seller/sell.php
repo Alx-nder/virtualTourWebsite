@@ -155,38 +155,10 @@
           <!-- first column -->
           <div class="col">
             <form action="upload.php" method="POST" enctype="multipart/form-data">
-
-            <?php  
-            if (isset($_GET['error'])) {
-            	echo "<p class='error'>";
-            	    echo htmlspecialchars($_GET['error']);
-            	echo "</p>";
-            }
-	         ?>
-
               <input type="file" name="image" multiple>
               <button type="submit" name="upload">Upload</button>
             </form>
-            <?php 
-            // if ($stmt->rowCount() > 0) { 
-              ?>
-                <!-- <div class="gallery">
-                  <h4>All Images</h4> -->
-                      <?php 
-                      // foreach ($images as $image) { 
-                        ?>
-                        <!-- <img style="width:127px;" src="uploads/ -->
-                        <?
-                        // =$image['img_name']
-                        ?>
-                        <!-- "> -->
-                      <?php 
-                    // } 
-                    ?>
-                <!-- </div> -->
-            <?php 
-          // } 
-          ?>
+            
           </div>
           <!-- mid section -->
           <div class="col">

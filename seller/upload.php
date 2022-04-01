@@ -1,7 +1,17 @@
 <?php
+session_start();   
+$conn = mysqli_connect('localhost','root','');
+mysqli_select_db($conn, 'virttour');
+$user=$_SESSION['email'];
+
 if (isset($_POST['upload'])){
-    ##### database connection
-    
+    ##### house details
+    $living_space=$_POST['living_space'];
+	$bathrooms=$_POST['bathrooms'];
+	$bedrooms=$_POST['bedrooms'];
+	$building_class=$_POST['building_class'];
+	$land=$_POST['land'];
+	$age=$_POST['age'];
     
 	$image = $_FILES['image'];
 
@@ -23,6 +33,8 @@ if (isset($_POST['upload'])){
 				$new_img_name= uniqid('',true).'.'.$image_extension;
 				$file_destination='uploads/'.$new_img_name;
 				move_uploaded_file($tmp_name,$file_destination);
+				$sql="INSERT INTO listings () VALUES ()";
+				mysqli_query($conn,$sql);
 				header("Location: sell.php?uploaded");
 			}else{
 				echo "image too large";
