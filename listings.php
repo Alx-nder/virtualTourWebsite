@@ -77,17 +77,26 @@ if(!$con)
   <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
                 
   <!-- chatbot -->
-    <input type="text" name="chat" placeholder="Enter message">
-    <button class="send">Send</button>
-    <button class="mic">mic</button>
-    <?php
-    // system("C:\\xampp\htdocs\\virtualTourWebsite\\chatbot1\\speech_module.py",$voice);
-    // echo $voice;
-    ?>
+  <div class="px-4 my-3" style="position: fixed; right: 0; bottom: 0; z-index: 1030; ">
+  <div class="rounded " style="background-color:#ffffffd0">
+      <div class="rounded py-3" id="response_area" style="background-color:#ffffffd0">
+        <p class="px-2 text-start"  style="background-color:#ffffffd0" >Hi! <?php echo $_SESSION['email'];?></p>
+      </div>
+        <div class="" id="chat_controls">
+        <ul class="list-group list-group-horizontal">  
+        <input id="user_chat" type="text" name="chat" class="form-control border-0 bg-light" placeholder="Enter message">
+          <button class="send  btn-primary">Send</button>
+          <!-- <button class="mic btn-danger">mic</button> -->
+          </ul>
+        </div>
+    </div>
+      <img id="chat_trigger" class="float-end" srcset="chatbot.png 9x" style="cursor: pointer;" alt="">
+  </div>
+    
 
   
   <!-- main section -->
-  <main class="mt-4">
+  <main class="mt-1">
     <div id="for_rec" class="container">
       <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec"></div>
     </div>
