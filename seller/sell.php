@@ -155,45 +155,49 @@
           <!-- first column -->
           <div class="col">
             <form action="upload.php" method="POST" enctype="multipart/form-data">
-              <input type="file" name="image" multiple>
-              <button type="submit" name="upload">Upload</button>
-            </form>
-            
+              <input type="file" name="image" required>
           </div>
           <!-- mid section -->
           <div class="col">
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="living_space" placeholder="acres of living space" require>
+                <input type="text" class="form-control house_details" name="living_space" placeholder="acres of living space" required>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="bathrooms" placeholder="no. of bathrooms">
+                <input type="text" class="form-control house_details" name="bathrooms" placeholder="no. of bathrooms"required>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="bedrooms" placeholder="no. of bedrooms">
+                <input type="text" class="form-control house_details" name="bedrooms" placeholder="no. of bedrooms"required>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="building_class" placeholder="building_class">
+                <input type="text" class="form-control house_details" name="building_class" placeholder="building_class"required>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="land" placeholder="acres of land">
+                <input type="text" class="form-control house_details" name="land" placeholder="acres of land"required>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="age" placeholder="age in years">
+                <input type="text" class="form-control house_details" name="age" placeholder="age in years"required>
               </div>
+
               <ul class="list-group list-group-horizontal">
-                <button class="btn border bg-transparent submit">Estimate</button>
+                <a class="btn border bg-transparent submit">Estimate</a>
+                <!-- <a href=""></a> -->
                 <input type="text"id="the_estimate" disabled placeholder="">
               </ul>
              
             </div>
             <div class="col">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="price" placeholder="Asking price">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="description" placeholder="Extra deatil/ Description">
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="house_location" placeholder="location">
+                <input type="text" class="form-control house_details" name="price" placeholder="Asking price"required>
               </div>
-              
+              <div class="input-group mb-3">
+                <input type="text" class="form-control house_details" name="house_location" placeholder="location"required>
+              </div>
+              <button type="submit" class="btn border bg-transparent submit" name="upload">Upload</button>
+
+              </form>
             </div>
           </div>
       </div>

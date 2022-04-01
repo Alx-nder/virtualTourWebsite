@@ -12,6 +12,9 @@ if (isset($_POST['upload'])){
 	$building_class=$_POST['building_class'];
 	$land=$_POST['land'];
 	$age=$_POST['age'];
+	$price=$_POST['price'];
+	$house_location=$_POST['house_location'];
+	$description=$_POST['description'];
     
 	$image = $_FILES['image'];
 
@@ -33,7 +36,8 @@ if (isset($_POST['upload'])){
 				$new_img_name= uniqid('',true).'.'.$image_extension;
 				$file_destination='uploads/'.$new_img_name;
 				move_uploaded_file($tmp_name,$file_destination);
-				$sql="INSERT INTO listings () VALUES ()";
+				$file_destination='http://localhost/virtualTourWebsite/seller/uploads/'.$new_img_name;
+				$sql="INSERT INTO listings (house_location,posted,house_description,price,image_src,tour_link,living_space,bathrooms,bedrooms,building_class,age,land,posted_by) VALUES ('$house_location','','$description','$price','$file_destination','','$living_space','$bathrooms','$bedrooms','$building_class','$age','$land','$user')";
 				mysqli_query($conn,$sql);
 				header("Location: sell.php?uploaded");
 			}else{

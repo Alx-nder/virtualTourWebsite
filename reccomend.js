@@ -16,7 +16,7 @@ $.ajax({
     data: {message_py:username},
     dataType: "text",
     success: function(resp){
-        resp=JSON.parse(resp)
+        resp=JSON.parse(resp);
         var div = document.createElement("div");
         div.setAttribute("class","col"); 
 
@@ -57,7 +57,7 @@ $.ajax({
         var card_footer_txt = document.createElement("small");   
         card_footer_txt.setAttribute("class", "text-muted");
         card_footer.appendChild(card_footer_txt);
-        card_footer_txt.innerHTML="Posted: "+ resp[2];
+        card_footer_txt.innerHTML="Contact: "+ resp[13];
         
         document.getElementById("csec").appendChild(div);
 
