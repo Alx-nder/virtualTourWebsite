@@ -86,78 +86,22 @@
       </div>
     </div>
   </nav>
-  
 
-  <!-- chatbot -->
-    <input type="text" name="chat" placeholder="Enter message">
-    <button class="send">Send</button>
-    <button class="mic">mic</button>
+    <main>
+    <form  action="upload.php" method="POST" enctype="multipart/form-data">
 
-  
-  <!-- main section -->
-  <main class="mt-4">
-    <div class="container">
-        <div class="navbar bg-transparent navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid pb-2 justify-content-center">
-                <div class="fs-5" >
-                  <ul class="navbar-nav">
-                    <li class="nav-item px-3">
-                    <a class="nav-link" id="profile">Profile</a>
-                    </li>
-                    <li class="nav-item px-3">
-                    <a class="nav-link" id="upload_listing">Upload listing</a>
-                    </li>
-                    <li class="nav-item px-3">
-                    <a class="nav-link" id="my_listings">My Listings</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-          </div>    
-      </div>
-    
     <div class="container py-2 px-4" style="background-color: #ffffff57!important;">
-      <div id="profile_page">
         <div class=" rounded my-3 row align-self-center">    
           <div class="card col bg-transparent border-0">
            <div>
-             <img srcset="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png 3x"  alt="user">
+             <img srcset="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png 5x"  alt="user">
            </div> 
             <!-- pic from https://pixabay.com/vectors/instagram-insta-user-instagram-icon-3814049/ -->
             <div class="card-body">
                 <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
           </div>
-    
-          <div class="card col bg-transparent border-0">
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-          <div class="card col bg-transparent border-0 ">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-transparent">An item</li>
-                <li class="list-group-item bg-transparent">A second item</li>
-                <li class="list-group-item bg-transparent">A third item</li>
-            </ul>
-          </div> 
-        </div>
-      </div>
-
-      <div id="upload_listing_page">
-        <div class="row align-self-center">
-          <!-- first column -->
-          <div class="col">
-            <form action="upload.php" method="POST" enctype="multipart/form-data">
-              <input type="file" name="image" required>
-          </div>
-          <!-- mid section -->
+          
           <div class="col">
               <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="living_space" placeholder="acres of living space" required>
@@ -177,14 +121,12 @@
               <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="age" placeholder="age in years"required>
               </div>
-
               <ul class="list-group list-group-horizontal">
                 <a class="btn border bg-transparent submit">Estimate</a>
-                <!-- <a href=""></a> -->
                 <input type="text"id="the_estimate" disabled placeholder="">
               </ul>
-             
             </div>
+
             <div class="col">
             <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="description" placeholder="Extra deatil/ Description">
@@ -195,14 +137,20 @@
               <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="house_location" placeholder="location"required>
               </div>
+              <div class="input-group mb-3">
+                <input type="file" name="image" required>
+              </div>
               <button type="submit" class="btn border bg-transparent submit" name="upload">Upload</button>
-
-              </form>
             </div>
           </div>
-      </div>
-    </div>
+        </div>
+      </form>
   </main>
+
+<!-- chatbot -->
+<input type="text" name="chat" placeholder="Enter message">
+    <button class="send">Send</button>
+    <button class="mic">mic</button>
 
 
  

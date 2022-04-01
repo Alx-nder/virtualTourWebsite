@@ -46,9 +46,9 @@ $.ajax({
         listing_price.innerHTML=resp[4];
 
         var card_sub_body = document.createElement("p");   
-        card_sub_body.setAttribute("class", "card-text");
+        card_sub_body.setAttribute("class", "card-text fs-6");
         card_body.appendChild(card_sub_body);
-        card_sub_body.innerHTML =resp[3];
+        card_sub_body.innerHTML ="Total acres of land: "+resp[12]+"<br>"+"Total acres of living space: "+resp[7]+"<br>"+"No. of Bedrooms: "+resp[9]+"<br>"+"No. of Bathrooms: "+resp[8]+"<br>"+"Built/renovated: "+resp[11]+" years ago";
         
         var card_footer = document.createElement("div");   
         card_footer.setAttribute("class", "card-footer");

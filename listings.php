@@ -60,8 +60,8 @@ if(!$con)
       <div class="col-5 pt-5">
         <div class="text-dark pt-5 px-4 ">
         <!-- fs-1 -->
-          <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1> 
-        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione temporibus tenetur quod blanditiis optio natus quibus</p>
+          <h1>Like it.   Tour it.   Secure it. </h1> 
+        <p> Welcome to virttour. All listings posted here are currently for sale. Here you can even enter a virtual tour. Scroll down to get started.</p>
         </div>
       </div>
 
