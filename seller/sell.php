@@ -15,38 +15,6 @@
     if($_SESSION['email']=='guest'){
       header('location:/virtualTourWebsite/login.php');
     }
-
-    
-// # server name
-// $sName = "localhost";
-// # user name
-// $uName = "root";
-// # password
-// $pass = "";
-
-// # database name
-// $db_name = "virttour";
-
-//     try {
-//       $conn = new PDO("mysql:host=$sName;dbname=$db_name", 
-//                       $uName, $pass);
-  
-//       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  
-//   }catch(PDOException $e){
-//     echo "Connection failed : ". $e->getMessage();
-//   }
-
-
-//     # fetching images
-// 	$sql  = "SELECT img_name FROM
-//   images ORDER BY id DESC";
-
-// $stmt = $conn->prepare($sql);
-// $stmt->execute();
-
-// $images = $stmt->fetchAll();
-
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +58,7 @@
     <main>
     <form  action="upload.php" method="POST" enctype="multipart/form-data">
 
-    <div class="container py-2 px-4" style="background-color: #ffffff57!important;">
+    <div class="container py-4 mt-5 px-4" style="background-color: #ffffff57!important;">
         <div class=" rounded my-3 row align-self-center">    
           <div class="card col bg-transparent border-0">
            <div>
@@ -98,7 +66,10 @@
            </div> 
             <!-- pic from https://pixabay.com/vectors/instagram-insta-user-instagram-icon-3814049/ -->
             <div class="card-body">
-                <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
+                <h5 class="card-title" id="user_id" >Hi <?php echo $_SESSION['email'];?>!</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-title" id="user_id" >Use this page to upload a listing you plan to sell. You can also use the estimate button to see what the prices are like based on the details you provide.</p>
             </div>
           </div>
           
@@ -113,7 +84,15 @@
                 <input type="text" class="form-control house_details" name="bedrooms" placeholder="no. of bedrooms"required>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control house_details" name="building_class" placeholder="building_class"required>
+                <select class="form-select" name="building_class" aria-label="Default select example" required>
+                  <option selected>Building class</option>
+                  <option value="1">board house flat</option>
+                  <option value="3">concrete flat</option>
+                  <option value="5">concrete complex (multi-story)</option>
+                  <option value="7">villa-type</option>
+                  <option value="9">mansion</option>
+                </select>  
+              <!-- <input type="text" class="form-control house_details" name="building_class" placeholder="building_class"required> -->
               </div>
               <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="land" placeholder="acres of land"required>
@@ -123,7 +102,7 @@
               </div>
               <ul class="list-group list-group-horizontal">
                 <a class="btn border bg-transparent submit">Estimate</a>
-                <input type="text"id="the_estimate" disabled placeholder="">
+                <input type="text"  id="the_estimate" disabled placeholder="">
               </ul>
             </div>
 
@@ -137,8 +116,11 @@
               <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="house_location" placeholder="location"required>
               </div>
+              <div class="input-group pt-3 mb-2">
+                 <label >Upload pictute of the listing</label>
+              </div>
               <div class="input-group mb-3">
-                <input type="file" name="image" required>
+                <input type="file" class="form-control house_details" name="image" required>
               </div>
               <button type="submit" class="btn border bg-transparent submit" name="upload">Upload</button>
             </div>
@@ -165,9 +147,6 @@
     <img id="chat_trigger" class="float-end" srcset="http://localhost/virtualTourWebsite/chatbot.png 9x" style="cursor: pointer;" alt="">
   </div>
     
-
-
- 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script  type = "text/javascript" src="sell.js"></script>
   <script src="http://localhost/virtualTourWebsite/chatbot.js"></script>

@@ -61,7 +61,7 @@ if(!$con)
         <div class="text-dark pt-5 px-4 ">
         <!-- fs-1 -->
           <h1>Like it.   Tour it.   Secure it. </h1> 
-        <p> Welcome to virttour. All listings posted here are currently for sale. Here you can even enter a virtual tour. Scroll down to get started.</p>
+        <p class="mt-4"> Welcome to virttour. All listings posted here are currently for sale. Here you can even enter a virtual tour. Scroll down to get started.</p>
         </div>
       </div>
 
