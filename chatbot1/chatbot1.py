@@ -13,19 +13,6 @@ from chatterbot.trainers import ListTrainer
 # insantiating the chatbot
 chatbot2 = ChatBot("DButler2", read_only=True)
 
-# , logic_adapters=[
-#         {
-#             'import_path': 'chatterbot.logic.SpecificResponseAdapter',
-#             'input_text': 'agent',
-#             'output_text': 'Ok, here is a link: http://chatterbot.rtfd.org'
-#         },
-#         {
-#             'import_path': 'cb_logic_adapter.agentlogicadapter'
-#         }],
-#         read_only=True)
-
-# imported zoom link - a function call
-# zoom_meeting_link=makemeeting.main()
 conversation = [
     "Hello",
     "Hi there!",

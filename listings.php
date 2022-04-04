@@ -23,7 +23,6 @@ if(!$con)
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="listings.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" media="all">
-    <!-- <link href='https://css.gg/spinner-alt.css' rel='stylesheet'> -->
     <link href="https://css.gg/css?=|dollar|pin|spinner" rel="stylesheet">
 
   </head> 
@@ -86,7 +85,6 @@ if(!$con)
         <ul class="list-group list-group-horizontal">  
         <input id="user_chat" type="text" name="chat" class="form-control border-0 bg-light" placeholder="Enter message">
           <button class="send  btn-primary">Send</button>
-          <!-- <button class="mic btn-danger">mic</button> -->
           </ul>
         </div>
     </div>
@@ -110,7 +108,6 @@ if(!$con)
     <i id="loader_image" class="gg-spinner"></i>
     <br>
     <i id="page_top" class="fas fa-plus fa-2x" style="display: none;"></i>
-
   </div>
   
   <!-- The Modal -->

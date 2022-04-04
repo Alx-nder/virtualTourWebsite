@@ -25,7 +25,6 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="http://localhost/virtualTourWebsite/listings.css"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" media="all">
   </head>
 <body style="background-color: #7f9497!important;" class="container-fluid text-dark">
@@ -92,8 +91,8 @@
                   <option value="7">villa-type</option>
                   <option value="9">mansion</option>
                 </select>  
-              <!-- <input type="text" class="form-control house_details" name="building_class" placeholder="building_class"required> -->
               </div>
+
               <div class="input-group mb-3">
                 <input type="text" class="form-control house_details" name="land" placeholder="acres of land"required>
               </div>
@@ -130,9 +129,8 @@
   </main>
 
 <!-- chatbot -->
-  <!-- chatbot -->
   <div class="px-4 my-3" style="position: fixed; right: 0; bottom: 0; z-index: 1030; ">
-  <div class="rounded " style="background-color:#ffffffd0">
+    <div class="rounded " style="background-color:#ffffffd0">
       <div class="rounded py-3" id="response_area" style="background-color:#ffffffd0">
         <p class="px-2 text-start"  style="background-color:#ffffffd0" >Hi! <?php echo $_SESSION['email'];?></p>
       </div>
@@ -140,7 +138,6 @@
         <ul class="list-group list-group-horizontal">  
         <input id="user_chat" type="text" name="chat" class="form-control border-0 bg-light" placeholder="Enter message">
           <button class="send  btn-primary">Send</button>
-          <!-- <button class="mic btn-danger">mic</button> -->
           </ul>
         </div>
     </div>

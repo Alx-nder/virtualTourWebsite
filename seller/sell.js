@@ -16,8 +16,7 @@ $.ajax({
             var building_class=$("[name=building_class]").val();
             var bathrooms=$("[name=bathrooms]").val();
             var the_estimate=((living_space*data[0])+(bathrooms*data[1])+(bedrooms*data[2])+(building_class*data[3])+(land*data[4])+(age*data[5])); 
-            $('#the_estimate').attr('placeholder',the_estimate);
-            
+            $('#the_estimate').attr('placeholder',the_estimate);    
     }
 })
 })

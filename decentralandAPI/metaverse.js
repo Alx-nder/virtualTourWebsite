@@ -81,14 +81,6 @@ a_recommendation();
             window.open(this.alt);
         }
     }}
-    
-    // top of page function
-var nexrec= document.getElementById("page_top");
-nexrec.addEventListener("click", function(){
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-})
-
 
 // infinite scroll
 $(window).scroll(function () {

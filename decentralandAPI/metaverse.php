@@ -24,10 +24,8 @@
     <link rel="stylesheet" href="http://localhost/virtualTourWebsite/listings.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" media="all">
   </head>
-<!-- <body style="background-color: #10051b!important; " class="container-fluid min-vh-100 text-light"> -->
 <body id="metabody">
   <!-- navbar -->
-    <!-- <div  style="background-image: url('http://localhost/virtualTourWebsite/milad-fakurian-wNsHBf_bTBo-unsplash.jpg'); background-repeat: no-repeat; background-attachment: fixed;background-size: cover;"> -->
       <nav class="navbar pt-3 navbar-expand-lg navbar-dark ">
       <div class="container-fluid">
         <a href="http://localhost/virtualTourWebsite/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/logo.png 3x" alt=""></a>
@@ -43,7 +41,7 @@
               <a class="nav-link" href="http://localhost/virtualTourWebsite/seller/sell.php">Sell</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"  >METAverse</a>
+              <a class="nav-link active" aria-current="page" href="#" >METAverse</a>
             </li>
             <li>
               <a class="nav-link" id="logout" href="logout.php">Logout</a>
@@ -53,11 +51,10 @@
       </div>
     </nav>
 <!-- isolated view of landing page's background image -->
-    <div class=" row min-vh-100 ">
-      <div class="col-3 ">
+    <div class="row min-vh-100 ">
+      <div class="col-3">
         <div class="text-light container position-absolute top-50 start-0 translate-middle-y">
-        <!-- fs-1 -->
-          <h1 class="">
+          <h1>
              Want Land in the METAverse?
           </h1> 
         </div>
@@ -77,7 +74,6 @@
         <ul class="list-group list-group-horizontal">  
         <input id="user_chat" type="text" name="chat" class="form-control border-0 bg-light" placeholder="Enter message">
           <button class="send  btn-primary">Send</button>
-          <!-- <button class="mic btn-danger">mic</button> -->
           </ul>
         </div>
     </div>
@@ -93,17 +89,6 @@
     </div>
   </main>
 
-   <!-- loader image -->
-  <!-- <div id="loader_image" style="display: block">
-    <img src="" alt="loading..." >
-  </div> -->
-  
-
-  <!-- scroll to top button -->
-  <div class="text-center py-3">
-    <i id="page_top" class="fas fa-plus fa-2x"></i>
-  </div>
-  
   
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

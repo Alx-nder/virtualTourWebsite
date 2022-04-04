@@ -63,7 +63,7 @@ owner=nft["owner"]["id"]
 
 pic_url=f"{api_base_url}/parcels/{nft_x}/{nft_y}/map.png"
 nft_tour=f"https://play.decentraland.org/?position={nft_x},{nft_y}"
-nft_price=int(a_nft["activeOrder"]["price"])/1000000000000000000
+nft_price=int(a_nft["activeOrder"]["price"])/1000000000000000000000
 nft_status=a_nft["activeOrder"]["status"]
 
 final_json=[ nft_x,nft_y,nft_id,owner, pic_url,nft_tour,nft_price,nft_status]

@@ -1,7 +1,6 @@
 const cb_uri = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py";
 const mic_url="http://localhost/virtualtourwebsite/chatbot1/speech_module.py";
 
-
 var chat_controls=document.getElementById("chat_controls");
 chat_controls.style.display="none";
 
@@ -42,10 +41,8 @@ $(".send").click(function(){
             data: {message_py:message},
             dataType: "text",
             success: function(data){
-                // alert(data);
                 response_area=document.getElementById("response_area");
-                // response_area.style.backgroundColor="#ffffffd0";
-
+                
                 // user
                 var user = document.createElement("p");   
                 user.setAttribute("class", "text-end px-3");
