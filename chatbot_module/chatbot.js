@@ -1,5 +1,5 @@
-const cb_uri = "http://localhost/virtualtourwebsite/chatbot1/chatbot1.py";
-const mic_url="http://localhost/virtualtourwebsite/chatbot1/speech_module.py";
+const cb_uri = "http://localhost/virtualtourwebsite/chatbot_module/chatbot1.py";
+const mic_url="http://localhost/virtualtourwebsite/chatbot_module/speech_module.py";
 
 var chat_controls=document.getElementById("chat_controls");
 chat_controls.style.display="none";

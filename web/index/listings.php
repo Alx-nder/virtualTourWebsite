@@ -31,7 +31,7 @@ if(!$con)
     <!-- navbar -->
     <nav class="navbar pt-3 navbar-expand-lg navbar-light ">
       <div class="container-fluid">
-        <a href="http://localhost/virtualTourWebsite/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/logo.png 3x" alt=""></a>
+        <a href="http://localhost/virtualTourWebsite/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/web/images/logo.png 3x" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,13 +41,13 @@ if(!$con)
               <a class="nav-link active" aria-current="page" href="#">Buy</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="seller\sell.php">Sell</a>
+              <a class="nav-link" href="http://localhost/virtualTourWebsite/web/seller\sell.php">Sell</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="decentralandAPI\metaverse.php">METAverse</a>
+              <a class="nav-link" href="http://localhost/virtualTourWebsite/web\metaverse\metaverse.php">METAverse</a>
             </li>
             <li>
-              <a class="nav-link" id="logout" href="logout.php">Logout</a>
+              <a class="nav-link" id="logout" href="http://localhost/virtualTourWebsite/validations/logout.php">Logout</a>
             </li>
           </ul> 
      
@@ -66,7 +66,7 @@ if(!$con)
 
         <div class="col-4">
             <video autoplay muted  loop poster="https://images.unsplash.com/photo-1488707872600-5507977fe355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
-            <source type="video/mp4" src="housetourvideo.mp4">
+            <source type="video/mp4" src="http://localhost/virtualTourWebsite/web/images/housetourvideo.mp4">
             <!-- pic credit https://images.unsplash.com/photo-1488707872600-5507977fe355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80 -->
             <!-- vid credit https://www.youtube.com/watch?v=An0SK0n7Xeo -->
             </video>
@@ -88,20 +88,15 @@ if(!$con)
           </ul>
         </div>
     </div>
-      <img id="chat_trigger" class="float-end" srcset="chatbot.png 9x" style="cursor: pointer;" alt="">
+      <img id="chat_trigger" class="float-end" srcset="http://localhost/virtualTourWebsite/web\images\chatbot.png 9x" style="cursor: pointer;" alt="">
   </div>
-    
 
-  
   <!-- main section -->
   <main class="mt-1">
     <div id="for_rec" class="container">
       <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec"></div>
     </div>
   </main>
-
-  
-  
 
   <!-- scroll to top button and loading-->
   <div class="text-center py-3">
@@ -117,8 +112,8 @@ if(!$con)
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script  type = "text/javascript" src="reccomend.js"></script>
-  <script src="chatbot.js"></script>
+  <script  type = "text/javascript" src="recommend.js"></script>
+  <script src="http://localhost/virtualTourWebsite/chatbot_module/chatbot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"crossorigin="anonymous"></script>
 
 </body>

@@ -11,7 +11,7 @@ username_tag.style.display="none";
 // function that send a recommendation to html
 function a_recommendation(){
 $.ajax({
-    url: "http://localhost/recommendAlgo/epsilon1.py",
+    url: "http://localhost/recommendAlgo/epsilon.py",
     method: "POST",
     data: {message_py:username},
     dataType: "text",

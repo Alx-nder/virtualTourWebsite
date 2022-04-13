@@ -19,10 +19,10 @@ $num = mysqli_num_rows($result);
 
 if($num==1){
     $_SESSION['email']=$email;
-    header('location:/virtualTourWebsite/listings.php');
+    header('location:/virtualTourWebsite/web/index/listings.php');
 }
 else{
-    header('location:/virtualTourWebsite/login.php');
+    header('location:/virtualTourWebsite/validations/login.php');
 }
 
 ?>

@@ -10,10 +10,10 @@
 
     if(!isset($_SESSION['email']))
     {
-        header('location:/virtualTourWebsite/login.php');
+        header('location:/virtualTourWebsite/validations/login.php');
     } 
     if($_SESSION['email']=='guest'){
-      header('location:/virtualTourWebsite/login.php');
+      header('location:/virtualTourWebsite/validations/login.php');
     }
 ?>
 
@@ -31,7 +31,7 @@
     <!-- navbar -->
   <nav class="navbar pt-3 navbar-expand-lg navbar-light ">
     <div class="container-fluid">
-    <a href="http://localhost/virtualTourWebsite/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/logo.png 3x" alt=""></a>
+    <a href="http://localhost/virtualTourWebsite/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/web/images/logo.png 3x" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,10 +44,10 @@
             <a class="nav-link active" aria-current="page" href="#">Sell</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link "  href="http://localhost/virtualTourWebsite/decentralandAPI/metaverse.php"  >METAverse</a>
+            <a class="nav-link "  href="http://localhost/virtualTourWebsite/web/metaverse/metaverse.php"  >METAverse</a>
           </li>
           <li>
-            <a class="nav-link" id="logout" href="http://localhost/virtualTourWebsite/logout.php">Logout</a>
+            <a class="nav-link" id="logout" href="http://localhost/virtualTourWebsite/validations/logout.php">Logout</a>
           </li>
         </ul>      
       </div>
@@ -141,12 +141,12 @@
           </ul>
         </div>
     </div>
-    <img id="chat_trigger" class="float-end" srcset="http://localhost/virtualTourWebsite/chatbot.png 9x" style="cursor: pointer;" alt="">
+    <img id="chat_trigger" class="float-end" srcset="http://localhost/virtualTourWebsite/web/images/chatbot.png 9x" style="cursor: pointer;" alt="">
   </div>
     
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script  type = "text/javascript" src="sell.js"></script>
-  <script src="http://localhost/virtualTourWebsite/chatbot.js"></script>
+  <script src="http://localhost/virtualTourWebsite/chatbot_module/chatbot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"crossorigin="anonymous"></script>
 
 </body>

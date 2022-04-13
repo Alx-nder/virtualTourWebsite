@@ -8,7 +8,7 @@ var username_tag=document.getElementById("user_id");
 username_tag.style.display="none";
 
 
-var nft_uri="http://localhost/virtualTourWebsite/decentralandAPI/decentralandapi.py";
+var nft_uri="http://localhost/virtualTourWebsite/apis/decentralandapi.py";
 
 // creating a recommend card
 function a_recommendation(){

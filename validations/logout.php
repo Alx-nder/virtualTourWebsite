@@ -3,6 +3,6 @@ session_start();
 
 session_destroy();
 
-header('location:/virtualTourWebsite/listings.php');
+header('location:/virtualTourWebsite/web/index/listings.php');
 
 ?>
