@@ -43,7 +43,7 @@ $.ajax({
         var listing_price = document.createElement("h5");   
         listing_price.setAttribute("class", "card-title");
         card_body.appendChild(listing_price);
-        listing_price.innerHTML=resp[4];
+        listing_price.innerHTML= resp[4];
 
         var card_sub_body = document.createElement("p");   
         card_sub_body.setAttribute("class", "card-text fs-6");
