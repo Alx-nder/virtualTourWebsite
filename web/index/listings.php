@@ -80,24 +80,27 @@ if(!$con)
   <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
             
   <div id="search_results" style="display:none">
-    <h3 class="text-center">Search results</h3>
-    <?php
-      echo"        <div class='card h-100 bg-light'><img src='https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=871&amp;q=80' class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:auto; object-fit:contain;' alt='http://localhost/krpano-1.20.11/viewer/krpano.html?xml=examples/interactive-area/interactive-area.xml'><div class='card-body'><h5 class='card-title'>lucea</h5><h5 class='card-title'>997000</h5><p class='card-text fs-6'>Total acres of land: 0.7<br>Total acres of living space: 0.5<br>No. of Bedrooms: 2<br>No. of Bathrooms: 1.5<br>Built/renovated: 8 years ago</p></div><div class='card-footer'><small class='text-muted'>Contact: info.virttour@gmail.com</small></div></div>";
-    if (isset($_GET['search_field'])){
-      $house_location=$_GET["search_field"];
-      $sql = "SELECT * FROM listings where house_location='$house_location'";
-      $result = $result = mysqli_query($con, $sql);
+    <h3 class="text-center pb-3">Search results <br> Houses in <?php echo $_SESSION['email'];?>/h3>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
 
-      // Associative array
-      
-      while($row = $result -> fetch_assoc()){
-        printf ("%s (%s)\n", $row["price"], $row["bedrooms"]);
-      
+      <?php
+            if (isset($_GET['search_field'])){
+        $house_location=$_GET["search_field"];
+        $sql = "SELECT * FROM listings where house_location='$house_location'";
+        $result = $result = mysqli_query($con, $sql);
+
+        // Associative array
+        
+        while($row = $result -> fetch_assoc()){
+          echo"      <div class='col'>  <div class='card h-100 bg-light'><img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:auto; object-fit:contain;' alt='http://localhost/krpano-1.20.11/viewer/krpano.html?xml=examples/interactive-area/interactive-area.xml'><div class='card-body'><h5 class='card-title'>",$row['house_location'],"</h5><h5 class='card-title'>",$row['price'],"</h5><p class='card-text fs-6'>Total acres of land: ",$row['land'],"<br>Total acres of living space: ",$row['living_space'],"<br>No. of Bedrooms: ",$row['bedrooms'],"<br>No. of Bathrooms: ",$row['bathrooms'],"<br>Built/renovated: ",$row['age']," years ago</p></div><div class='card-footer'><small class='text-muted'>Contact: ",$row['posted_by'],"</small></div></div></div>";
+        }
+        // Free result set
+        $result -> free_result();
       }
-      // Free result set
-      $result -> free_result();
-    }
-    ?>
+      ?>
+      </div>
+    </div>  
   </div>
   <!-- chatbot -->
   <div class="px-4 my-3" style="position: fixed; right: 0; bottom: 0; z-index: 1030; ">
