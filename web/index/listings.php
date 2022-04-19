@@ -23,7 +23,7 @@ if(!$con)
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="listings.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" media="all">
-    <link href="https://css.gg/css?=|dollar|pin|spinner" rel="stylesheet">
+    <link href="https://css.gg/css?=|dollar|pin|spinner|search" rel="stylesheet">
 
   </head> 
 
@@ -31,7 +31,7 @@ if(!$con)
     <!-- navbar -->
     <nav class="navbar pt-3 navbar-expand-lg navbar-light ">
       <div class="container-fluid">
-        <a href="http://localhost/virtualTourWebsite/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/web/images/logo.png 3x" alt=""></a>
+        <a href="http://localhost/virtualTourWebsite/web/index/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/web/images/logo.png 3x" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -60,7 +60,11 @@ if(!$con)
         <div class="text-dark pt-5 px-4 ">
         <!-- fs-1 -->
           <h1>Like it.   Tour it.   Secure it. </h1> 
-        <p class="mt-4"> Welcome to virttour. All listings posted here are currently for sale. Here you can even enter a virtual tour. Scroll down to get started.</p>
+          <p class="mt-4 me-4"> Welcome to virttour. All listings posted here are currently for sale. Here you can even enter a virtual tour. Scroll down or search to get started.</p>
+          <form action="" method="get" class="list-group pt-3 me-5 rounded-0 list-group-horizontal border-bottom">
+            <i class="gg-search mx-1 mt-2" type="submit" id="search_submit"></i>
+            <input type="text" name="search_field" class="form-control border-0  bg-transparent" placeholder="Search by location" id="search">             
+          </form>
         </div>
       </div>
 
@@ -74,7 +78,27 @@ if(!$con)
     </div>
 
   <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
-                
+            
+  <div id="search_results" style="display:none">
+    <h3 class="text-center">Search results</h3>
+    <?php
+      echo"        <div class='card h-100 bg-light'><img src='https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=871&amp;q=80' class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:auto; object-fit:contain;' alt='http://localhost/krpano-1.20.11/viewer/krpano.html?xml=examples/interactive-area/interactive-area.xml'><div class='card-body'><h5 class='card-title'>lucea</h5><h5 class='card-title'>997000</h5><p class='card-text fs-6'>Total acres of land: 0.7<br>Total acres of living space: 0.5<br>No. of Bedrooms: 2<br>No. of Bathrooms: 1.5<br>Built/renovated: 8 years ago</p></div><div class='card-footer'><small class='text-muted'>Contact: info.virttour@gmail.com</small></div></div>";
+    if (isset($_GET['search_field'])){
+      $house_location=$_GET["search_field"];
+      $sql = "SELECT * FROM listings where house_location='$house_location'";
+      $result = $result = mysqli_query($con, $sql);
+
+      // Associative array
+      
+      while($row = $result -> fetch_assoc()){
+        printf ("%s (%s)\n", $row["price"], $row["bedrooms"]);
+      
+      }
+      // Free result set
+      $result -> free_result();
+    }
+    ?>
+  </div>
   <!-- chatbot -->
   <div class="px-4 my-3" style="position: fixed; right: 0; bottom: 0; z-index: 1030; ">
   <div class="rounded " style="background-color:#ffffffd0">
