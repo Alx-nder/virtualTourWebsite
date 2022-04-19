@@ -39,7 +39,7 @@ if(!$con)
         <div class="collapse justify-content-center navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav  mb-2 justify-content-center mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Buy</a>
+              <a class="nav-link active" aria-current="page" href="http://localhost/virtualTourWebsite/web/index/listings.php">Buy</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/virtualTourWebsite/web/seller\sell.php">Sell</a>
@@ -62,12 +62,10 @@ if(!$con)
         <!-- fs-1 -->
           <h1>Like it.   Tour it.   Secure it. </h1> 
           <p class="mt-4 me-4"> Welcome to virttour. All listings posted here are currently for sale. Here you can even enter a virtual tour. Scroll down or search to get started.</p>
-          <form action="" method="get" class="list-group pt-3 me-5 rounded-0 list-group-horizontal border-bottom">
-            <i class="gg-search mx-1 mt-2" type="submit" id="search_submit"></i>
+          <form action="listings.php" method="get" class="list-group pt-3 me-5 rounded-0 list-group-horizontal border-bottom" >
+            <i class="gg-search mx-1 mt-2" type="submit"id="search_submit" ></i>
             <input type="text" name="search_field" class="form-control border-0  bg-transparent" placeholder="Search by location" id="search">             
           </form>
-          <i class="fa-solid fa-mountain-sun"></i>
-          <i class="bi bi-cash-coin"></i>
         </div>
       </div>
 
@@ -89,13 +87,23 @@ if(!$con)
       <hr class=" my-4 ">
     </div>
     <div class="container">
-    <h3 class="pb-3">Search results</h3>
+      <div class="list-group-horizontal list-group position-relative">
+      <h3 class="pb-3">Search results</h3>
+    <span class=" position-absolute end-0" role="button" id="search_close" style="  
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    ">&times;</span>
+
+      </div>
+    
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
       <?php
             if (isset($_GET['search_field'])){
         $house_location=$_GET["search_field"];
-        $sql = "SELECT * FROM listings where house_location='$house_location'";
+        $sql = "SELECT * FROM listings where house_location='$house_location' ORDER BY price asc";
         $result = $result = mysqli_query($con, $sql);
 
         // Associative array
