@@ -32,7 +32,7 @@ if (isset($_POST['upload'])){
 	if(in_array($image_extension,$allowed_extensions)){
 		if($error===0){
 			// size in kbs
-			if($size<100000000){
+			if($size<1000){
 				$new_img_name= uniqid('',true).'.'.$image_extension;
 				$file_destination='uploads/'.$new_img_name;
 				move_uploaded_file($tmp_name,$file_destination);
@@ -41,13 +41,14 @@ if (isset($_POST['upload'])){
 				mysqli_query($conn,$sql);
 				header("Location: sell.php?uploaded");
 			}else{
-				echo "image too large";
+				header("Location: sell.php?image_too_large");
 			}
 		}else{
-			echo "Error. Please try again";
+			header("Location: sell.php?error_try_again");
+
 		}
 	}else{
-		echo 'wrong file type';
+		header("Location: sell.php?wrong_file_type");
 	}
 }
 ?>

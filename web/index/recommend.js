@@ -134,7 +134,6 @@ $(document).ready(function(){
     });    
 });
 
-
 // search function
 $('#search_submit').click(function(){
     $('#search_results').css('display', 'block');

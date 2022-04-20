@@ -51,7 +51,6 @@ if(!$con)
               <a class="nav-link" id="logout" href="http://localhost/virtualTourWebsite/validations/logout.php">Logout</a>
             </li>
           </ul> 
-     
         </div>
       </div>
     </nav>
@@ -101,7 +100,7 @@ if(!$con)
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
       <?php
-            if (isset($_GET['search_field'])){
+        if (isset($_GET['search_field'])){
         $house_location=$_GET["search_field"];
         $sql = "SELECT * FROM listings where house_location='$house_location' ORDER BY price asc";
         $result = $result = mysqli_query($con, $sql);
