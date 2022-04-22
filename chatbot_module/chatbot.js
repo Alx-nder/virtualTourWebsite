@@ -33,6 +33,7 @@ $(".send").click(function(){
     var message = $('[name=chat]').val();
     if (message=="")
     {
+        // we cannot send empty message to the chatbot
     }
     else{
         $.ajax({

@@ -85,7 +85,7 @@ function update_preference(image_tag){
         method: "POST",
         data: {message_py:request_body},
         dataType: "text",
-        success: function(resp){ 
+        success: function(){ 
             // console.log
         } 
     })

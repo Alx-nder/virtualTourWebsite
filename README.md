@@ -4,7 +4,7 @@ This is a complete web app to demonstrate the automated recommendations.
 This is a virtual tour app. Users can post real-estate listings so others can take a online tour of the space. 
 
 FOLDERS:
-
+        
     API's: 
     This folder contains scripts that implement a  decentraland API and a Zoom API. 
         1. The decentraland API is used to get meta-data on NFT parcels for sale and also a link to enter the MetaVerse at that parcel.

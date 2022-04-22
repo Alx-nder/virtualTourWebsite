@@ -20,11 +20,6 @@ def main():
 	#rounded off unix epoch time
 	expiringfrmt = round(expiring.timestamp())
 
-
-	headers={ 
-		"alg": "HS256",
-		"typ": "JWT"
-		}
 	payload ={
 		"iss": API_KEY,
 		"exp": expiringfrmt
@@ -38,7 +33,7 @@ def main():
 	# endpoint provided by zoom api
 	url='https://api.zoom.us/v2/users/{}/meetings'.format(email)
 	header = {"authorization":"Bearer {}".format(encodedjwt)}
-	date = datetime.datetime(2022,1,26,23,30).strftime("%Y-%M-%dT%H:%M:%SZ")
+	date = datetime.datetime(2022,4,20,23,30).strftime("%Y-%M-%dT%H:%M:%SZ")
 
 	# meeting details
 	obj={"topic":"Live agent","starttime":date, "duration":30, "password":"12345"}
