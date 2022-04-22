@@ -8,7 +8,7 @@ sys.path.append("C:\\Users\\tyree\\AppData\\Roaming\\Python\\Python310\\site-pac
 
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
-
+import speech_module
 
 # insantiating the chatbot
 chatbot2 = ChatBot("DButler2", read_only=True)
@@ -27,9 +27,12 @@ conversation = [
 trainer = ListTrainer(chatbot2, show_training_progress=False)
 trainer.train(conversation)
 
-form=cgi.FieldStorage()
-user_speech=form.getvalue("message_py")
-
-bot_response = chatbot2.get_response(user_speech)
+# use either the voice recognition or the chatbot text field
+if not cgi.FieldStorage() :
+    bot_response = chatbot2.get_response(speech_module.main())
+else:
+    form=cgi.FieldStorage()
+    user_speech=form.getvalue("message_py") 
+    bot_response = chatbot2.get_response(user_speech)
 
 print(str(bot_response))

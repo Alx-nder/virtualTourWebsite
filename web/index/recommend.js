@@ -91,8 +91,6 @@ function update_preference(image_tag){
     })
 }      
 
-
-
  // // Get the modal
  function enter_tour(){
     var modal = document.getElementById('myModal');
@@ -104,6 +102,7 @@ function update_preference(image_tag){
             modal_embed.type="text/html";
             modal_embed.src=this.alt;
             modal_embed.height="100%";
+            // update the preference while viewing
             update_preference(this);
         }
     }
@@ -115,12 +114,6 @@ function update_preference(image_tag){
     }
    }
 
-   //to jump to top
-var nexrec= document.getElementById("page_top");
-nexrec.addEventListener("click", function(){
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-})
 // infinite scroll
 $(document).ready(function(){
     $(window).scroll(function () {

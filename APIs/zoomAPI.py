@@ -45,6 +45,7 @@ def main():
 	print(file)
 	join_url = file["join_url"]
 	
+	# BUGfIX - anchor tag makes the link clickable 
 	return f'\n here is your zoom meeting link <a href= {join_url} target=\"_blank\">{join_url}</a>\n'
 
 # script to prevent the program from running when importing 

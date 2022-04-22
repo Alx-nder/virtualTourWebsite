@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-//to destroy guest session
+//BUG-FIX - to destroy guest session
 session_destroy();
 
 session_start();
