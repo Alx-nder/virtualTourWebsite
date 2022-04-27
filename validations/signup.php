@@ -10,12 +10,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_select_db($con, 'virttour');
 
 	
-	$username = $_POST["username"];
+	$email = $_POST["email"];
 	$password = $_POST["password"];
 	$cpassword = $_POST["cpassword"];
 			
 	
-	$sql = "Select * from users where username='$username'";
+	$sql = "Select * from users where email='$email'";
 	
 	$result = mysqli_query($con, $sql);
 	
@@ -26,14 +26,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	// or not in our Database
 	if($num == 0) {
 		if(($password == $cpassword) && $exists===false) {
-	
-			$hash = password_hash($password,
-								PASSWORD_DEFAULT);
-				
+		
 			// Password Hashing is used here.
-			$sql = "INSERT INTO `users` ( `username`,
-				`password`, `date`) VALUES ('$username',
-				'$hash', current_timestamp())";
+			$sql = "INSERT INTO `users` ( `email`,`password`) VALUES ('$email','$password')";
 	
 			$result = mysqli_query($con, $sql);
 	
@@ -127,28 +122,19 @@ if($num>0)
 <div class="container my-4 ">
 	
 	<h1 class="text-center">Signup Here</h1>
-	<form action="signup.php" method="post">
+	<form action="signup.php"class="login_tag text-center" method="post">
 	
 		<div class="form-group">
-			<label for="username">Username</label>
-		<input type="text" class="form-control" id="username"
-			name="username" aria-describedby="emailHelp">	
+
+		<input type="text" class="form-control mb-3 border-0 border-bottom rounded-0 bg-transparent" id="username" name="email" aria-describedby="emailHelp" placeholder="Email" required>	
+		</div>
+	
+		<div class="form-group ">
+			<input type="password" class="form-control mb-3 border-bottom rounded-0 border-0 bg-transparent" id="password" name="password" placeholder="Password" required>
 		</div>
 	
 		<div class="form-group">
-			<label for="password">Password</label>
-			<input type="password" class="form-control"
-			id="password" name="password">
-		</div>
-	
-		<div class="form-group">
-			<label for="cpassword">Confirm Password</label>
-			<input type="password" class="form-control"
-				id="cpassword" name="cpassword">
-	
-			<small id="emailHelp" class="form-text text-muted">
-			Make sure to type the same password
-			</small>
+			<input type="password" class="form-control mb-3 border-0 border-bottom rounded-0 bg-transparent" id="cpassword" name="cpassword" placeholder="Confirm Password" required>
 		</div>	
 	
 		<button type="submit" class="btn btn-primary">
