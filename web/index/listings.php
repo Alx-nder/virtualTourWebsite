@@ -51,7 +51,7 @@ if(!$con)
               <a class="nav-link" id="logout" href="http://localhost/virtualTourWebsite/validations/logout.php">Logout</a>
             </li>
             <li>
-              <a class="nav-link" id="login" style="display: none;" href="http://localhost/virtualTourWebsite/validations/login.php">Login/Sign-Up</a>        
+              <a class="nav-link" id="login" style="display: none;" href="http://localhost/virtualTourWebsite/validations/login.php">Login</a>        
             </li>
           </ul> 
         </div>    
@@ -67,7 +67,7 @@ if(!$con)
           <!-- search function -->
           <form action="listings.php" method="get" class="list-group pt-3 me-5 rounded-0 list-group-horizontal border-bottom" >
             <i class="gg-search mx-1 mt-2" type="submit"id="search_submit" ></i>
-            <input type="text" name="search_field" class="form-control border-0  bg-transparent" placeholder="Search by location" id="search">             
+            <input type="text" name="search_field" class="form-control border-0  bg-transparent" placeholder="Search listings by location" id="search">             
           </form>
         </div>
       </div>

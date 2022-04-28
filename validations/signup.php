@@ -108,6 +108,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container my-4 ">
 	
 	<form action="signup.php"class="login_tag rounded text-center" method="post">
+		<a href="http://localhost/virtualTourWebsite/web/index/listings.php"><img class="pb-1" srcset="http://localhost/virtualTourWebsite/web/images/logo.png 3x" alt=""></a>
+
 		<h2 class="pb-2">Signup</h2>
 	
 		<div class="border-bottom mb-3">

@@ -21,22 +21,21 @@
     <!-- vid credit https://assets.mixkit.co/videos/preview/mixkit-minimalist-room-with-gray-sofa-3110-large.mp4 -->
     </video>
 
-
-        <form action="validation.php" class="text-center rounded login_tag" method="post">
-          <h2 class="pb-2">Log In</h2>
-	          <div class="mb-3 border-bottom">
-            <input type="email" name="email" class="form-control border-0 bg-transparent" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-          </div>
+      <form action="validation.php" class="text-center rounded login_tag" method="post">
+      <a href="http://localhost/virtualTourWebsite/web/index/listings.php"><img class="pb-1" srcset="http://localhost/virtualTourWebsite/web/images/logo.png 3x" alt=""></a>
+        <h2 class="pb-2">Log In</h2>
           <div class="mb-3 border-bottom">
-            <input type="password" name="password" class="form-control border-0 bg-transparent" placeholder="Password" id="exampleInputPassword1" required>
-          </div>
-
-          <button type="submit" class="btn btn-primary mb-3">Log In</button>
-      
-          <div>
-            <a class="text-dark" href="signup.php">Or Sign Up here</a>  
-          </div>   
-        </form>   
+          <input type="email" name="email" class="form-control border-0 bg-transparent" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3 border-bottom">
+          <input type="password" name="password" class="form-control border-0 bg-transparent" placeholder="Password" id="exampleInputPassword1" required>
+        </div> 
+        <button type="submit" class="btn btn-primary mb-3">Log In</button>
+    
+        <div>
+          <a class="text-dark" href="signup.php">Or Sign Up here</a>  
+        </div>   
+      </form>   
         
       
   <?php 

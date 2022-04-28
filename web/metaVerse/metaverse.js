@@ -3,6 +3,7 @@ var username=document.getElementById("user_id").innerHTML;
 var logout=document.getElementById("logout");
 if (username=="guest"){
     logout.style.display = "none";
+    login.style.display="block";
 }
 var username_tag=document.getElementById("user_id");
 username_tag.style.display="none";
