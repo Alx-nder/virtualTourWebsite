@@ -50,8 +50,11 @@ if(!$con)
             <li>
               <a class="nav-link" id="logout" href="http://localhost/virtualTourWebsite/validations/logout.php">Logout</a>
             </li>
+            <li>
+              <a class="nav-link" id="login" style="display: none;" href="http://localhost/virtualTourWebsite/validations/login.php">Login/Sign-Up</a>        
+            </li>
           </ul> 
-        </div>
+        </div>    
       </div>
     </nav>
 

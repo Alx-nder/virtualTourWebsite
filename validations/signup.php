@@ -14,9 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$password = $_POST["password"];
 	$cpassword = $_POST["cpassword"];
 			
-	
 	$sql = "Select * from users where email='$email'";
-	
 	$result = mysqli_query($con, $sql);
 	
 	$num = mysqli_num_rows($result);
@@ -27,11 +25,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	if($num == 0) {
 		if(($password == $cpassword) && $exists===false) {
 		
-			// Password Hashing is used here.
 			$sql = "INSERT INTO `users` ( `email`,`password`) VALUES ('$email','$password')";
-	
 			$result = mysqli_query($con, $sql);
-	
 			if ($result) {
 				$showAlert = true;
 			}
@@ -39,14 +34,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		else {
 			$showError = "Passwords do not match";
 		}	
-	}// end if
+	}
 	
-if($num>0)
-{
-	$exists="Username not available";
+	if($num>0)
+	{
+		$exists="Username not available";
+	}	
 }
-	
-}//end if
 	
 ?>
 	
@@ -55,14 +49,8 @@ if($num>0)
 <html lang="en">
 
 <head>
-	
-	<!-- Required meta tags -->
 	<meta charset="utf-8">
-	<meta name="viewport" content=
-		"width=device-width, initial-scale=1,
-		shrink-to-fit=no">
-	
-	<!-- Bootstrap CSS -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="http://localhost/virtualTourWebsite/web/index/style.css">
     <title>Virtual tour</title>
@@ -76,10 +64,8 @@ if($num>0)
     <!-- vid credit https://assets.mixkit.co/videos/preview/mixkit-minimalist-room-with-gray-sofa-3110-large.mp4 -->
     </video>
 
-<?php
-	
+<?php	
 	if($showAlert) {
-	
 		echo ' <div class="alert alert-success
 			alert-dismissible fade show" role="alert">
 	
@@ -87,7 +73,7 @@ if($num>0)
 			now created and you can login.
 			<button type="button" class="close"
 				data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">×</span>
+				<span aria-hidden="true">X</span>
 			</button>
 		</div> ';
 	}
@@ -100,7 +86,7 @@ if($num>0)
 	
 	<button type="button" class="close"
 			data-dismiss="alert aria-label="Close">
-			<span aria-hidden="true">×</span>
+			<span aria-hidden="true">X</span>
 	</button>
 	</div> ';
 }
@@ -121,25 +107,25 @@ if($num>0)
 	
 <div class="container my-4 ">
 	
-	<h1 class="text-center">Signup Here</h1>
-	<form action="signup.php"class="login_tag text-center" method="post">
+	<form action="signup.php"class="login_tag rounded text-center" method="post">
+		<h2 class="pb-2">Signup</h2>
 	
-		<div class="form-group">
-
-		<input type="text" class="form-control mb-3 border-0 border-bottom rounded-0 bg-transparent" id="username" name="email" aria-describedby="emailHelp" placeholder="Email" required>	
+		<div class="border-bottom mb-3">
+			<input type="email" class="form-control  border-0  bg-transparent" name="email" aria-describedby="emailHelp" placeholder="Email" required>	
 		</div>
 	
-		<div class="form-group ">
-			<input type="password" class="form-control mb-3 border-bottom rounded-0 border-0 bg-transparent" id="password" name="password" placeholder="Password" required>
+		<div class="border-bottom mb-3 ">
+			<input type="password" class="form-control  border-0 bg-transparent"  name="password" placeholder="Password" required>
 		</div>
 	
-		<div class="form-group">
-			<input type="password" class="form-control mb-3 border-0 border-bottom rounded-0 bg-transparent" id="cpassword" name="cpassword" placeholder="Confirm Password" required>
+		<div class=" border-bottom mb-3">
+			<input type="password" class="form-control  border-0 bg-transparent" name="cpassword" placeholder="Confirm Password" required>
 		</div>	
 	
-		<button type="submit" class="btn btn-primary">
-		SignUp
-		</button>
+		<button type="submit" class="btn btn-primary my-3">SignUp</button>
+		<div class="">
+            <a class="text-dark" href="login.php">Or Log In here</a>  
+        </div> 
 	</form>
 </div>
 
