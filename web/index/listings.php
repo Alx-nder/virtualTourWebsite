@@ -83,49 +83,43 @@ if(!$con)
 
   <h5 class="card-title" id="user_id" ><?php echo $_SESSION['email'];?></h5>
 
-            
-  <div id="search_results" style="display:none">
-      <!-- line separator -->
-    <div class="container pt-3">
-      <hr class=" my-4 ">
-    </div>
-    <div class="container">
-      <div class="list-group-horizontal list-group position-relative">
-      <h3 class="pb-3">Search results</h3>
-      <!-- close button -->
-    <span class=" position-absolute end-0" role="button" id="search_close" style="  color: #f1f1f1; font-size: 40px;font-weight: bold;transition: 0.3s;">&times;</span>
-
-      </div>
-    
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-
-        <?php
-          if (isset($_GET['search_field'])){
-          $house_location=$_GET["search_field"];
-          $sql = "SELECT * FROM listings where house_location='$house_location' ORDER BY price asc";
-          $result = $result = mysqli_query($con, $sql);
-
-          // Associative array
+  
+    <?php
+      if (isset($_GET['search_field'])){
+        echo'
+        <div id="search_results" >
+            <!-- line separator -->
+          <div class="container pt-3">
+            <hr class=" my-4 ">
+          </div>
+          <div class="container">
+            <div class="list-group-horizontal list-group position-relative">
+            <h3 class="pb-3">Search results</h3>
+            <!-- close button -->
+          <span class=" position-absolute end-0" role="button" id="search_close" style="  color: #f1f1f1; font-size: 40px;font-weight: bold;transition: 0.3s;">&times;</span>
+      
+            </div>
           
-          while($row = $result -> fetch_assoc()){
-            echo"<div class='col'>  <div class='card h-100 bg-light'><img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:auto; object-fit:contain;' alt='http://localhost/krpano-1.20.11/viewer/krpano.html?xml=examples/interactive-area/interactive-area.xml'><div class='card-body'><h5 class='card-title'>",$row['house_location'],"</h5><i class='bi bi-cash-coin'></i><h5 class='card-title'>",$row['price'],"</h5><p class='card-text fs-6'>Total acres of land: ",$row['land'],"<br>Total acres of living space: ",$row['living_space'],"<br>No. of Bedrooms: ",$row['bedrooms'],"<br>No. of Bathrooms: ",$row['bathrooms'],"<br>Built/renovated: ",$row['age']," years ago</p></div><div class='card-footer'><small class='text-muted'>Contact: ",$row['posted_by'],"</small></div></div></div>";
-          }
-          // Free result set
-          $result -> free_result();
-        }
-        ?>
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>  
-  </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+      ';
+
+      $house_location=$_GET["search_field"];
+      $sql = "SELECT * FROM listings where house_location='$house_location' ORDER BY price asc";
+      $result = $result = mysqli_query($con, $sql);
+
+      // Associative array
+      
+      while($row = $result -> fetch_assoc()){
+        echo"<div class='col'>  <div class='card h-100 bg-light'><img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:auto; object-fit:contain;' alt='http://localhost/krpano-1.20.11/viewer/krpano.html?xml=examples/interactive-area/interactive-area.xml'><div class='card-body'><h5 class='card-title'>",$row['house_location'],"</h5><i class='bi bi-cash-coin'></i><h5 class='card-title'>",$row['price'],"</h5><p class='card-text fs-6'>Total acres of land: ",$row['land'],"<br>Total acres of living space: ",$row['living_space'],"<br>No. of Bedrooms: ",$row['bedrooms'],"<br>No. of Bathrooms: ",$row['bathrooms'],"<br>Built/renovated: ",$row['age']," years ago</p></div><div class='card-footer'><small class='text-muted'>Contact: ",$row['posted_by'],"</small></div></div></div>";
+      }
+      // Free result set
+      $result -> free_result();
+    }
+      echo'</div>
+          </div>  
+        </div>';
+    ?>
+  
   <!-- chatbot -->
   <div class="px-4 my-3" style="position: fixed; right: 0; bottom: 0; z-index: 1030; ">
   <div class="rounded " style="background-color:#ffffffd0">
