@@ -135,3 +135,7 @@ video{
   background-attachment: fixed;
   background-size: cover;
 }
+
+.border-bottom {
+  border-bottom: 1px solid #6c757d!important;
+}
