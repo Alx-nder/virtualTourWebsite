@@ -15,9 +15,9 @@ mysqli_select_db($con, 'virttour');
     <link rel="stylesheet" href="http://localhost/virtualTourWebsite/web/index/listings.css">
 </head>
 <body>
-    <div class="container">
+    <div class=" ">
         <div class=" col text-center bg-transparent border-0">
-            <h3 class="py-3">Report <?php echo uniqid("",false);?> </h3>
+            <h3 class="">Report No.<?php echo uniqid("",false);?> </h3>
             <div>
                 <img srcset="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814049_960_720.png 5x"  alt="user">
             </div> 
@@ -36,15 +36,23 @@ mysqli_select_db($con, 'virttour');
                 $sql = "SELECT * FROM user_pref where username ='$user'";
                 $result = $result = mysqli_query($con, $sql);
                 while($row = $result -> fetch_assoc()){
-                    echo "Your activity:<br>"
-                        ,"Listings in Grange: ",$row['grange'],
-                        "Listings in Lucea: ",$row['lucea']
-                                            ;
+                    echo "<pre>
+                    <hr>
+                                    Your interaction activity:<br>     
+Listings in Grange: ",$row['grange']," times                  Listing costing less than 1 million: ",$row['price_0']," times
+Listings in Kingston: ",$row['kingston']," times                Listing costing less than 3 million: ",$row['price_1']," times
+Listings in Lucea: ",$row['lucea']," times                   Listing costing more than 3 million: ",$row['price_2']," times
+Listings in Mandeville: ",$row['mandeville']," times
+Listings in Manchester: ",$row['manchester']," times
+                        <hr>
+                        </pre>";
                 }
             }       
-        ?>
-
-        <div class="row row-cols-1 row-cols-md-6 g-4">
+            ?>
+        <div class="text-center">
+        <p>Your listings</p>    
+        </div>
+        <div class="row row-cols-4  g-4">
 
         <?php
                 if (isset($_SESSION['email'])){
@@ -56,7 +64,7 @@ mysqli_select_db($con, 'virttour');
                 while($row = $result -> fetch_assoc()){
                     echo"
                     <div class='col'>  
-                      <div class='card bg-light'>
+                      <div class=' bg-light'>
                         <img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100px; height:100px; object-fit:cover;'>
                           <div class='card-body'>
                             <h5 class='card-title'>Listing ID.# ",$row['id'],"</h5>
@@ -75,7 +83,7 @@ mysqli_select_db($con, 'virttour');
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // window.print()
+        window.print()
     });
 </script>
 </html>
