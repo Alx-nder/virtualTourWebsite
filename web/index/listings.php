@@ -96,11 +96,11 @@ if(!$con)
             <div class="list-group-horizontal list-group position-relative">
             <h3 class="pb-3">Search results</h3>
             <!-- close button -->
-          <span class=" position-absolute end-0" role="button" id="search_close" style="  color: #f1f1f1; font-size: 40px;font-weight: bold;transition: 0.3s;">&times;</span>
+          <h3 class=" position-absolute end-0" role="button" id="search_close">...</h3>
       
             </div>
           
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="search_open">
       ';
 
       $house_location=$_GET["search_field"];
@@ -144,7 +144,7 @@ if(!$con)
     <div id="for_rec" class="container">
       <div class="list-group pt-3 me-5 rounded-0 list-group-horizontal ">
         <hr>
-        <h3 class="text-center pb-3">FEATURED listings </h3>
+        <h3 class="text-center pb-3">Listings based on your activity</h3>
         <hr>
       </div>
       <div class=" row row-cols-1 row-cols-md-3 g-4" id="csec"></div>

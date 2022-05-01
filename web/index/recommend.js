@@ -23,7 +23,7 @@ $.ajax({
         div.setAttribute("class","col"); 
 
         var card = document.createElement("div");
-        card.setAttribute("class","card h-100 bg-light"); 
+        card.setAttribute("class","card  bg-light"); 
         div.appendChild(card);
         
         var card_img = document.createElement("img");   
@@ -46,6 +46,11 @@ $.ajax({
         listing_price.setAttribute("class", "card-title");
         card_body.appendChild(listing_price);
         listing_price.innerHTML= resp[4];
+
+        var listing_id = document.createElement("p");   
+        listing_id.setAttribute("class", "card-title");
+        card_body.appendChild(listing_id);
+        listing_id.innerHTML= resp[0];
 
         var card_sub_body = document.createElement("p");   
         card_sub_body.setAttribute("class", "card-text fs-6");
@@ -80,7 +85,8 @@ function update_preference(image_tag){
     var parent_card=image_tag.parentElement;
     var card_location= parent_card.getElementsByClassName("card-title")[0].innerHTML;
     var card_price= parent_card.getElementsByClassName("card-title")[1].innerHTML;
-    var request_body=JSON.stringify({username,card_price,card_location});
+    var listing_id= parent_card.getElementsByClassName("card-title")[2].innerHTML;
+    var request_body=JSON.stringify({username,card_price,card_location,listing_id});
 
     $.ajax({
         url: "http://localhost/recommendAlgo/update_pref.py",
@@ -130,6 +136,13 @@ $(document).ready(function(){
 });
 
 // search function
-$('#search_close').click(function(){
-    $('#search_results').css('display', 'none');
+
+
+$("#search_close").click(function(){
+    var search_open = document.getElementById('search_open')
+    if (search_open.style.display === "none") {
+        search_open.style.display = "block";
+      } else {
+        search_open.style.display = "none";
+      }
 })

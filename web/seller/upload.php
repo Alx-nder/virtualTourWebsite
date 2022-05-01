@@ -32,7 +32,7 @@ if (isset($_POST['upload'])){
 	if(in_array($image_extension,$allowed_extensions)){
 		if($error===0){
 			// size in kbs
-			if($size<10000){
+			if($size<100000){
 				$new_img_name= uniqid('',true).'.'.$image_extension;
 				$file_destination='uploads/'.$new_img_name;
 				move_uploaded_file($tmp_name,$file_destination);

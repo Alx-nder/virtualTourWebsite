@@ -21,3 +21,12 @@ $(".submit").click(function(){
         }
     })
 })
+
+$("#your_listings").click(function(){
+    var listings_list = document.getElementById('listings_list')
+    if (listings_list.style.display === "none") {
+        listings_list.style.display = "block";
+      } else {
+        listings_list.style.display = "none";
+      }
+})

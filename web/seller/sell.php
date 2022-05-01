@@ -68,36 +68,30 @@
 
   <div class="container ">
   <hr class=" my-4 ">
-  <h3 class='pb-3'>Your Listings</h3>
-    <div class="list-group-horizontal list-group position-relative">
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="list-group-horizontal list-group position-relative ">
+    <h3 class="pb-3" >Your Listings</h3>
+    <h3 class=" position-absolute end-0" role="button" id="your_listings">...</h3>      
+  </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="listings_list" >
       <?php
         if (isset($_SESSION['email'])){
         $user=$_SESSION['email'];
         $sql = "SELECT * FROM listings where posted_by='$user' ORDER BY listings_interaction desc";
         $result = $result = mysqli_query($con, $sql);
 
-        // Associative array
+        // Associative array of a user's listings
         while($row = $result -> fetch_assoc()){
           echo"
           <div class='col'>  
-            <div class='card h-100 bg-light'>
-              <img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:auto; object-fit:contain;' alt='http://localhost/krpano-1.20.11/viewer/krpano.html?xml=examples/interactive-area/interactive-area.xml'>
+            <div class='card bg-light'>
+              <img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:50%; object-fit:cover;' alt='http://localhost/krpano-1.20.11/viewer/krpano.html?xml=examples/interactive-area/interactive-area.xml'>
             
                 <div class='card-body'>
-                  <h5 class='card-title'>",$row['house_location'],"</h5>
-                  <h5 class='card-title'>",$row['price'],"</h5>
-                  <p class='card-text fs-6'>Total acres of land: ",$row['land'],"
-                    <br>Total acres of living space: ",$row['living_space'],"
-                    <br>No. of Bedrooms: ",$row['bedrooms'],"
-                    <br>No. of Bathrooms: ",$row['bathrooms'],"
-                    <br>Built/renovated: ",$row['age']," years ago
-                  </p>
+                  <h5 class='card-title'>Listing ID.# ",$row['id'],"</h5>
+                  <p class='card-title'>",$row['listings_interaction']," views since posted</p>
                 </div>
-              <div class='card-footer'>
-                <small class='text-muted'>Contact: ",$row['posted_by'],"</small>
-              </div>
             </div>
           </div>";
         }
@@ -105,7 +99,6 @@
         $result -> free_result();
         }
       ?>
-    </div>
     </div>
     <hr class=" my-4 ">
   </div>
