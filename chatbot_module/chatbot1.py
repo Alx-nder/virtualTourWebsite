@@ -28,11 +28,17 @@ trainer = ListTrainer(chatbot2, show_training_progress=False)
 trainer.train(conversation)
 
 # use either the voice recognition or the chatbot text field
+'''
 if not cgi.FieldStorage() :
     bot_response = chatbot2.get_response(speech_module.main())
 else:
     form=cgi.FieldStorage()
     user_speech=form.getvalue("message_py") 
     bot_response = chatbot2.get_response(user_speech)
+'''
+
+form=cgi.FieldStorage()
+user_speech=form.getvalue("message_py") 
+bot_response = chatbot2.get_response(user_speech)
 
 print(str(bot_response))

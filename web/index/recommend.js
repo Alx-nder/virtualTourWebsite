@@ -136,8 +136,6 @@ $(document).ready(function(){
 });
 
 // search function
-
-
 $("#search_close").click(function(){
     var search_open = document.getElementById('search_open')
     if (search_open.style.display === "none") {
