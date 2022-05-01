@@ -68,13 +68,22 @@
 
   <div class="container ">
   <hr class=" my-4 ">
+<div class="text-center">
+<h4 >
+      Generate a report of your activity here
+    </h4>
+    <iframe src="report.php" style="display: none;" name="report" title="Reportpage"></iframe>
+    <button class="btn btn-primary" onclick="frames['report'].print()">Get a report</button>
+
+</div>
+    <hr class=" my-4 ">
 
   <div class="list-group-horizontal list-group position-relative ">
     <h3 class="pb-3" >Your Listings</h3>
     <h3 class=" position-absolute end-0" role="button" id="your_listings">...</h3>      
   </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4" id="listings_list" >
+    <div class="row row-cols-4 g-4" id="listings_list" >
       <?php
         if (isset($_SESSION['email'])){
         $user=$_SESSION['email'];
@@ -86,12 +95,17 @@
           echo"
           <div class='col'>  
             <div class='card bg-light'>
-              <img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:50%; object-fit:cover;' alt='http://localhost/krpano-1.20.11/viewer/krpano.html?xml=examples/interactive-area/interactive-area.xml'>
+              <img src=",$row['image_src']," class='list_img my_img rounded my-2 mx-2' style='max-width:100%; height:180px; object-fit:contain;' >
             
                 <div class='card-body'>
                   <h5 class='card-title'>Listing ID.# ",$row['id'],"</h5>
                   <p class='card-title'>",$row['listings_interaction']," views since posted</p>
-                </div>
+                
+        <h5 class='card-title'>",$row['house_location'],"</h5>
+        <h5 class='card-title'>",$row['price'],"</h5>
+        <p class='card-text fs-6'>Total acres of land: ",$row['land'],"<br>Total acres of living space: ",$row['living_space'],"<br>No. of Bedrooms: ",$row['bedrooms'],"<br>No. of Bathrooms: ",$row['bathrooms'],"<br>Built/renovated: ",$row['age']," years ago</p>
+        </div>
+        
             </div>
           </div>";
         }

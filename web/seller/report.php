@@ -83,7 +83,7 @@ Listings in Manchester: ",$row['manchester']," times
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        window.print()
+        // window.print()
     });
 </script>
 </html>
