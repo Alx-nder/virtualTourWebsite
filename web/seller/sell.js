@@ -4,7 +4,7 @@ var username=document.getElementById("user_id").innerHTML;
 
 $(".submit").click(function(){
     $.ajax({
-        url: "http://localhost/virtualTourWebsite/seller/estimation.py",
+        url: "http://localhost/virtualTourWebsite/web/seller/estimation.py",
         method: "POST",
         data: {message_py:""},
         dataType: "text",

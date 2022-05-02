@@ -1,5 +1,5 @@
 #!C:\Program Files\Python310\python.exe
-print("content-type: text/html\n\n" )
+# print("content-type: text/html\n\n" )
 
 import sys
 import cgi

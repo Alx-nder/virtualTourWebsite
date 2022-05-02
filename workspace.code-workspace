@@ -8,6 +8,10 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "virtualTourWebsite"
+		"liveServer.settings.multiRootWorkspaceName": "virtualTourWebsite",
+		"dataworkspace.excludedProjects": [
+			"virtualTourWebsite/database/Enter/Enter/Enter.sqlproj",
+			"virtualTourWebsite/database/Enter/Enter.sqlproj"
+		]
 	}
 }
