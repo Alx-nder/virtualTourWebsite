@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	if($num == 0) {
 		if(($password == $cpassword) && $exists===false) {
 			//into user pref table 
-			$sql - "INSERT INTO user_pref ( username ) VALUES ('$email')";
+			$sql = "INSERT INTO `user_pref` (`username`)  VALUE ('$email')";
 			$result = mysqli_query($con, $sql);
 			// into users table
 			$sql = "INSERT INTO `users` ( `email`,`password`) VALUES ('$email','$password')";
