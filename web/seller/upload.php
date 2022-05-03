@@ -37,8 +37,13 @@ if (isset($_POST['upload'])){
 				$file_destination='uploads/'.$new_img_name;
 				move_uploaded_file($tmp_name,$file_destination);
 				$file_destination='http://localhost/virtualTourWebsite/web/seller/uploads/'.$new_img_name;
+				
 				$sql="INSERT INTO listings (house_location,posted,house_description,price,image_src,tour_link,living_space,bathrooms,bedrooms,building_class,age,land,posted_by) VALUES ('$house_location','','$description','$price','$file_destination','$file_destination','$living_space','$bathrooms','$bedrooms','$building_class','$age','$land','$user')";
+				
 				mysqli_query($conn,$sql);
+
+				$sql= "ALTER TABLE user_pref ADD '$house_location' int";
+
 				header("Location: sell.php?uploaded");
 			}else{
 				header("Location: sell.php?image_too_large");
