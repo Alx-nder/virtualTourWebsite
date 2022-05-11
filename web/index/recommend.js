@@ -2,9 +2,11 @@
 var username=document.getElementById("user_id").innerHTML;
 var logout=document.getElementById("logout");
 var login=document.getElementById("login");
+var sign_up=document.getElementById("sign_up");
 if (username=="guest"){
     logout.style.display = "none";
     login.style.display="block";
+    sign_up.style.display="block";
 }
 var username_tag=document.getElementById("user_id");
 username_tag.style.display="none";

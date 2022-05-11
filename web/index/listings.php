@@ -18,7 +18,7 @@ if(!$con)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Virttour: Home</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -32,7 +32,9 @@ if(!$con)
     <!-- navbar -->
     <nav class="navbar pt-3 navbar-expand-lg navbar-light" aria-label="navbar">
       <div class="container-fluid">
-        <a href="http://localhost/virtualTourWebsite/web/index/listings.php"><img class="mx-3" srcset="http://localhost/virtualTourWebsite/web/images/logo.png 3x" alt=""></a>
+        <a href="http://localhost/virtualTourWebsite/web/index/listings.php">
+          <img class="mx-3" srcset="http://localhost/virtualTourWebsite/web/images/logo.png 3x" alt="">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,12 +55,17 @@ if(!$con)
             <li>
               <a class="nav-link" id="login" style="display: none;" href="http://localhost/virtualTourWebsite/validations/login.php">Login</a>        
             </li>
+            <li>
+              <a class="nav-link" id="sign_up" style="display: none;" href="http://localhost/virtualTourWebsite/validations/signup.php">Sign Up</a>        
+            </li>
           </ul> 
         </div>    
       </div>
     </nav>
 
+
     <div class=" row container py-4 mb-5">
+      
       <div class="col-5 pt-5">
         <div class="text-dark pt-5 px-4 ">
         <!-- fs-1 -->
