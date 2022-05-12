@@ -61,6 +61,9 @@
           <li>
             <a class="nav-link" id="logout" href="http://localhost/virtualTourWebsite/validations/logout.php">Logout</a>
           </li>
+          <li>
+              <a class="nav-link" href="http://localhost/virtualTourWebsite/web/about/about.php">About Us</a>        
+          </li>
         </ul>      
       </div>
     </div>

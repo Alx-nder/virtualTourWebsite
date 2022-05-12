@@ -59,7 +59,7 @@ if(!$con)
               <a class="nav-link" id="sign_up" style="display: none;" href="http://localhost/virtualTourWebsite/validations/signup.php">Sign Up</a>        
             </li>
             <li>
-              <a class="nav-link" id="sign_up" style="display: none;" href="http://localhost/virtualTourWebsite/web/about/about.php">About Us</a>        
+              <a class="nav-link" href="http://localhost/virtualTourWebsite/web/about/about.php">About Us</a>        
             </li>
           </ul> 
         </div>    

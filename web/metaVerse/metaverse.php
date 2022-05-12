@@ -41,13 +41,19 @@
               <a class="nav-link" href="http://localhost/virtualTourWebsite/web/seller/sell.php">Sell</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" >METAverse</a>
+              <a class="nav-link active" aria-current="page" href="http://localhost/virtualTourWebsite/web/metaverse/metaverse.php" >METAverse</a>
             </li>
             <li>
               <a class="nav-link" id="logout" href="http://localhost/virtualTourWebsite/validations/logout.php">Logout</a>
             </li>
             <li>
               <a class="nav-link" id="login" style="display: none;" href="http://localhost/virtualTourWebsite/validations/login.php">Login</a>        
+            </li>
+            <li>
+              <a class="nav-link" id="sign_up" style="display: none;" href="http://localhost/virtualTourWebsite/validations/signup.php">Sign Up</a>        
+            </li>
+            <li>
+              <a class="nav-link" href="http://localhost/virtualTourWebsite/web/about/about.php">About Us</a>        
             </li>
           </ul>      
         </div>
