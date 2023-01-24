@@ -9,35 +9,28 @@ database= client.virttour
 #  a collection is a table
 preference_collection= database.pref
 
-#  command to add data
-# preference_collection.insert_many(users)
-
-# pref=preference_collection.find({"username":"guest"})
-# print(list(pref))
-
-# preference_collection.update_one({"username":"guest"},{'$inc':{"lucea":1}})
-
-pref=preference_collection.find({"username":"guest"})
-print(list(pref))
-
-def insert_doc():
-    new_user={
-        "username":"{}"
-    }
-    preference_collection.insert_one(new_user)
-
-
+# updating user preference document
 def register_click(username, tag):
+    preference_collection.update_one({"username":username},{"$inc": {tag:1}})
+    '''
+    TO DO: 
+        CREATE TAG IF IT DOES NOT EXIST
+    '''
 
-    updates={
-        ### set new field
-        # "$set": {"new_field": True},
-        # increment
-        "$inc": {tag:1}
-        #$rename rename fields and not values
-    }
-    preference_collection.update_one({"username":username},updates)
-register_click("guest",'price_0')
 
-pref=preference_collection.find({"username":"guest"})
-print(list(pref))
+# returning most clicked tag
+def highest_click(username):
+    user_data=preference_collection.find_one({"username":username})
+    
+    # convert from cursor
+    user_data=list(user_data.values())
+    for tag in  user_data:
+        print(tag)
+### note find highest and keep tag name
+highest_click("guest")
+# val={"one":1,"two":2}
+# for i in val.values():
+#     print(i)
+
+
+
