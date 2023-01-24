@@ -23,13 +23,28 @@ def highest_click(username):
     user_data=preference_collection.find_one({"username":username})
     
     # convert from cursor
-    user_data=list(user_data.values())
-    for tag in  user_data:
-        print(tag)
+    # capture values from document
+    tag_values=list(user_data.values())
+
+    # for tag in  user_data:
+    #     print(tag)
+    max = -1
+    index=1
+    for i in range(2,len(tag_values)):
+        if tag_values[i]>max:
+            max=tag_values[i]
+            index=i
+
+    print(max,index)
+
 ### note find highest and keep tag name
+
 highest_click("guest")
+
+
 # val={"one":1,"two":2}
-# for i in val.values():
+# print(list(val)[1])
+# for i in val:
 #     print(i)
 
 
