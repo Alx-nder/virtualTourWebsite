@@ -26,8 +26,6 @@ def highest_click(username):
     # capture values from document
     tag_values=list(user_data.values())
 
-    # for tag in  user_data:
-    #     print(tag)
     max = -1
     index=1
     for i in range(2,len(tag_values)):
@@ -35,17 +33,7 @@ def highest_click(username):
             max=tag_values[i]
             index=i
 
-    print(max,index)
+    return list(user_data)[index]
 
 ### note find highest and keep tag name
-
-highest_click("guest")
-
-
-# val={"one":1,"two":2}
-# print(list(val)[1])
-# for i in val:
-#     print(i)
-
-
 
