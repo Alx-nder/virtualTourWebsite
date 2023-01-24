@@ -12,6 +12,14 @@ preference_collection= database.pref
 #  command to add data
 # preference_collection.insert_many(users)
 
+# pref=preference_collection.find({"username":"guest"})
+# print(list(pref))
+
+# preference_collection.update_one({"username":"guest"},{'$inc':{"lucea":1}})
+
+pref=preference_collection.find({"username":"guest"})
+print(list(pref))
+
 def insert_doc():
     new_user={
         "username":"{}"
@@ -19,5 +27,17 @@ def insert_doc():
     preference_collection.insert_one(new_user)
 
 
-def find_pref():
-    pref=preference_collection.find([{"username":"{}",}])
+def register_click(username, tag):
+
+    updates={
+        ### set new field
+        # "$set": {"new_field": True},
+        # increment
+        "$inc": {tag:1}
+        #$rename rename fields and not values
+    }
+    preference_collection.update_one({"username":username},updates)
+register_click("guest",'price_0')
+
+pref=preference_collection.find({"username":"guest"})
+print(list(pref))
