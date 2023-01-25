@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-
+import random
 cluster_url ="mongodb://localhost:27017/"
 client = MongoClient(cluster_url)
 
@@ -43,5 +43,15 @@ listings=database.listings
 
 def present_listing(tag):
     res=listings.find({'location':tag})
-    return list(res)
+    
+    # change from cursor to list
+    res=list(res)
+    
+    # return for  list
+    # return res
 
+    # return for single random listing
+    return res[random.randrange(0,len(res))]
+
+
+print(present_listing("lucea"))
