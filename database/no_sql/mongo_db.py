@@ -53,5 +53,8 @@ def present_listing(tag):
     # return for single random listing
     return res[random.randrange(0,len(res))]
 
+def random_listing():
+    return random.choice(list(listings.find()))
 
-print(present_listing("lucea"))
+
+# build multi arm bandit
