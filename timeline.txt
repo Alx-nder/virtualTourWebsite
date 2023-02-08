@@ -1,0 +1,8 @@
+1. create tags on mongodb 
+2. create mongodb functions that update tag values per click
+3. mongodb function that returns the highest clicked tag
+4. mongodb that returns a random tag
+5. create validations on flask
+6. validations are linked to tags
+7. recommendations sent to frontend
+8. interaction sent to backend
