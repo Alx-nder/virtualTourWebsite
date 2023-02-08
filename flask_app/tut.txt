@@ -4,3 +4,11 @@
 
 # https://www.youtube.com/watch?v=dam0GPOAvVI
 # web app
+
+TODO 
+
+DO AUTHENTICATION
+CONNECT JS TO flask
+FINISH mongodb DATABASE
+
+
