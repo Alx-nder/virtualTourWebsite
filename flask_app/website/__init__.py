@@ -21,19 +21,15 @@ def create_app():
     app.register_blueprint(views,url_prefix='/')
     app.register_blueprint(auth,url_prefix='/')
 
-    from .models import User
+    from . import models
     # rename the import
 
     # import so it runs
-    create_database(app)
 
+    with app.app_context():
+        db.create_all()
     return app
 
-def create_database(app):
-    if not path.exists('website/'+ DB_NAME):
-        db.create-all(app=app)
-        print("Database created")
-        
 
 
 # file name __init__.py turns a folder into a pyhton package
