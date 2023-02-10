@@ -11,11 +11,9 @@ def logout():
 
 @auth.route('/register',methods=['GET','POST'])
 def register():
-
-    # if request.method=='POST':
-    #     email=request.form['email']
-    #     password=request.form['password']
-    #     cpassword=request.form['cpassword']
-
     return render_template('register.html')
-    # return User().signup()
+
+
+@auth.route('/signup',methods=['POST','GET'])
+def signup():
+    return User().signup()

@@ -1,12 +1,12 @@
 $("form[name=register").submit(function(e){
-    var $form= ($(this));
+    var $form= $(this);
     var $error = $form.find(".error");
     var data=$form.serialize();
 
     e.preventDefault();
 
     $.ajax({
-        url: "/register",
+        url: "/signup",
         type: "POST",
         data: data,
         dataType: "json",
