@@ -1,8 +1,15 @@
 from flask import Flask
+import pymongo
 
+ #database
+connection=pymongo.MongoClient("mongodb://localhost:27017/")
+
+database=connection.virttour
 
 def create_app():
     app=Flask(__name__)
+
+    # database.init_app(app)
 
     # importing routes
     from .views import views
