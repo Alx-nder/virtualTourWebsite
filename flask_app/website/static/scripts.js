@@ -3,6 +3,7 @@ $("form[name=register").submit(function(e){
     var $error = $form.find(".error");
     var data=$form.serialize();
 
+    // prevent reloading submit
     e.preventDefault();
 
     $.ajax({
@@ -14,7 +15,14 @@ $("form[name=register").submit(function(e){
             console.log(resp)
     },
         error: function(resp){
-        console.log(resp)  
+
+            console.log(resp) 
+            //read error message
+            $error.text("reugyugsp");
+            $error.removeClass("error--hidden");
+
+            alert();
+
         }
     });
 

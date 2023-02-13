@@ -16,8 +16,13 @@ class User:
         # encrypt passord
         user['password']=pbkdf2_sha256.encrypt(user['password'])
         
-        database.user_auth.insert_one(user)
+        #query if user exists
+        if database.user_auth.find_one({'email':user['email']}):
+            return jsonify({'error':'User already exists'}), 400
+        elif database.user_auth.insert_one(user):
+            return jsonify(user),200
         
-        return jsonify(user)
+        return jsonify({'error':'Something went wrong'}), 400
+
 
 # https://www.youtube.com/watch?v=mISFEwojJmE

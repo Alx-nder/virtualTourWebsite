@@ -9,8 +9,6 @@ database=connection.virttour
 def create_app():
     app=Flask(__name__)
 
-    # database.init_app(app)
-
     # importing routes
     from .views import views
     from .auth import auth
