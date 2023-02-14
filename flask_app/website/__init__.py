@@ -9,6 +9,9 @@ database=connection.virttour
 def create_app():
     app=Flask(__name__)
 
+    # secret key for session data
+    app.secret_key = "oiawnaniomawo8998jj"
+
     # importing routes
     from .views import views
     from .auth import auth

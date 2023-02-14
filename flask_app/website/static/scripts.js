@@ -12,7 +12,8 @@ $("form[name=register").submit(function(e){
         data: data,
         dataType: "json",
         success: function(resp){
-            console.log(resp)
+            // send to hompage after signup
+            window.location.href='/index';
     },
         error: function(resp){
 
