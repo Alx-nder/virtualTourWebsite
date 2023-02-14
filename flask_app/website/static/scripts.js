@@ -18,7 +18,7 @@ $("form[name=register").submit(function(e){
 
             console.log(resp) 
             //read error message
-            $error.text("reugyugsp");
+            $error.text(resp['responseText']);
             $error.removeClass("error--hidden");
 
             alert();
