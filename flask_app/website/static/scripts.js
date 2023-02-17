@@ -22,8 +22,6 @@ $("form[name=register").submit(function(e){
             $error.text(resp['responseText']);
             $error.removeClass("error--hidden");
 
-            alert();
-
         }
     });
 
