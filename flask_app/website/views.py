@@ -10,4 +10,4 @@ def home():
 
 @views.route('sell')
 def dashboard():
-    return render_template("sell.html")
+    return render_template("sell.html") 

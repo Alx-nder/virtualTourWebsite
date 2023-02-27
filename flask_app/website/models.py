@@ -26,6 +26,7 @@ class User:
         #query if user exists
         if database.user_auth.find_one({'email':user['email']}):
             return jsonify({'error':'User already exists'}), 400
+        
         elif database.user_auth.insert_one(user):
             return self.start_session(user)
         
@@ -33,5 +34,5 @@ class User:
     
     def logout(self):
         session.clear()
-        return redirect('/index')
+        return redirect('/')
 # https://www.youtube.com/watch?v=mISFEwojJmE
