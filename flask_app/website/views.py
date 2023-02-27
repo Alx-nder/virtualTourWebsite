@@ -9,5 +9,6 @@ def home():
     return render_template("index.html")
 
 @views.route('sell')
+@login_required
 def dashboard():
     return render_template("sell.html") 

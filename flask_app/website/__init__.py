@@ -1,5 +1,5 @@
-from flask import Flask,jsonify,request, session, redirect
-
+from flask import Flask,jsonify,request, session, redirect,render_template
+from functools import wraps
 import pymongo
 
  #database
@@ -17,6 +17,9 @@ def login_required(f):
         return redirect('/')
     return wrap
 
+
+
+
 def create_app():
     app=Flask(__name__)
 
@@ -26,10 +29,19 @@ def create_app():
     
 
     # importing routes
-    from .views import views
+    @app.route('/')
+    def home():
+       return render_template("index.html")
+
+    @app.route('sell')
+    @login_required
+    def dashboard():
+        return render_template("sell.html") 
+
+
+
     from .auth import auth
 
-    app.register_blueprint(views,url_prefix='/')
     app.register_blueprint(auth,url_prefix='/')
 
     return app
