@@ -1,14 +1,15 @@
 # file for webpages
 from flask import Blueprint, render_template
 
-views=Blueprint("views",__name__)
+views = Blueprint("views", __name__)
 
 
-@views.route('/')
+@views.route("/")
 def home():
     return render_template("index.html")
 
-@views.route('sell')
+
+@views.route("sell")
 @login_required
 def dashboard():
-    return render_template("sell.html") 
+    return render_template("sell.html")
